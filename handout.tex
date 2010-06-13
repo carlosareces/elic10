@@ -8,7 +8,7 @@
 \pagenumbering{arabic}
 \setcounter{page}{1}
 
-\title{Curso 2: Generaci\'on de Lenguaje Natural y Aplicaciones}
+\title{Generaci\'on de Lenguaje Natural y Aplicaciones}
 \author{Carlos Areces\\
   {\tt carlos.areces@gmail.com} 
 \and 
@@ -19,33 +19,53 @@ Luciana Benotti\\
   Equipo PLN - Universidad Nacional de C\'ordoba - Argentina
 }
 
+\date{}
 
 \maketitle
 
 Este curso est\'a compuesto por dos partes. En la primera se dar\'a una introducci\'on al problema de generaci\'on de lenguaje natural. Presentaremos los algoritmos cl\'asicos de generaci\'on, haciendo \'enfasis en la generaci\'on de referencias. En la segunda parte discutiremos sistemas de generaci\'on situados en un entorno virtual.
-
-La segunda parte tiene como requisito previo la primera. La evaluaci\'on final cubrir\'a temas de ambas partes.
+La segunda parte tiene como requisito previo la primera. La evaluaci\'on final (tipo take-home) cubrir\'a temas de ambas partes.
 
 \section{Introducci\'on a la Generaci\'on de Lenguaje Natural}
 
-\paragraph{Profesor:} Carlos Areces (INRIA Grand Est, Francia / Univ. Nacional de C\'ordoba)
+\paragraph{Profesor:} Carlos Areces %(INRIA Grand Est, Francia / Univ. Nacional de C\'ordoba)
 
 \paragraph{Horario:} Lunes, martes y mi\'ercoles de 14 a 17 hs (9 horas de clase)
 
 \paragraph{Pre-requisitos:} Conocimientos b\'asicos de l\'ogica y algoritmos. No se asume conocimiento previo de procesamiento de lenguaje natural.
 
-\paragraph{Resumen:} El problema de generaci\'on de lenguaje natural puede definirse, intuitivamente, como el proceso de transformaci\'on de informaci\'on en texto (escrito o hablado) en lenguaje natural (por ejemplo, Ingl\'es o Español). El texto generado debe ser no solamente gramaticalmente correcto, sino adecuado para el contexto en donde ser\'a utilizado.
+\paragraph{Resumen:} El problema de generaci\'on de lenguaje natural puede definirse, intuitivamente, como el proceso de transformaci\'on de informaci\'on en texto (escrito o hablado) en lenguaje natural (por ejemplo, Ingl\'es o Espa\~{n}ol). El texto generado debe ser no solamente gramaticalmente correcto, sino adecuado para el contexto en donde ser\'a utilizado.
 
-\subsection*{Lunes:} El Problema de Generaci\'on de Lenguaje Natural (GLN). Historia. Generaci\'on vs. Parsing. GNL Pipeline. Representaci\'on de Informaci\'on e Inferencia para GLN. Evaluaci\'on de Sistemas de GLN.
+\subsection*{Lunes:} El Problema de Generaci\'on de Lenguaje Natural (GLN): Historia; Ejemplos; Generaci\'on vs.\ Parsing; GNL Pipeline; Representaci\'on de Informaci\'on e Inferencia para GLN; Evaluaci\'on de Sistemas de GLN (Dale and Reiter, 1997).
 
-\subsection*{Martes:} Generaci\'on Sint\'actica. Generaci\'on via Charts. Tree Adjoining Grammars. Interface Sint\'actica-Sem\'antica.
+\subsection*{Martes:} Generaci\'on Sint\'actica. Generaci\'on via Charts (Kay, 1996). Tree Adjoining Grammars (Joshi and Schabes, 1997). Interface Sint\'actica-Sem\'antica.
 
-\subsection*{Mi\'ercoles:} Algoritmos de Generaci\'on de Expresiones Referenciales. Informaci\'on Proposicional vs. Informaci\'on Relacional. Optimizaci\'on de Algoritmos. Evaluaci\'on.
+\subsection*{Mi\'ercoles:} Algoritmos de Generaci\'on de Expresiones Referenciales (Dale and Reiter, 1995). Informaci\'on Proposicional vs.\ Informaci\'on Relacional. Optimizaci\'on de Algoritmos. Evaluaci\'on.
 
+\subsection*{Bibliograf\'ia:}
+\begin{enumerate}
+\item Ehud Reiter and Robert Dale (1997). Building applied natural language generation systems. Journal of Natural Language Engineering, 3, 57-87. Ver pag.~\pageref{jnle97}.\\
+\textbf{Contenido:} Dale and Reiter son figuras cl\'asicas en el \'area de generaci\'on de lenguaje natural, y su trabajo di\'o origen a muchas de las nociones fundamentales del campo.  En este \'articulo dan una visi\'on general del \'area desde la perspectiva de la construcci\'on de sistemas de generaci\'on para aplicaciones espec\'ificas, discutiendo las tareas b\'asicas como determinaci\'on de contenido, planeamiento de discurso, agregaci\'on, etc.     
+
+\item Martin Kay (1996). Chart generation.
+Proceedings of the 34th annual meeting on Association for Computational Linguistics table of contents
+Santa Cruz, California.  200-204.
+Association for Computational Linguistics  Morristown, NJ, USA. Ver pag.~\pageref{kay96}.\\
+\textbf{Contenido:} En este art\'iculo Kay introdujo por primera vez el algoritmo de realizaci\'on sint\'actica v\'ia charts, adaptanto el algoritmo de chart parsing.  Muchos altoritmos actuales de realizaci\'on sint\'actica se basan en esta arquitectura.  
+
+\item Aravind Joshi and Yves Schabes (1997). 	
+Tree-adjoining grammars.
+Handbook of formal languages, vol. 3: beyond words. 69 - 123  
+Springer-Verlag.  New York, USA . Ver pag.~\pageref{joshi}.\\
+\textbf{Contenido:} Las Tree Adjoining Grammars, TAG (gram\'aticas de \'arboles adjuntos) son un formalismo gramatical especialmente apropiado para la descripci\'on de gram\'aticas de lenguajes naturales.  El art\'iculo introduce formalmente las TAG, y discute luego el caso particular de gram\'aticas TAG lexicalizadas. (Hemos omitido parte del art\'iculo que no era relevante al curso).    
+
+\item Robert Dale and Ehud Reiter (1995). Computational Interpretations of the Gricean Maxims in the Generation of Referring Expressions. Cognitive Science 19:233-263. Ver pag.~\pageref{cogsci95}.\\
+\textbf{Contenido:} Dale and Reiter fueron tambi\'en precursores en el \'area de generaci\'on de expresiones referenciales (GER). En este art\'iculo se hace una revisi\'on de algoritmos presentados anteriormente y se propone el \emph{algoritmo incremental} que es la base de muchos algoritmos de GER actuales.  La principal limitaci\'on del algoritmo, sin embargo, es que s\'olo maneja informaci\'on proposicional.  Otros autores propusieron luego extensiones para manejar informaci\'on relacional.  
+\end{enumerate}
 
 \section{Generaci\'on de Instrucciones en un Entorno Virtual}
 
-\paragraph{Profesora:} Luciana Benotti (INRIA Grand Est, Francia / Univ. Nacional de C\'ordoba)
+\paragraph{Profesora:} Luciana Benotti 
 
 \paragraph{Horario:} Jueves y viernes de 14 a 17 hs (6 horas de clase)
 
@@ -77,10 +97,23 @@ La segunda parte tiene como requisito previo la primera. La evaluaci\'on final c
 \end{enumerate}
 
 \pagebreak
+
+\label{jnle97} \includepdf[nup=1x2, landscape, pages={1-32}, scale=.92, frame, pagecommand={}]{jnle97.pdf}
+
+\label{kay96} \includepdf[pages={1-5}, scale=.92, frame, pagecommand={}]{kay.pdf}
+
+\label{joshi} \includepdf[nup=1x2, landscape, pages={1-21,54-56}, scale=.92, frame, pagecommand={}]{joshi-schabes.pdf}
+
+\label{cogsci95} \includepdf[nup=1x2, landscape, pages={1-29}, scale=.92, frame, pagecommand={}]{cogsci95.pdf}
+
 \label{planning-state-search} \includepdf[nup=1x2, landscape, pages={1-13}, scale=.92, frame, pagecommand={}]{russell-norvig-chap11.pdf}
+
 \label{planning-graphplan} \includepdf[nup=1x2, landscape, pages={21-28}, scale=.92, frame, pagecommand={}]{russell-norvig-chap11.pdf}
+
 \label{planning-history} \includepdf[nup=1x2, landscape, pages={34-38}, scale=.92, frame, pagecommand={}]{russell-norvig-chap11.pdf}
+
 \label{give-challenge} \includepdf[pages={1-9}, scale=.92, frame, pagecommand={}]{give-report-09.pdf}
+
 \label{situated-REG} \includepdf[pages={1-8}, scale=.92, frame, pagecommand={}]{Situated-REG.pdf}
 
 \end{document}
