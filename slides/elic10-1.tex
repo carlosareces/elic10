@@ -13,6 +13,9 @@
 \usepackage{latexsym}
 \usepackage{mdwtab}
 \usepackage{xspace}
+\usepackage{tikz}
+\usetikzlibrary{shapes,snakes}
+\usetikzlibrary{petri}
 
 \DefineNamedColor{named}{Periwinkle}{cmyk}{0.57,0.55,0,0}
 \DefineNamedColor{named}{Plum}{cmyk}{0.50,1,0,0}
@@ -81,79 +84,108 @@ Universidad Nacional de C\'ordoba, C\'ordoba, Argentina}
 \end{frame}
 
 \begin{frame}
-\frametitle{What This Tutorial is About}
+%\frametitle{What This Tutorial is About}
+\frametitle{De que se Trata este Curso?}
 
-\label{f0}
 \begin{itemize}
-\item { {The design and construction of systems which}}
+\item Vamos a hablar de la Generaci\'on Autom\'atica de Lenguaje Natural
+\item Es decir, el dise\~no e implementaci\'on de sistemas que 
 \begin{itemize}
-\item produce understandable texts in English or other human languages ...
-\item from some underlying non-linguistic representation of information 
-\item using knowledge about language and the application domain.
+\item producen texto comprensible en lenguaje natural (e.g., Castellano, 
+Ingl\'es, etc.)
+\item a partir de una representaci\'on no ling\"u\'istica de informaci\'on
+\item usando conocimiento acerca del lenguaje y del dominio de aplicaci\'on.
 \end{itemize}
-\item { {Based on:}}
-\item { { E Reiter and R Dale \mbox{$[$}1999\mbox{$]$} \textit{Building Natural Language Generation Systems}. Cambridge University Press.}}
+
 \end{itemize}
+
+%\label{f0}
+%\begin{itemize}
+%\item { {The design and construction of systems which}}
+%\begin{itemize}
+%\item produce understandable texts in English or other human languages ...
+%\item from some underlying non-linguistic representation of information 
+%\item using knowledge about language and the application domain.
+%\end{itemize}
+%\end{itemize}
 
 \end{frame}
 
 \begin{frame}
-\frametitle{Goals of the Tutorial}
+\frametitle{Objetivos del Curso}
 
-\label{f2}
 \begin{itemize}
-\item { {For managers:}}
-\begin{itemize}
-\item to provide a broad overview of the field and what is possible today
+\item Dar un panorama amplio del \'area y de lo que es posible hacer hoy en d\'ia.
+\item Introducir en detalle algunas de las t\'ecnicas (algunas b\'asicas y otras 
+m\'as avanzadas) del \'area. 
+\item Discutir algunos temas que son importantes para la aplicaci\'on de 
+t\'ecnicas de GLN en proyectos concretos.
 \end{itemize}
-\item { {For implementers:}}
-\begin{itemize}
-\item to provide a realistic assessment of available techniques
-\end{itemize}
-\item { {For researchers:}}
-\begin{itemize}
-\item to highlight the issues that are important in current applied NLG projects
-\end{itemize}
-\end{itemize}
-
-
-
 \end{frame}
 
 \begin{frame}
-\frametitle{Overview}
+\frametitle{Estructura del Curso}
 
-\label{f6}
+\begin{columns}
+\column{1.1\textwidth}
 \begin{itemize}
-\item { {1 An Introduction to NLG}}
-\item { {2 Requirements Analysis and a Case Study}}
-\item { {3 The Component Tasks in NLG}}
-\item { {4 NLG in Multimedia and Multimodal Systems}}
-\item { {5 Conclusions and Pointers}}
+\item \mH{Primera Parte}: Carlos Areces
+\begin{itemize}
+\item \mH{Lunes:} El Problema de Generaci\'on de Lenguaje Natural. Algunos systemas de GNL.  GNL Pipeline. Representaci\'on de Informaci\'on e Inferencia para GLN. Evaluaci\'on de Sistemas de GLN.\pause
+
+\item \mH{Martes:} Tree Adjoining Grammars (TAG). Interface Sint\'actica-Sem\'antica.
+Realizaci\'on. Realizaci\'on via via Charts. \pause
+
+\item \mH{Mi\'ercoles:} Algoritmos de Generaci\'on de Expresiones Referenciales. Informaci\'on Proposicional vs.\ Informaci\'on Relacional. Optimizaci\'on de Algoritmos. Evaluaci\'on.\pause
 \end{itemize}
 
+\item \mH{Segunda Parte}: Luciana Benotti
 
+\begin{itemize}
+\item \mH{Jueves:} Entornos Virtuales (e.g., Second Life) y Aplicaciones (e.g., Tutoring) para Sistemas de GNL. Inferencia Orientada a Metas. Algoritmos de Planning y su uso en Entornos Virtuales.\pause
+
+\item \mH{Viernes:} Generaci\'on de Referencias en un Entorno Virtual. Estrategias de Referencia. Supervisi\'on de la Interpretaci\'on. Evaluaci\'on.
+\end{itemize}
+\end{itemize}
+\end{columns}
 \end{frame}
 
 \begin{frame}
-\frametitle{An Introduction to NLG}
+\frametitle{Lo que Veremos Hoy}
 
-\label{f8}
 \begin{itemize}
-\item { {What is Natural Language Generation?}}
-\item { {Some Example Systems}}
-\item { {Types of NLG Applications}}
-\item { {When are NLG Techniques Appropriate?}}
-\item { {NLG System Architecture}}
+\item  Introducci\'on a GLN 
+\item  Un Caso de Estudio
+\item  Las Tareas b\'asicas de GLN
+\item  NLG en Ambientes Multimedia y Multimodales
+\item Evaluaci\'on de Systemas de GLN
 \end{itemize}
+\end{frame}
 
 
+\begin{frame}
+\frametitle{Lo que Veremos Hoy}
+
+\begin{itemize}
+\item  Introducci\'on a GLN 
+\begin{tabular}{|l}
+ {\small Que es GLN?}\\
+ {\small Ejemplos}\\
+ {\small Aplicaciones t\'ipicas de GLN}\\
+ {\small Cuando es apropiado usar GLN?}\\
+ {\small La Arquitectura de un systema de NLG}
+\end{tabular}
+
+\item  Un Caso de Estudio
+\item  Las Tareas b\'asicas de GLN
+\item  NLG en Ambientes Multimedia y Multimodales
+\item Evaluaci\'on de Systemas de GLN
+\end{itemize}
 \end{frame}
 
 \begin{frame}
-\frametitle{What is NLG?}
+\frametitle{Qu\'e es GLN?}
 
-\label{f10}
 \begin{itemize}
 \item { {Natural language generation is the process of deliberately constructing a natural language text in order to meet specified communicative goals.}}\\
 
@@ -164,36 +196,65 @@ Universidad Nacional de C\'ordoba, C\'ordoba, Argentina}
 \end{frame}
 
 \begin{frame}
-\frametitle{What is NLG?}
+\frametitle{Qu\'e es GLN?}
 
-\label{f12}
 \begin{itemize}
-\item { {Goal: }}
+\item  \mH{Objetivo: }
+
 \begin{itemize}
-\item computer software which produces understandable and appropriate texts in English or other human languages
+\item software que produce texto entendible y adecuado en lenguaje natural (e.g., Ingl\'es).
 \end{itemize}
-\item { {Input: }}
+
+\item  \mH{Input: }
 \begin{itemize}
-\item some underlying non-linguistic representation of information
+\item Informaci\'on no ling\"u\'istica (e.g., una base de datos)
 \end{itemize}
-\item { {Output: }}
+
+\item  \mH{Output: }
 \begin{itemize}
-\item documents, reports, explanations, help messages, and other kinds of texts
+\item documentoss, reportes, explicaciones, mensajes de ayuda, etc.
 \end{itemize}
-\item { {Knowledge sources required: }}
+
+\item \mH{Informaci\'on requerida: }
 \begin{itemize}
-\item knowledge of language and of the domain
+\item Conocimiento dle lenguaje y del dominio de aplicaci\'on
 \end{itemize}
 \end{itemize}
 
 \end{frame}
 
 \begin{frame}
-\frametitle{Language Technology}
+\frametitle{Generaci\'on vs. Interpretaci\'on}
 
 \begin{center}
-\includegraphics[scale=.3]{pics/pic1.jpg}
+\begin{tikzpicture}[style=thick]
+
+\node (n1) at (0,0) [rectangle, draw, minimum size=25pt]{Significado};
+
+\node (l1) at (-3,-1) [ellipse, draw, minimum size=25pt]{Interpretaci\'on};
+\node (l2) at (3,-1) [ellipse, draw, minimum size=25pt]{Generaci\'on};
+
+\node (n2) at (-2,-2) [rectangle, draw, minimum size=25pt]{Texto};
+\node (n3) at (2,-2) [rectangle, draw, minimum size=25pt]{Texto};
+
+\node (l1) at (-4.3,-3) [ellipse, draw, minimum size=25pt]{Reconocimiento};
+\node (l2) at (4,-3) [ellipse, draw, minimum size=25pt]{Producci\'on};
+
+\node (n4) at (-2,-4) [rectangle, draw, minimum size=25pt]{Habla};
+\node (n5) at (2,-4) [rectangle, draw, minimum size=25pt]{Habla};
+
+\draw [->] (n2) to (n1);
+\draw [->] (n1) to (n3);
+
+\draw [->] (n4) to (n2);
+\draw [->] (n3) to (n5);
+
+\end{tikzpicture}
 \end{center}
+
+%\begin{center}
+%\includegraphics[scale=.3]{pics/pic1.jpg}
+%\end{center}
 \end{frame}
 
 \begin{frame}
@@ -391,7 +452,6 @@ Universidad Nacional de C\'ordoba, C\'ordoba, Argentina}
          (MONAT 7)
          (TAG 21))))
 \end{verbatim}
-
 
 \end{frame}
 
@@ -1721,5 +1781,814 @@ It was the wettest month.
 \end{itemize}
 \end{itemize}
 \end{frame}
+
+
+\begin{frame}
+\frametitle{
+Lexical Choice}
+
+\label{f0}
+\begin{itemize}
+\item {{If several lexicalisations are possible, consider:}}
+\item {{user knowledge and preferences}}
+\item {{consistency with previous usage}}
+\begin{itemize}
+\item in some cases, it may be best to vary lexemes
+\end{itemize}
+\item {{interaction with other aspects of microplanning}}
+\item {{pragmatics}}
+\begin{itemize}
+\item It is encouraging that you have many reasons to stop.        (more precise meaning)
+\item It\^as good that you have a lot of reasons to stop.                 (lower reading level)
+\end{itemize}
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{
+WeatherReporter: Variations in Describing Rainfall}
+
+\label{f3}
+\begin{itemize}
+\item {{Variations in syntactic category:}}
+\item {{S:                \mbox{$[$}rainfall was very poor indeed\mbox{$]$}}}
+\item {{NP:        \mbox{$[$}a much worse than average rainfall\mbox{$]$}}}
+\item {{AP:        \mbox{$[$}much drier than average\mbox{$]$}}}
+\item {{Variations in semantics:}}
+\item {{Absolute:        \mbox{$[$}very dry\mbox{$]$}
+                \mbox{$[$}a very poor rainfall\mbox{$]$}}}
+\item {{Comparative:        \mbox{$[$}a much worse than average rainfall\mbox{$]$}
+                \mbox{$[$}much drier than average\mbox{$]$} }}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{
+WeatherReporter: 
+Aggregation and Lexicalisation}
+
+\label{f7}
+\begin{itemize}
+\item {{Many different results are possible:}}
+\item {{The month was cooler and drier than average.
+There were the average number of rain days, but the total rain for the year so far is well below average. There was rain on every day for 8 days from 11th to 18th, but rainfall amounts were mostly small.}}
+\item {{The month was cooler and drier than average.
+Although the total rain for the year so far is well below average, there were the average number of rain days.  There was a small mount of rain on every day for 8 days from 11th to 18th.}}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{
+Referring Expression Generation}
+
+\label{f9}
+\begin{itemize}
+\item {{How do we identify specific domain objects and entities?}}
+\item {{Two issues:}}
+\item {{Initial introduction of an object}}
+\item {{Subsequent references to an already salient object}}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{
+Initial Reference}
+
+\label{f11}
+\begin{itemize}
+\item {{Introducing an object into the discourse:}}
+\item {{use a full name}}
+\begin{itemize}
+\item Jeremy
+\end{itemize}
+\item {{relate to an object that is already salient}}
+\begin{itemize}
+\item Jane's goldfish
+\end{itemize}
+\item {{specify physical location}}
+\begin{itemize}
+\item the goldfish in the bowl on the table
+\end{itemize}
+\item {{Poorly understood; more research is needed}}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{
+Subsequent Reference}
+
+\label{f13}
+\begin{itemize}
+\item {{Some possibilities:}}
+\item {{Pronouns}}
+\begin{itemize}
+\item \underbar{It} swims in circles.
+\end{itemize}
+\item {{Definite NPs}}
+\begin{itemize}
+\item \underbar{The goldfish} swims in circles.
+\end{itemize}
+\item {{Proper names, possibly abbreviated}}
+\begin{itemize}
+\item \underbar{Jeremy} swims in circles.
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{
+Choosing a Form of Reference}
+
+\label{f15}
+\begin{itemize}
+\item {{Some suggestions from the literature:}}
+\item {{use a pronoun if it refers to an entity mentioned in the previous clause, and there is no other entity in the previous clause that the pronoun could refer to}}
+\item {{otherwise use a name, if a short one exists}}
+\item {{otherwise use a definite NP}}
+\item {{Also important to conform to genre conventions -- for example, there are more pronouns in newspaper articles than in technical manuals}}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{
+Example}
+
+\label{f17}
+\begin{itemize}
+\item {{I am taking the Caledonian Express tomorrow.  \underbar{It} is a much better train than the Grampian Express.  \underbar{The Caledonian} has a real restaurant car, while \underbar{the Grampian }just has a snack bar.   \underbar{The restaurant car} serves wonderful fish, while \underbar{the snack bar} serves microwaved mush.}}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{
+Referring Expression Generation in WeatherReporter}
+
+\label{f19}
+\begin{itemize}
+\item {{Referring to months:}}
+\begin{itemize}
+\item June 1999
+\item June
+\item the month
+\item next June
+\end{itemize}
+\item {{Relatively simple, so can be hardcoded in document planning}}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{
+Research Issues}
+
+\label{f21}
+\begin{itemize}
+\item {{How do we make microplanning choices?}}
+\item {{How do we perform higher-level aggregation, such as forming paragraphs from sentences?}}
+\item {{How do we lexicalise if domain concepts do not straightforwardly map into words?}}
+\item {{What is the best way of making an initial reference to an object?}}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{
+Realisation}
+
+\label{f23}
+\begin{itemize}
+\item {{Goal: }}
+\begin{itemize}
+\item to convert text specifications into actual text
+\end{itemize}
+\item {{Purpose: }}
+\begin{itemize}
+\item to hide the peculiarities of English (or whatever the target language is) from the rest of the NLG system
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{
+Realisation Tasks}
+
+\label{f25}
+\begin{itemize}
+\item {{Structure Realisation:}}
+\item {{Choose markup to convey document structure }}
+\item {{Linguistic Realisation:}}
+\item {{Insert function words}}
+\item {{Choose correct inflection of content words}}
+\item {{Order words within a sentence}}
+\item {{Apply orthographic rules}}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{
+Structure Realisation}
+
+\label{f27}
+\begin{itemize}
+\item {{Add document markup}}
+\item {{An example: means of marking paragraphs:}}
+\begin{itemize}
+\item HTML                        \mbox{$<$}P\mbox{$>$}
+\item LaTeX                         (blank line)
+\item RTF                        \mbox{$\backslash$}par
+\item SABLE (speech)        \mbox{$<$}BREAK\mbox{$>$}
+\end{itemize}
+\item {{Depends on the document presentation system}}
+\item {{Usually done with simple mapping rules}}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{
+Linguistic Realisation}
+
+\label{f29}
+\begin{itemize}
+\item {{Techniques:}}
+\item {{Bi-directional Grammar Specifications}}
+\item {{Grammar Specifications tuned for Generation}}
+\item {{Template-based Mechanisms}}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{
+Bi-directional Grammar Specifications}
+
+\label{f31}
+\begin{itemize}
+\item {{Key idea:  one grammar specification used for both realisation and parsing}}
+\item {{Can be expressed as a set of declarative mappings between semantic and syntactic structures}}
+\item {{Different processes applied for generation and analysis}}
+\item {{Theoretically elegant}}
+\item {{To date, sometimes used in machine-translation systems, but almost never used in other applied NLG systems}}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{
+Problems with the 
+Bi-directional Approach}
+
+\label{f33}
+\begin{itemize}
+\item {{Output of an NLU parser (a semantic form) is very different from the input to an NLG realiser (a text specification)}}
+\item {{Debatable whether lexicalisation should be integrated with realisation}}
+\item {{Difficult in practice to engineer large bidirectional grammars}}
+\item {{Difficulties handling fixed phrases}}
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{
+Grammar Specifications tuned for Generation}
+
+\label{f35}
+\begin{itemize}
+\item {{Grammar provides a set of choices for realisation}}
+\item {{Choices are made on the basis of the input text specification}}
+\item {{Grammar can \textit{only} be used for NLG}}
+\item {{Working software is available}}
+\begin{itemize}
+\item Bateman's KPML
+\item Elhadad's FUF/SURGE
+\item CoGenTex\^as RealPro
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{
+Example: KPML}
+
+\label{f37}
+\begin{itemize}
+\item {{Linguistic realiser based on Systemic Functional Grammar}}
+\item {{Successor to Penman}}
+\item {{Uses the Nigel grammar of English}}
+\item {{Smaller grammars for several other languages available}}
+\item {{Incorporates a grammar development environment}}
+\end{itemize}
+ 
+\end{frame}
+
+\begin{frame}
+\frametitle{
+Systemic Grammar}
+
+\label{f39}
+\begin{itemize}
+\item {{Emphasises the functional organisation of language}}
+\item {{surface forms are viewed as the consequences of selecting a set of abstract functional features}}
+\item {{choices correspond to minimal grammatical alternatives}}
+\item {{the interpolation of an intermediate abstract representation allows the specification of the text to accumulate gradually}}
+\end{itemize}
+ 
+\end{frame}
+
+\begin{frame}
+\frametitle{
+A Systemic Network}
+
+\label{f41}
+ 
+\end{frame}
+
+\begin{frame}
+\frametitle{
+KPML}
+
+\label{f43}
+\begin{itemize}
+\item {{How it works:}}
+\item {{choices are made using INQUIRY SEMANTICS}}
+\item {{for each choice system in the grammar, a set of predicates known as CHOOSERS are defined}}
+\item {{these tests are functions from the internal state of the realiser and host generation system to one of the features in the system the chooser is associated with}}
+\end{itemize}
+ 
+\end{frame}
+
+\begin{frame}
+\frametitle{
+KPML}
+
+\label{f45}
+\begin{itemize}
+\item {{Realisation Statements:}}
+\item {{small grammatical constraints at each choice point build up to a grammatical specification}}
+\item {{\"{\i}!`Insert SUBJECT\"{\i}\mbox{$\pm$}:  an element functioning as subject will be present}}
+\item {{\"{\i}!`Conflate SUBJECT ACTOR\"{\i}\mbox{$\pm$}:  the constituent functioning as SUBJECT is the same as the constituent that functions as ACTOR}}
+\item {{\"{\i}!`Order FINITE SUBJECT\"{\i}\mbox{$\pm$}:  FINITE must immediately precede SUBJECT}}
+\end{itemize}
+ 
+\end{frame}
+
+\begin{frame}
+\frametitle{
+Realisation Statements}
+
+\label{f47}
+ 
+\end{frame}
+
+\begin{frame}
+\frametitle{
+An SPL input to KPML}
+
+\label{f49}
+\begin{itemize}
+\item {{\textbf{(l / greater-than-comparison}}}
+\item {{\textbf{  :tense past}}}
+\item {{\textbf{  :exceed-q (l  a) exceed}}}
+\item {{\textbf{  :command-offer-q notcommandoffer}}}
+\item {{\textbf{  :proposal-q notproposal}}}
+\item {{\textbf{  :domain (m / one-or-two-d-time :lex month :determiner the)}}}
+\item {{\textbf{  :standard (a / quality :lex average determiner zero)}}}
+\item {{\textbf{  :range (c / sense-and-measure-quality :lex cool)}}}
+\item {{\textbf{  :inclusive (r / one-or-two-d-time}}}
+\item {{\textbf{    :lex day}}}
+\item {{\textbf{    :number plural}}}
+\item {{\textbf{    :property-ascription (r / quality :lex rain)}}}
+\item {{\textbf{    :size-property-ascription 
+                         (av / scalable-quality :lex the-av-no-of)))}}}
+\item {{\textbf{}}}??
+\item {{\textbf{The month was cooler than average with the average number of rain days. }}}
+\item {{\textbf{}}}??
+\end{itemize}
+ 
+\end{frame}
+
+\begin{frame}
+\frametitle{
+Observation}
+
+\label{f51}
+\begin{itemize}
+\item {{These approaches are geared towards broad-coverage linguistically sophisticated treatments}}
+\item {{Most current applications don't require this sophistication:  much of what is needed can be achieved by templates or even canned text}}
+\item {{But many applications will need deeper treatments for some aspects of the language}}
+\item {{Solution:  integrate canned text, templates and \"{}realisation from first principles\"{} in one system}}
+\end{itemize}
+ 
+\end{frame}
+
+\begin{frame}
+\frametitle{
+Busemann's TG/2}
+
+\label{f53}
+\begin{itemize}
+\item {{Integrates canned text, templates and context free rules}}
+\item {{All expressed as production rules whose actions are determined by conditions met by the input structure}}
+\item {{Input structures specified in GIL, the Generation Interface Language; allows a portable interface}}
+\item {{Output can easily include formatting elements}}
+\end{itemize}
+ 
+\end{frame}
+
+\begin{frame}
+\frametitle{
+TG/2 Overview}
+
+\label{f55}
+ 
+\end{frame}
+
+\begin{frame}
+\frametitle{
+A GIL Input Structure}
+
+\label{f57}
+\begin{itemize}
+\item {{\mbox{$[$}(COOP wertueberschreitung)
+           (TIME \mbox{$[$}(PRED dofc)
+                  (NAME \mbox{$[$}(DAY 31) 
+                         (MONTH 12) 
+                         (YEAR 1996)\mbox{$]$})\mbox{$]$})
+           (POLLUTANT so2)
+           (SITE \"{}V\~A{\P}lklingen-City\"{})
+           (THRESHOLD-VALUE \mbox{$[$}(AMOUNT 1000) 
+                             (UNIT mkg-m3)\mbox{$]$})
+           (DURATION \mbox{$[$}(DAY 30)\mbox{$]$})
+           (SOURCE \mbox{$[$}(LAW-NAME vdi-richtlinie-2310)
+                    (THRESHOLD-TYPE mikwert)\mbox{$]$})
+           (EXCEEDS \mbox{$[$}(STATUS yes) 
+                     (TIMES 4)\mbox{$]$})\mbox{$]$}}}
+\end{itemize}
+ 
+\end{frame}
+
+\begin{frame}
+\frametitle{
+A TGL Rule}
+
+\label{f59}
+\begin{itemize}
+\item {{(defproduction threshold-exceeding \"{}WU01\"{}
+  (:PRECOND (:CAT DECL
+             :TEST ((coop-eq 'threshold-exceeding)
+                    (threshold-value-p)))
+   :ACTIONS (:TEMPLATE
+               (:OPTRULE PPTime (get-param 'time)
+               (:OPTRULE SITEV (get-param site) 
+               (:RULE THTYPE (self) 
+               (:OPTRULE POLL (get-param 'pollutant) 
+               (:OPTRULE DUR (get-param 'duration)
+               \"{}(\"{} (:RULE VAL (get-param 'threshold-value)) 
+                   (:OPTRULE LAW (get-param 'law-name)) \"{})\"{}
+               (:RULE EXCEEDS (get-param 'exceeds)) \"{}.\"{}
+             :CONSTRAINTS (:GENDER (THTYPE EXCEEDS) :EQ))))}}
+\end{itemize}
+ 
+\end{frame}
+
+\begin{frame}
+\frametitle{
+TG/2 Output}
+
+\label{f61}
+\begin{itemize}
+\item {{On 31-12-1996 at the measurement station at V\~A{\P}lklingen-City, the MIK value (MIK-Wert) for sulphur dioxide over a period of 30 days (1000 \^A\mbox{$\mu$}g/m\^A\mbox{${}^3$} according to directive VDI 2310 (VDI-Richtlinie 2310)) was exceeded four times. }}
+\end{itemize}
+ 
+\end{frame}
+
+\begin{frame}
+\frametitle{
+Pros and Cons}
+
+\label{f63}
+\begin{itemize}
+\item {{No free lunch:  every existing tool requires a steep learning curve}}
+\item {{Approaches like TG/2 may be sufficient for most applications}}
+\item {{Linguistically-motivated approaches require some theoretical commitment and understanding, but promise broader coverage and consistency}}
+\end{itemize}
+ 
+\end{frame}
+
+\begin{frame}
+\frametitle{
+Morphology and Orthography}
+
+\label{f65}
+\begin{itemize}
+\item {{Realiser must be able to:}}
+\item {{inflect words}}
+\item {{apply standard orthographic spelling changes}}
+\item {{add punctuation}}
+\item {{add standard punctuation rules}}
+\end{itemize}
+ 
+\end{frame}
+
+\begin{frame}
+\frametitle{
+Research Issues}
+
+\label{f67}
+\begin{itemize}
+\item {{How can different techniques (and linguistic formalisms) be combined?}}
+\item {{What are the costs and benefits of using templates instead of \^adeep\^a realisation techniques? }}
+\item {{How do layout issues affect realisation?}}
+\end{itemize}
+ 
+\end{frame}
+
+\begin{frame}
+\frametitle{
+Overview}
+
+\label{f69}
+\begin{itemize}
+\item {{1                An Introduction to NLG}}
+\item {{2                Requirements Analysis and a Case Study}}
+\item {{3                The Component Tasks in NLG}}
+\item {{4                NLG in Multimedia and Multimodal Systems}}
+\item {{5                Conclusions and Pointers}}
+\end{itemize}
+ 
+\end{frame}
+
+\begin{frame}
+\frametitle{
+Document Types}
+
+\label{f71}
+\begin{itemize}
+\item {{Simple ASCII (eg email messages)}}
+\begin{itemize}
+\item relatively straightforward: just words and punctuation symbols
+\end{itemize}
+\item {{Printed documents (eg newspapers, technical documents)}}
+\begin{itemize}
+\item need to consider typography, graphics
+\end{itemize}
+\item {{Online documents (eg Web pages)}}
+\begin{itemize}
+\item need to consider hypertext links
+\end{itemize}
+\item {{Speech (eg radio broadcasts, information by telephone)}}
+\begin{itemize}
+\item need to consider prosody
+\end{itemize}
+\item {{Visual presentation (eg TV broadcasts, MS Agent)}}
+\begin{itemize}
+\item need to consider animation, facial expressions
+\end{itemize}
+\end{itemize}
+ 
+\end{frame}
+
+\begin{frame}
+\frametitle{
+Typography}
+
+\label{f73}
+\begin{itemize}
+\item {{Character attributes (italics, boldface, colour, font)}}
+\begin{itemize}
+\item can be used to indicate emphasis or other aspects of use:  typographic distinctions carry meaning
+\end{itemize}
+\item {{Layout (itemised lists, section and chapter headings)}}
+\begin{itemize}
+\item allows indication of structure, can enable information access
+\end{itemize}
+\item {{Special constructs provide sophisticated resources}}
+\begin{itemize}
+\item boxed text, margin notes, ...
+\end{itemize}
+\end{itemize}
+ 
+\end{frame}
+
+\begin{frame}
+\frametitle{
+Typographically-flat Text}
+
+\label{f75}
+\begin{itemize}
+\item {{When time is limited, travel by limousine, unless cost is also limited, in which case go by train.  When only cost is limited a bicycle should be used for journeys of less than 10 kilometers, and a bus for longer journeys.  Taxis are recommended when there are no constraints on time or cost, unless the distance to be travelled exceeds 10 kilometers.  For journeys longer than 10  kilometers, when time and cost are not important, journeys should be made by hire car.}}
+\end{itemize}
+ 
+\end{frame}
+
+\begin{frame}
+\frametitle{
+Structured Text}
+
+\label{f77}
+\begin{itemize}
+\item {{\textit{When only time is limited}:}}
+\begin{itemize}
+\item travel by Limousine
+\end{itemize}
+\item {{\textit{When only cost is limited}:}}
+\begin{itemize}
+\item travel by Bus if journey more than10 kilometers
+\item travel by Bicycle if journey less than10 kilometers
+\end{itemize}
+\item {{\textit{When both time and cost are limited}:}}
+\begin{itemize}
+\item travel by Train
+\end{itemize}
+\item {{\textit{When time and cost are not limited}:}}
+\begin{itemize}
+\item travel by Hire Car if journey more than10 kilometers
+\item travel by Taxi if journey less than10 kilometers
+\end{itemize}
+\end{itemize}
+ 
+\end{frame}
+
+\begin{frame}
+\frametitle{
+Tabular Presentation}
+
+\label{f79}
+ 
+\end{frame}
+
+\begin{frame}
+\frametitle{
+Diagrammatic Presentation}
+
+\label{f81}
+ 
+\end{frame}
+
+\begin{frame}
+\frametitle{
+Text and Graphics}
+
+\label{f83}
+\begin{itemize}
+\item {{Which is better?  Depends on:}}
+\begin{itemize}
+\item type of information communicated
+\item expertise of user
+\item delivery medium
+\end{itemize}
+\item {{Best approach: use both!}}
+\end{itemize}
+ 
+\end{frame}
+
+\begin{frame}
+\frametitle{
+An Example from WIP}
+
+\label{f85}
+ 
+\end{frame}
+
+\begin{frame}
+\frametitle{
+Similarities between
+Text and Graphics}
+
+\label{f87}
+\begin{itemize}
+\item {{Both contain sublanguages}}
+\item {{Both permit conversational implicature}}
+\item {{Structure is important in both}}
+\item {{Both express discourse relations}}
+\item {{Do we need a media-independent theory of communication?}}
+\end{itemize}
+ 
+\end{frame}
+
+\begin{frame}
+\frametitle{
+Hypertext}
+
+\label{f89}
+\begin{itemize}
+\item {{Generate Web pages!}}
+\begin{itemize}
+\item Dynamic hypertext
+\end{itemize}
+\item {{Models of hypertext}}
+\begin{itemize}
+\item browsing
+\item question-space
+\item dialogue
+\end{itemize}
+\item {{Model-dependent issues}}
+\begin{itemize}
+\item click on a link twice: same result both times?
+\item discourse models for hypertext
+\end{itemize}
+\end{itemize}
+ 
+\end{frame}
+
+\begin{frame}
+\frametitle{
+Example:  Peba}
+
+\label{f91}
+ 
+\end{frame}
+
+\begin{frame}
+\frametitle{
+Speech Output}
+
+\label{f93}
+\begin{itemize}
+\item {{The NLG Perspective: enhances output possibilities}}
+\begin{itemize}
+\item communicate via spoken channels (eg, telephone)
+\item add information (eg emotion, importance)
+\end{itemize}
+\item {{The speech synthesis perspective: intonation carries information}}
+\begin{itemize}
+\item Need information about syntactic structure, information status, homographs
+\item Currently obtained by text analysis
+\item Could by obtained from an NLG system automatically:  the idea of concept-to-speech
+\end{itemize}
+\end{itemize}
+ 
+\end{frame}
+
+\begin{frame}
+\frametitle{
+Examples}
+
+\label{f95}
+\begin{itemize}
+\item {{\textit{John took a bow}}}
+\begin{itemize}
+\item Difficult to determine which sense of \textit{bow} is meant, and therefore how to pronounce it, from text analysis
+\item But an NLG system knows this
+\end{itemize}
+\item {{\textit{John washed the dog}}}
+\begin{itemize}
+\item Should stress that part of the information that is new
+\item An NLG system will know what this is
+\end{itemize}
+\end{itemize}
+ 
+\end{frame}
+
+\begin{frame}
+\frametitle{
+Overview}
+
+\label{f97}
+\begin{itemize}
+\item {{1                An Introduction to NLG}}
+\item {{2                Requirements Analysis and a Case Study}}
+\item {{3                The Component Tasks in NLG}}
+\item {{4                NLG in Multimedia and Multimodal Systems}}
+\item {{5                Conclusions and Pointers}}
+\end{itemize}
+ 
+\end{frame}
+
+\begin{frame}
+\frametitle{
+Applied NLG in 1999}
+
+\label{f99}
+\begin{itemize}
+\item {{Many NLG applications being investigated }}
+\item {{Few actually fielded}}
+\begin{itemize}
+\item but at least there are some: in 1989 there were none
+\end{itemize}
+\item {{We are beginning to see reusable software, and specialist software houses}}
+\item {{More emphasis on mixing simple and complex techniques}}
+\item {{More emphasis on evaluation}}
+\item {{We believe the future is bright}}
+\end{itemize}
+ 
+\end{frame}
+
+\begin{frame}
+\frametitle{
+Resources: SIGGEN}
+
+\label{f101}
+\begin{itemize}
+\item {{SIGGEN (ACL Special Interest Group for Generation)}}
+\item {{Web site at  
+http://www.dynamicmultimedia.com.au/siggen}}
+\begin{itemize}
+\item resources: software, papers, bibliographies
+\item conference and workshop announcements
+\item job announcements
+\item discussions
+\item NLG people and places
+\end{itemize}
+\end{itemize}
+ 
+\end{frame}
+
 
 \end{document}
