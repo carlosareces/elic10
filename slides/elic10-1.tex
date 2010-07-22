@@ -258,29 +258,24 @@ Realizaci\'on. Realizaci\'on via via Charts. \pause
 \end{frame}
 
 \begin{frame}
-\frametitle{Example System \#1: FoG}
+\frametitle{Sistema Ejemplo \#1: FoG}
 
-\label{f16}
 \begin{itemize}
-\item { {Function: }}
+\item \mH{Funci\'on: }
 \begin{itemize}
-\item Produces textual weather reports in English and French 
+\item Producir reportes clim\'aticos en formato texto  en Ingl\'es y en Franc\'es.
 \end{itemize}
-\item { {Input: }}
+\item \mH{Input: }
 \begin{itemize}
-\item Graphical/numerical weather depiction
+\item Im\'agen gr\'afica clim\'atica con informaci\'on num\'erica
 \end{itemize}
-\item { {User: }}
+\item \mH{Usuario: }
 \begin{itemize}
-\item Environment Canada (Canadian Weather Service)
+\item Environment Canada (Servicio Clim\'atico Canadiense)
 \end{itemize}
-\item { {Developer: }}
+\item \mH{Status: }
 \begin{itemize}
-\item CoGenTex
-\end{itemize}
-\item { {Status: }}
-\begin{itemize}
-\item Fielded, in operational use since 1992
+\item Funcionando desde 1992
 \end{itemize}
 \end{itemize}
 \end{frame}
@@ -304,86 +299,71 @@ Realizaci\'on. Realizaci\'on via via Charts. \pause
 \end{frame}
 
 \begin{frame}
-\frametitle{Example System \#2: PlanDoc}
+\frametitle{Sistema Ejemplo \#2: PlanDoc}
 
-\label{f22}
 \begin{itemize}
-\item { {Function: }}
+\item \mH{Funci\'on: }
 \begin{itemize}
-\item Produces a report describing the simulation options that an engineer has explored
+\item Producir un reporte describiendo las opciones de simulaci\'on que un ingeniero ya ha explorado
 \end{itemize}
-\item { {Input: }}
+\item \mH{Input: }
 \begin{itemize}
-\item A simulation log file
+\item Un archivo de log de simulaciones
 \end{itemize}
-\item { {User: }}
+\item \mH{Usuario: }
 \begin{itemize}
 \item Southwestern Bell
 \end{itemize}
-\item { {Developer: }}
+\item \mH{Status: }
 \begin{itemize}
-\item Bellcore and Columbia University
-\end{itemize}
-\item { {Status: }}
-\begin{itemize}
-\item Fielded, in operational use since 1996
+\item Funcionando desde 1996
 \end{itemize}
 \end{itemize}
 
 \end{frame}
 
-\begin{frame}
+\begin{frame}[fragile]
 \frametitle{PlanDoc: Input}
 
-\label{f24}
-\begin{itemize}
-\item { {RUNID fiberall FIBER 6/19/93 act yes}}
-\item { {FA 1301 2 1995}}
-\item { {FA 1201 2 1995}}
-\item { {FA 1401 2 1995}}
-\item { {FA 1501 2 1995}}
-\item { {ANF co 1103 2 1995 48}}
-\item { {ANF 1201 1301 2 1995 24}}
-\item { {ANF 1401 1501 2 1995 24}}
-\item { {END. 856.0 670.2}}
-\end{itemize}
+\begin{verbatim}
+  RUNID fiberall FIBER 6/19/93 act yes
+  FA 1301 2 1995
+  FA 1201 2 1995
+  FA 1401 2 1995
+  FA 1501 2 1995
+  ANF co 1103 2 1995 48
+  ANF 1201 1301 2 1995 24
+  ANF 1401 1501 2 1995 24
+  END. 856.0 670.2
+\end{verbatim}
 
 \end{frame}
 
 \begin{frame}
 \frametitle{PlanDoc: Output}
 
-\label{f26}
-\begin{itemize}
-\item { {This saved fiber refinement includes all DLC changes in Run-ID ALLDLC. RUN-ID FIBERALL demanded that PLAN activate fiber for CSAs 1201, 1301, 1401 and 1501 in 1995 Q2. It requested the placement of a 48-fiber cable from the CO to section 1103 and the placement of 24-fiber cables from section 1201 to section 1301 and from section 1401 to section 1501 in the second quarter of 1995. For this refinement, the resulting 20 year route PWE was \$856.00K, a \$64.11K savings over the BASE plan and the resulting 5 year IFC was \$670.20K, a \$60.55K savings over the BASE plan.}}
-\end{itemize}
-
+This saved fiber refinement includes all DLC changes in Run-ID ALLDLC. RUN-ID FIBERALL demanded that PLAN activate fiber for CSAs 1201, 1301, 1401 and 1501 in 1995 Q2. It requested the placement of a 48-fiber cable from the CO to section 1103 and the placement of 24-fiber cables from section 1201 to section 1301 and from section 1401 to section 1501 in the second quarter of 1995. For this refinement, the resulting 20 year route PWE was \$856.00K, a \$64.11K savings over the BASE plan and the resulting 5 year IFC was \$670.20K, a \$60.55K savings over the BASE plan.
 \end{frame}
 
 \begin{frame}
-\frametitle{Example System \#3: STOP}
+\frametitle{Sistema Ejemplo \#3: STOP}
 
-\label{f28}
 \begin{itemize}
-\item { {Function: }}
+\item \mH{Function: }
 \begin{itemize}
-\item Produces a personalised smoking-cessation leaflet
+\item Producir un folleto presonalizado para ayudar a dejar de fumar 
 \end{itemize}
-\item { {Input: }}
+\item \mH{Input: }
 \begin{itemize}
-\item Questionnaire about smoking attitudes, beliefs, history
+\item Questionario sobre historia, creencias, actitudes, etc.\ sobre el cigarrillo
 \end{itemize}
-\item { {User: }}
+\item \mH{Usuario: }
 \begin{itemize}
 \item NHS (British Health Service)
 \end{itemize}
-\item { {Developer: }}
+\item \mH{Status: }
 \begin{itemize}
-\item University of Aberdeen 
-\end{itemize}
-\item { {Status: }}
-\begin{itemize}
-\item Undergoing clinical evaluation to determine its effectiveness
+\item Utilizado por varios a\~nos
 \end{itemize}
 \end{itemize}
 
@@ -401,36 +381,31 @@ Realizaci\'on. Realizaci\'on via via Charts. \pause
 \begin{frame}
 \frametitle{STOP: Output}
 
- { {{Dear Ms Cameron}}}
+Dear Ms Cameron\\ \ \\
 
  { {Thank you for taking the trouble to return the smoking questionnaire that we sent you. It appears from your answers that although you're not planning to stop smoking in the near future, you would like to stop if it was easy. You think it would be difficult to stop because \textit{smoking helps you cope with stress, it is something to do when you are bored, and smoking stops you putting on weight}. However, you have reasons to be confident of success if you did try to stop, and there are ways of coping with the difficulties. }}
 
 \end{frame}
 
 \begin{frame}
-\frametitle{Example System \#4: TEMSIS}
+\frametitle{Sistema Ejemplo \#4: TEMSIS}
 
-\label{f34}
 \begin{itemize}
-\item { {Function: }}
+\item \mH{Funci\'on: }
 \begin{itemize}
-\item Summarises pollutant information for environmental officials
+\item Sumarizaci\'on de informaci\'on sobre contaminaci\'on
 \end{itemize}
-\item { {Input: }}
+\item \mH{Input: }
 \begin{itemize}
-\item Environmental data + a specific query
+\item Datos ambientales + una pregunta espec\'ifica
 \end{itemize}
-\item { {User: }}
+\item \mH{Usuario: }
 \begin{itemize}
-\item Regional environmental agencies in France and Germany
+\item Agencias ambientales en Francia y Alemania
 \end{itemize}
-\item { {Developer: }}
+\item \mH{Status: }
 \begin{itemize}
-\item DFKI GmbH
-\end{itemize}
-\item { {Status: }}
-\begin{itemize}
-\item Prototype developed; requirements for fielded system being analysed
+\item Prototipos fueron instalados en la region Saar/Alsacia (borde entre Alemania y Francia). 
 \end{itemize}
 \end{itemize}
 
@@ -459,9 +434,13 @@ Realizaci\'on. Realizaci\'on via via Charts. \pause
 \frametitle{TEMSIS: Output Summary}
 
 \begin{itemize}
-\item Le 21/7/1998 \`a la station de mesure de V\"olklingen-City, la valeur moyenne maximale d'une demi-heure (Halbstundenmittelwert) pour l'ozone atteignait 104.0 $\mu$g/m${}^3$. Par cons\'equent, selon le decret MIK (MIK-Verordnung), la valeur limite autoris\'ee de 120 $\mu$g/m${}^3$ n'a pas \'et\'e d\'epass\'e.
+\item \mH{Franc\'es:}
 
-\item Der h\"ochste Halbstundenmittelwert f\"ur Ozon an der Me{\ss}station V\"olklingen-City erreichte 
+Le 21/7/1998 \`a la station de mesure de V\"olklingen-City, la valeur moyenne maximale d'une demi-heure (Halbstundenmittelwert) pour l'ozone atteignait 104.0 $\mu$g/m${}^3$. Par cons\'equent, selon le decret MIK (MIK-Verordnung), la valeur limite autoris\'ee de 120 $\mu$g/m${}^3$ n'a pas \'et\'e d\'epass\'e.
+
+\item \mH{Alem\'an:}
+
+Der h\"ochste Halbstundenmittelwert f\"ur Ozon an der Me{\ss}station V\"olklingen-City erreichte 
 am 21.7.1998 104.0 $\mu$g/m${}^3$, womit der gesetzlich zul\"assige Grenzwert nach MIK-Verordnung von 
 120 $\mu$g/m${}^3$ nicht \"uberschritten wurde.
 \end{itemize}
@@ -469,42 +448,45 @@ am 21.7.1998 104.0 $\mu$g/m${}^3$, womit der gesetzlich zul\"assige Grenzwert na
 \end{frame}
 
 \begin{frame}
-\frametitle{Types of NLG Applications}
+\frametitle{Tipos de Aplicaciones de NLG}
 
-\label{f40}
 \begin{itemize}
-\item { {Automated document production}}
+\item \mH{Producci\'on autom\'atica de documentos}
 \begin{itemize}
-\item weather forecasts, simulation reports, letters, ...
+\item reportes clim\'aticos, reporte de simulaciones, cartas, \ldots
 \end{itemize}
-\item { {Presentation of information to people in an understandable fashion}}
+\item \mH{Presentaci\'on de informaci\'on al p\'ublico en forma entendible}
 \begin{itemize}
-\item medical records, expert system reasoning, ...
+\item imformes m\'edicos, sistemas expertos de inferencia, \ldots
 \end{itemize}
-\item { {Teaching}}
+\item \mH{Ense\~nanza}
 \begin{itemize}
-\item information for students in CAL systems
+\item educaci\'on a distancia
 \end{itemize}
-\item { {Entertainment}}
+\item \mH{Entretenimiento/Arte}
 \begin{itemize}
-\item jokes (?), stories (??), poetry (???)
+\item bromas (?), historias (??), poes\'ia (???)
 \end{itemize}
 \end{itemize}
 
 \end{frame}
 
 \begin{frame}
-\frametitle{The Computer\^as Role}
+\frametitle{El Role de la Computadora}
 
-\label{f42}
+ Dos posibilidades
 \begin{itemize}
-\item { {Two possibilities:}}
 \item { {\#1 The system produces a document without human help: }}
-\item { {weather forecasts, simulation reports, patient letters}}
-\item { {summaries of statistical data, explanations of expert system reasoning, context-sensitive help, }}
+
+ { {weather forecasts, simulation reports, patient letters}}
+
+ { {summaries of statistical data, explanations of expert system reasoning, context-sensitive help, }}
+
 \item { {\#2 The system helps a human author create a document:}}
-\item { {weather forecasts, simulation reports, patient letters}}
-\item { {customer-service letters, patent claims, technical documents, job descriptions, ...}}
+
+ { {weather forecasts, simulation reports, patient letters}}
+
+ { {customer-service letters, patent claims, technical documents, job descriptions, ...}}
 \end{itemize}
 
 \end{frame}
@@ -1320,184 +1302,11 @@ From a Corpus}
 \item Goal = desired communicative effect
 \item Plan constituents = messages or structures that combine messages (subplans)
 \end{itemize}
-\item { {Can involve explicit reasoning about the user\^as beliefs}}
-\item { {Often based on ideas from Rhetorical Structure Theory}}
+\item { {Can involve explicit reasoning about the user's beliefs}}
 \end{itemize}
  
 \end{frame}
 
-\begin{frame}
-\frametitle{Rhetorical Structure Theory}
-
-\label{f154}
-\begin{itemize}
-\item { {D1: You should come to the Northern Beaches Ballet performance on Saturday.}}
-\item { {D2: I\^am in three pieces.}}
-\item { {D3: The show is really good.}}
-\item { {D4: It got a rave review in the Manly Daily. }}
-\item { {D5: You can get the tickets from the shop next door.}}
-\end{itemize}
- 
-\end{frame}
-
-\begin{frame}
-\frametitle{Rhetorical Structure Theory}
-
-\label{f156}
- 
-\end{frame}
-
-\begin{frame}
-\frametitle{An RST Relation Definition}
-
-\label{f158}
-\begin{itemize}
-\item { {Relation name: Motivation}}
-\item { {Constraints on N:}}
-\begin{itemize}
-\item Presents an action (unrealised) in which the hearer is the actor
-\end{itemize}
-\item { {Constraints on S:}}
-\begin{itemize}
-\item Comprehending S increases the hearer\^as desire to perform the action presented in N
-\end{itemize}
-\item { {The effect:}}
-\begin{itemize}
-\item The hearer\^as desire to perform the action presented in N is increased
-\end{itemize}
-\end{itemize}
- 
-\end{frame}
-
-\begin{frame}
-\frametitle{Document Structuring in WeatherReporter}
-
-\label{f160}
-\begin{itemize}
-\item { {Three basic rhetorical relationships:}}
-\item { {SEQUENCE}}
-\item { {ELABORATION}}
-\item { {CONTRAST}}
-\end{itemize}
- 
-\end{frame}
-
-\begin{frame}
-\frametitle{Message Attributes}
-
-\label{f162}
- 
-\end{frame}
-
-\begin{frame}
-\frametitle{Document Structuring in WeatherReporter}
-
-\label{f164}
-\begin{itemize}
-\item { {SEQUENCE}}
-\item { {Two messages can be connected by a SEQUENCE relationship if both have the attribute }}
-\begin{itemize}
-\item message-status = primary
-\end{itemize}
-\end{itemize}
- 
-\end{frame}
-
-\begin{frame}
-\frametitle{Document Structuring in WeatherReporter}
-
-\label{f166}
-\begin{itemize}
-\item { {ELABORATION}}
-\item { {Two messages can be connected by an ElABORATION relationship if:}}
-\begin{itemize}
-\item they are both have the same message-topic
-\item the nucleus has message-status = primary
-\end{itemize}
-\end{itemize}
- 
-\end{frame}
-
-\begin{frame}
-\frametitle{Document Structuring in WeatherReporter}
-
-\label{f168}
-\begin{itemize}
-\item { {CONTRAST}}
-\item { {Two messages can be connected by a CONTRAST relationship if:}}
-\begin{itemize}
-\item they both have the same message-topic
-\item they both have the feature
-absolute-or-relative = relative-to-average
-\item they have different values for
-relative-difference:direction
-\end{itemize}
-\end{itemize}
- 
-\end{frame}
-
-\begin{frame}
-\frametitle{Document Structuring in WeatherReporter}
-
-\label{f170}
-\begin{itemize}
-\item { {Select a start message}}
-\item { {Use rhetorical relation operators to add messages to this structure until all messages are consumed or no more operators apply}}
-\item { {Start message is any message with }}
-\begin{itemize}
-\item message-significance = routine
-\end{itemize}
-\end{itemize}
- 
-\end{frame}
-
-\begin{frame}
-\frametitle{Document Structuring using Relation Definitions}
-
-\label{f172}
-\begin{itemize}
-\item { {The algorithm:}}
-
-\begin{itemize}
-\item DocumentPlan = StartMessage
-\item MessageSet = MessageSet - StartMessage
-\item repeat
-\item find a rhetorical operator that will allow attachment of a message to the DocumentPlan 
-\item attach message and remove from MessageSet
-\item until MessageSet = 0 or no operators apply
-\end{itemize}
-\end{itemize}
- 
-\end{frame}
-
-\begin{frame}
-\frametitle{Target Text \#1}
-
-\label{f174}
-\begin{itemize}
-\item { {The month was cooler and drier than average, with the average number of rain days, but the total rain for the year so far is well below average. Although there was rain on every day for 8 days from 11th to 18th, rainfall amounts were mostly small.}}
-\end{itemize}
- 
-\end{frame}
-
-\begin{frame}
-\frametitle{Document Structuring in WeatherReporter}
-
-\label{f176}
-\begin{itemize}
-\item { {The Message Set:}}
-
-\begin{itemize}
-\item MonthlyTempMsg (\"{}cooler than average\"{})
-\item MonthlyRainfallMsg (\"{}drier than average\"{})
-\item RainyDaysMsg (\"{}average number of rain days\"{})
-\item RainSoFarMsg (\"{}well below average\"{})
-\item RainSpellMsg (\"{}8 days from 11th to 18th\"{})
-\item RainAmountsMsg (\"{}amounts mostly small\"{})
-\end{itemize}
-\end{itemize}
- 
-\end{frame}
 
 \begin{frame}
 \frametitle{Document Structuring in WeatherReporter}
