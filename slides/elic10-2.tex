@@ -173,482 +173,454 @@ $B$ & $\rightarrow$ & $Bb$ $\mid$ $b$
 Tree set $T$ shown here, $T = T(G)$
 \end{frame}
 
-\begin{frame}
-\frametitle{Tree Sets: Consider T below. There is no CFG G such that T (G) = T : Why?}
+%\begin{frame}
+%\frametitle{Tree Sets: Consider T below. There is no CFG G such that T (G) = T : Why?}
 
 
-\begin{itemize}
-\item
+%\begin{itemize}
+%\item
 
 
 
-S
+%S
 
 
-A
+%A
 
 
-a
+%a
 
 
 
 
 
-A
+%A
 
 
-A
+%A
 
 
 
 
 
-a
+%a
 
 
 
 
 
-A
+%A
 
 
-A
+%A
 
 
 
 
 
-A
+%A
 
 
 
 
 
-.
+%.
 
 
-.
+%.
 
 
-.
+%.
 
 
 
 
 
-b
+%b
 
 
-b
+%b
 
 
 
 
 
-.
+%.
 
 
-.
+%.
 
 
-.
+%.
 
 
-8
+%8
 
 
 
 
-\end{itemize}
+%\end{itemize}
 
-\end{frame}
+%\end{frame}
 
-\begin{frame}
-\frametitle{Local Tree Predicates}
+%\begin{frame}
+%\frametitle{Local Tree Predicates}
 
-\begin{itemize}
-\item
+%\begin{itemize}
+%\item
 
-A
+%A
 
 
 
 
 
-A $\rightarrow$ a
+%A $\rightarrow$ a
 
 
 
 
 
-A if there is a right tree context A
+%A if there is a right tree context A
 
 
-A
+%A
 
 
 
 
 
-A $\rightarrow$ A
+%A $\rightarrow$ A
 
 
 
 
 
-b
+%b
 
 
 
 
 
-if there is a left tree context A
+%if there is a left tree context A
 
 
 
 
 
-A
+%A
 
 
 
 
 
-no context needed
+%no context needed
 
 
 
 
 
-S
+%S
 
 
 
 
 
-S $\rightarrow$ A
+%S $\rightarrow$ A
 
 
 
 
 
-Apply the predicates to trees and we can accept or reject trees. That is, we
+%Apply the predicates to trees and we can accept or reject trees. That is, we
 
 
-can recognize a tree set. Just like a grammar recognizes a set of strings,
+%can recognize a tree set. Just like a grammar recognizes a set of strings,
 
 
-these predicates can recognize a set of trees.
+%these predicates can recognize a set of trees.
 
 
-9
+%9
 
 
 
 
-\end{itemize}
+%\end{itemize}
 
-\end{frame}
+%\end{frame}
 
-\begin{frame}
-\frametitle{Tree Sets}
+%\begin{frame}
+%\frametitle{Tree Sets}
 
-\begin{itemize}
-\item
+%\begin{itemize}
+%\item
 
 
 
 
-S
+%S
 
 
-A
+%A
 
 
-a
+%a
 
 
 
 
 
-A
+%A
 
 
-A
+%A
 
 
 
 
 
-a
+%a
 
 
 
 
 
-A
+%A
 
 
-A
+%A
 
 
 
 
 
-A
+%A
 
 
 
 
 
-.
+%.
 
 
-.
+%.
 
 
-.
+%.
 
 
 
 
 
-b
+%b
 
 
-b
+%b
 
 
 
 
 
-.
+%.
 
 
-.
+%.
 
 
-.
+%.
 
 
 
 
 
-However, T can be recognized by a ﬁnite-state bottom-up tree automaton
+%However, T can be recognized by a finite-state bottom-up tree automaton
 
 
-10
+%10
 
 
 
 
-\end{itemize}
+%\end{itemize}
 
-\end{frame}
+%\end{frame}
 
-\begin{frame}
-\frametitle{Tree Sets of CFGs and Recognizable Sets}
+%\begin{frame}
+%\frametitle{Tree Sets of CFGs and Recognizable Sets}
 
 
-\begin{itemize}
-\item
+%\begin{itemize}
+%\item
 
 
 
-\item Recognizable Sets: Tree sets recognized by ﬁnite-state bottom-up tree
+%\item Recognizable Sets: Tree sets recognized by finite-state bottom-up tree
 
 
-automata: analogs of regular sets
+%automata: analogs of regular sets
 
 
 
 
 
-\item Strings sets of recognizable sets are context-free languages
+%\item Strings sets of recognizable sets are context-free languages
 
 
 
 
 
-\item Recognizable sets are the same as tree sets of CFGs closed under
+%\item Recognizable sets are the same as tree sets of CFGs closed under
 
 
-relabelling homomorphisms (Thatcher, 1967)
+%relabelling homomorphisms (Thatcher, 1967)
 
 
 
 
 
-\item Additional strong generative power of recognizable sets by introducing
+%\item Additional strong generative power of recognizable sets by introducing
 
 
-local tree predicates
+%local tree predicates
 
 
-11
+%11
 
 
 
 
-\end{itemize}
+%\end{itemize}
 
-\end{frame}
+%\end{frame}
 
-\begin{frame}
-\frametitle{Tree Sets of CFGs and Recognizable Sets}
+%\begin{frame}
+%\frametitle{Tree Sets of CFGs and Recognizable Sets}
 
-\begin{itemize}
-\item
+%\begin{itemize}
+%\item
 
 
 
 
-\item Surprisingly, even context-sensitive grammars when interpreted as local
+%\item Surprisingly, even context-sensitive grammars when interpreted as local
 
 
-tree predicates can only generate the recognizable sets
+%tree predicates can only generate the recognizable sets
 
 
 
 
 
-\item Local sets = Tree sets for CFGs; Recognizable sets = Local sets plus
+%\item Local sets = Tree sets for CFGs; Recognizable sets = Local sets plus
 
 
-relabeling of the nodes
+%relabeling of the nodes
 
 
 
 
 
-\item Hence, CSGs when interpreted as {``}ﬁlters'' on trees can only produce
+%\item Hence, CSGs when interpreted as {``}filters'' on trees can only produce
 
 
-context-free languages (Peters and Ritchie, 1969; McCawley, 1967)
+%context-free languages (Peters and Ritchie, 1969; McCawley, 1967)
 
 
 
 
 
-\item Result can be strengthened to boolean combinations of CSG local tree
+%\item Result can be strengthened to boolean combinations of CSG local tree
 
 
-predicates (Joshi, Levy and Yueh, 1972; Rogers, 1997)
+%predicates (Joshi, Levy and Yueh, 1972; Rogers, 1997)
 
 
-12
+%12
 
 
 
 
-\end{itemize}
+%\end{itemize}
 
-\end{frame}
+%\end{frame}
 
-\begin{frame}
-\frametitle{Overview}
+%\begin{frame}
+%\frametitle{Overview}
 
 
-\begin{itemize}
-\item
+%\begin{itemize}
+%\item
 
 
 
-\item Tree Adjoining Grammars
+%\item Tree Adjoining Grammars
 
 
-
+%
 
 
- Weak vs. Strong Generative Capacity
+% Weak vs. Strong Generative Capacity
 
 
-
+%
 
 
-
+%
 
 
-
+%
 
 
-TAGs  Natural Language and Complexity
+%TAGs  Natural Language and Complexity
 
 
-
+%
 
 
-
+%
 
 
- Lexicalization of Grammars
+% Lexicalization of Grammars
 
 
 
 
 
-\item TAGs for Natural Languages
+%\item TAGs for Natural Languages
 
 
 
 
 
-13
+%13
 
 
 
 
-\end{itemize}
+%\end{itemize}
 
-\end{frame}
+%\end{frame}
 
 \begin{frame}
 \frametitle{Natural Language and Complexity}
 
 
 \begin{itemize}
-\item
-
-
 
 \item We ask the question: Does a particular formal language describe some
-
-
 aspect of human language
 
-
-
-
-
-\item Then we ﬁnd out if that language isn't in a particular language class
-
+\item Then we find out if that language isn't in a particular language class
 
 \item For example, if we abstract some aspect of human language to the
-
-
-formal language: \{wwR $\mid$ where w $\in$ \{a, b\}∗, wR is the reverse of w\} we can
-
-
-then ask if it is possible to write a regular expression for this language
-
-
-
-
+formal language: 
+$$\{ww^R \mid \mbox{ where } w \in \{a, b\}*, w^R \mbox{ is the reverse of } w\}$$ 
+we can then ask if it is possible to write a regular expression for this language
 
 \item If we can, then we can say that this particular example from human
-
-
 language does not go beyond regular languages. If not, then we have to
-
-
 go higher in the hierarchy (say, up to context-free languages)
-
-
-14
-
-
-
-
 \end{itemize}
 
 \end{frame}
@@ -657,34 +629,11 @@ go higher in the hierarchy (say, up to context-free languages)
 \frametitle{Strong vs. Weak Generative Capacity}
 
 \begin{itemize}
-\item
-
-
-
-
 \item If we consider strong generative capacity then the answer is somewhat
-
-
 easier to obtain
 
-
-
-
-
 \item For example, do we need nested dependencies to compute the
-
-
 semantics in a natural way?
-
-
-
-
-
-15
-
-
-
-
 \end{itemize}
 
 \end{frame}
@@ -693,52 +642,19 @@ semantics in a natural way?
 \frametitle{Strong vs. Weak Generative Capacity}
 
 \begin{itemize}
-\item
-
-
-
-
 \item However, strong generative capacity requires a particular grammar and a
-
-
 particular linguistics theory of semantics or how meaning is assigned (in
-
-
 steps or compositionally)
 
-
-
-
-
 \item So, the stronger claim will be that some aspect of human language when
-
-
 you consider weak generative capacity is not regular
 
-
-
-
-
-\item This is quite tricky: consider L1 = \{anbn\} is context-free but L2 = \{a∗b∗\} is
-
-
-regular and L1 $\subset$ L2: so you could cheat and pick some subset of the
-
-
+\item This is quite tricky: consider 
+$L1 = \{a^nb^n\}$ is context-free but $L2 = \{a^*b^*\}$ is
+regular and $L1 \subset L2$: so you could cheat and pick some subset of the
 language which won't prove anything
 
-
-
-
-
-\item Furthermore, the language should be inﬁnite
-
-
-16
-
-
-
-
+\item Furthermore, the language should be infinite
 \end{itemize}
 
 \end{frame}
@@ -747,85 +663,26 @@ language which won't prove anything
 \frametitle{Strong vs. Weak Generative Capacity}
 
 \begin{itemize}
-\item
-
-
-
-
 \item Also, if we consider the size of a grammar then also the answer is easier
-
-
-to obtain (∗joyable, ∗richment). The CFG is more elegant and smaller
-
-
+to obtain (*joyable, *richment). The CFG is more elegant and smaller
 than the equivalent regular grammar:
 
+\begin{center}
+\begin{tabular}{rcl}
+ V & $\rightarrow$ & X\\
 
+ A & $\rightarrow$ & X -able $\mid$ X -ment\\
 
+ X & $\rightarrow$ & en- NA\\
 
-
-V
-
-
-A
-
-
-X
-
-
-NA
-
-
-
-
-
-$\rightarrow$
-
-
-$\rightarrow$
-
-
-$\rightarrow$
-
-
-$\rightarrow$
-
-
-
-
-
-X
-
-
-X -able $\mid$ X -ment
-
-
-en- NA
-
-
-joy $\mid$ rich
-
-
-
-
+NA & $\rightarrow$ & joy $\mid$ rich\\
+\end{tabular}
+\end{center}
 
 \item This is an engineering argument. However, it is related to the problem of
-
-
 describing the human learning process. Certain aspects of language are
-
-
 learned all at once not individually for each case.
-
-
 e.g., learning enjoyment automatically if enrichment was learnt
-
-
-17
-
-
-
-
 \end{itemize}
 
 \end{frame}
@@ -834,39 +691,22 @@ e.g., learning enjoyment automatically if enrichment was learnt
 \frametitle{Is Human Language a Regular Language}
 
 \begin{itemize}
-\item
-
-
-
-
 \item Consider the following set of English sentences (strings)
 
+\begin{itemize}
+\item $S$ = If $S_1$ then $S_2$
 
--- S = If S 1 then S 2
-
-
--- S = Either S 3, or S 4
-
-
--- S = The man who said S 5 is arriving today
+\item $S$ = Either $S_3$, or $S_4$
 
 
-
+\item $S$ = The man who said $S_5$ is arriving today
+\end{itemize}
 
 
 \item Map If, then $\rightarrow$ a and either, or $\rightarrow$ b. This results in strings like abba or
-
-
 abaaba or abbaabba
 
-
-\item L = \{wwR $\mid$ where w $\in$ \{a, b\}∗, wR is the reverse of w\}
-
-
-18
-
-
-
+\item $L = \{ww^R \mid \mbox{ where } w \in \{a, b\}^*, w^R \mbox{ is the reverse of } w\}$
 
 \end{itemize}
 
@@ -876,49 +716,23 @@ abaaba or abbaabba
 \frametitle{Human Language is not a Regular Language}
 
 \begin{itemize}
-\item
-
-
-
-
 \item Another example, also from English, is the set of center embedded
-
-
 structures
 
 
-Think of S $\rightarrow$ a S b and the nested dependencies a1a2a3b3b2b1
-
-
-
+Think of $S \rightarrow a S b$ and the nested dependencies $a_1a_2a_3b_3b_2b_1$
 
 
 \item Center embedding in English:
 
-
-the shares that the broker recommended were bought $\Rightarrow$ N1 N2V2V1
+the shares that the broker recommended were bought $\Rightarrow$ $N_1N_2V_2V_1$
 
 
 the moment when the shares that the broker recommended were bought
-
-
-has passed $\Rightarrow$ N1 N2 N3V3V2V1
-
-
-
-
+has passed $\Rightarrow$ $N_1N_2N_3V_3V_2V_1$
 
 \item Can you come up with an example that has four verbs and corresponding
-
-
 number of nouns?
-
-
-19
-
-
-
-
 \end{itemize}
 
 \end{frame}
@@ -927,46 +741,16 @@ number of nouns?
 \frametitle{Human Competence vs. Human Performance}
 
 \begin{itemize}
-\item
-
-
-
-
 \item What if no more than 3 or 4 center embedding structures are possible?
-
-
-Then the language is ﬁnite, so the language is no longer strictly
-
-
+Then the language is finite, so the language is no longer strictly
 context-free
 
-
-
-
-
 \item The common assumption made is that human competence is
-
-
 represented by the context-free grammar, but human performance suffers
-
-
 from memory limitations which can be simulated by a simpler mechanism
 
-
-
-
-
 \item The arguments about elegance, size and the learning process in humans
-
-
 also apply in this case
-
-
-20
-
-
-
-
 \end{itemize}
 
 \end{frame}
@@ -975,46 +759,18 @@ also apply in this case
 \frametitle{Human Language is not a Context-Free Language}
 
 \begin{itemize}
-\item
-
-
-
-
 \item Two approaches as before: consider strong and weak generative
-
-
 capacity
 
-
-
-
-
 \item For strong generative capacity, if we can show crossing dependencies in
-
-
 a language then no CFG can be written for such a language. Why?
 
-
-
-
-
 \item Quite a few major languages spoken by humans have crossing
-
-
 dependencies:
 
 
 e.g Dutch (Bresnan et al., 1982), Swiss German (Shieber, 1984), Tagalog
-
-
 (Rambow and MacLachlan, 2002)
-
-
-21
-
-
-
-
 \end{itemize}
 
 \end{frame}
@@ -1121,10 +877,6 @@ Eng: S 1 + S 2 = we helped1 Hans1 PRO( ) paint2 the house2
 
 
 SwGer: S 1 + S 2 = we Hans1 PRO( ) the house2 helped1 paint1
-
-
-22
-
 
 
 
@@ -1301,134 +1053,65 @@ V3
 \end{frame}
 
 \begin{frame}
-\frametitle{The Chomsky Hierarchy: G = (N, T, P, S ) where, $\alpha$, $\beta$, $\gamma$ $\in$ (N $\cup$ T )∗}
+\frametitle{The Chomsky Hierarchy}
+
+Let $G = (N, T, P, S )$ where, $\alpha$, $\beta$, $\gamma$ $\in$ $(N \cup T)^*$
 
 \begin{itemize}
-\item
+\item unrestricted or type-0 grammars: $\alpha$ $\rightarrow$ $\beta$, such that $\alpha \not = \epsilon$
 
-
-
-
-\item unrestricted or type-0 grammars: $\alpha$ $\rightarrow$ $\beta$, such that $\alpha$
-
-
-
-
-
-\item context-sensitive grammars: $\alpha$A$\beta$ $\rightarrow$ $\alpha$$\gamma$$\beta$, such that $\gamma$
-
-
-
-
+\item context-sensitive grammars: $\alpha$A$\beta$ $\rightarrow$ $\alpha$$\gamma$$\beta$, such that $\gamma \not = \epsilon$
 
 \item context-free grammars: A $\rightarrow$ $\gamma$
 
-
-
-
-
 \item regular grammars: A $\rightarrow$ a B or A $\rightarrow$ a
 
-
-
-
-
-24
-
-
-
-
 \end{itemize}
 
 \end{frame}
 
 \begin{frame}
-\frametitle{Context-sensitive grammars: L(G) = \{anbn $\mid$ n $\geq$ 1\}}
+\frametitle{Context-sensitive grammars:}
 
-\begin{itemize}
-\item
+$L(G) = \{a^nb^n \mid n \geq 1\}$
 
+\begin{center}
+\begin{tabular}{rcl}
+S & $\rightarrow$ & S BC \\
 
+S & $\rightarrow$ & aC \\
 
+aB & $\rightarrow$ & aa \\
 
-S $\rightarrow$ S BC
+C B & $\rightarrow$ & BC \\
 
+Ba & $\rightarrow$ & aa \\
 
-S $\rightarrow$ aC
-
-
-aB $\rightarrow$ aa
-
-
-C B $\rightarrow$ BC
-
-
-Ba $\rightarrow$ aa
-
-
-C $\rightarrow$ b
-
-
-
-
-
-25
-
-
-
-
-\end{itemize}
+C & $\rightarrow$ & b
+\end{tabular}
+\end{center}
 
 \end{frame}
 
 \begin{frame}
-\frametitle{Context-sensitive grammars: L(G) = \{anbn $\mid$ n $\geq$ 1\}}
+\frametitle{Context-sensitive grammars:}
 
-\begin{itemize}
-\item
+$L(G) = \{a^nb^n \mid n \geq 1\}$
 
-
-
-
-S1
-
-
-S 2 B1 C1
-
-
-S 3 B2 C2 B1 C1
-
-
-a3 C3 B2 C2 B1 C1
-
-
-a3 B2 C3 C2 B1 C1
-
-
-a3 a2 C3 C2 B1 C1
-
-
-a3 a2 C3 B1 C2 C1
-
-
-a3 a2 B1 C3 C2 C1
-
-
-a3 a2 a1 C3 C2 C1
-
-
-a3 a2 a1 b3 b2 b1
-
-
-
-
-
-26
-
-
-
-
-\end{itemize}
+\begin{center}
+\begin{tabular}{r}
+$S_1$\\
+$S_2 B_1 C_1$\\
+$S_3 B_2 C_2 B_1 C_1$\\
+$a_3 C_3 B_2 C_2 B_1 C_1$\\
+$a_3 B_2 C_3 C_2 B_1 C_1$\\
+$a_3 a_2 C_3 C_2 B_1 C_1$\\
+$a_3 a_2 C_3 B_1 C_2 C_1$\\
+$a_3 a_2 B_1 C_3 C_2 C_1$\\
+$a_3 a_2 a_1 C_3 C_2 C_1$\\
+$a_3 a_2 a_1 b_3 b_2 b_1$\\
+\end{tabular}
+\end{center}
 
 \end{frame}
 
@@ -1436,522 +1119,205 @@ a3 a2 a1 b3 b2 b1
 \frametitle{Tree Adjoining Grammars}
 
 \begin{itemize}
-\item
-
-
-
 
 \item Intuition we have is that the trees produced after parsing are important for
-
-
 computing the meaning.
 
-
-
-
-
 \item So instead of building the trees using context-sensitive rules like
-
-
-$\alpha$A$\beta$ $\rightarrow$ $\alpha$$\gamma$$\beta$, we can build in the context-sensitive part into elementary
-
-
+$\alpha A \beta  \rightarrow \alpha \gamma \beta$, we can build in the context-sensitive part into elementary
 trees which is used to build larger trees.
 
 
 $\Rightarrow$ Elementary trees are just like the rules in a context-free grammar.
 
 
-
-
-
 \item The elementary trees become the basic units which can be used to
-
-
 rewrite non-terminal nodes inside elementary trees.
 
-
 $\Rightarrow$ This rewriting is analogous to expanding a non-terminal in a
-
-
 context-free grammar.
-
-
-27
-
-
-
 
 \end{itemize}
 
 \end{frame}
 
 \begin{frame}
-\frametitle{Tree Adjoining Grammar: Formal Deﬁnition}
+\frametitle{Arboles Finitos Ordenadios Etiquetados}
 
 \begin{itemize}
-\item
+\item Un \'arbol finito ordenado etiquetado es una estructura $t = \tup{N_t, \triangleleft_t, \prec_t, L_t}$ donde
 
+\begin{itemize}
+\item $N_t$ es un conjunto finito no vac\'io de \mH{nodos}
 
+\item $\triangleleft_t$ y $\prec_t$ son relaciones binarias sobre $N_t$, respectivamente `dominio' (dominance) y `precedencia' (precedence)
 
+\item $\triangleleft^t$ define un \'arbol (i.e., un \'unico nodo ra\'iz y todo nodo excepto la ra\'iz tiene un \'unico predecesor) y $\prec_t$ define un orden total sobre los hijos de un nodo. 
 
-\item Tree adjoining grammar G = (S , N, T, I, A) where
+\item $L_t$ es la funci\'on de etiquetado, que asigna a cada nodo un conjunto de etiquetas.  
+\end{itemize}
+\end{itemize}
+\end{frame}
 
+\begin{frame}
+\frametitle{Elementos de una TAG}
 
--- N is the set of non-terminal symbols
+Una TAG es un conjunto finito de arboles finitos ordenados etiquetados 
+con ciertas caracteristicas
 
+\begin{columns}
+\column{.65\textwidth}
 
--- T is the set of terminal symbols
+\begin{itemize}
+\item Tomemos dos conjuntos $V_N$ (no terminales) y $V_T$ (terminales), finitos no vac\'ios \pause
 
+\begin{picture}(0,0)
+\only<2>{
+\put(175,-82){
+\includegraphics[scale=.5]{pics/pic2-9.jpg}
+}}
+\only<3>{
+\put(175,-74){
+\includegraphics[scale=.5]{pics/pic2-10.jpg}
+}}
+\only<4>{
+\put(172,-74){
+\includegraphics[scale=.5]{pics/pic2-11.jpg}
+}}
+\only<5>{
+\put(172,-74){
+\includegraphics[scale=.5]{pics/pic2-12.jpg}
+}}
+\only<6>{
+\put(172,-74){
+\includegraphics[scale=.5]{pics/pic2-13.jpg}
+}}
+\only<7>{
+\put(172,-74){
+\includegraphics[scale=.5]{pics/pic2-14.jpg}
+}}
+\end{picture}
 
--- I is a set of non-recursive (terminal) trees
+\vspace*{-.5cm}
+\item $t = \tup{N_t, \triangleleft_t,\prec_t,L_t}$ \pause
 
+\item $L_t$ :
 
--- A is the set of recursive (non-terminal) trees
+\ \ \ NonLeaves$_t$ $\to$ \mH{$V_N$} \pause
 
-
--- S is the set of start trees where S $\subseteq$ I ,
-
-
--- I $\cup$ A is the set of elementary trees
-
-
-28
-
-
-
-
+\ \ \ Leaves$_t$$\to$\mH{$V_N$}$\pause\mH{\{\downarrow,\star\}}$\pause \mH{$\cup V_T$}\pause \mH{$\cup \{\epsilon\}$} 
 \end{itemize}
 
+
+
+\column{.5\textwidth}
+
+\end{columns}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Tree Adjoining Grammar: Formal Definition}
+
+\begin{itemize}
+
+\item Tree adjoining grammar $G = (S , N, T, I, A)$ where
+
+\begin{itemize}
+\item $N$ is the set of non-terminal symbols
+
+
+\item $T$ is the set of terminal symbols
+
+
+\item $I$ is a set of non-recursive (terminal) trees
+
+
+\item $A$ is the set of recursive (non-terminal) trees
+
+
+\item $S$ is the set of start trees where $S \subseteq I$
+
+
+\item $I \cup A$ is the set of elementary trees
+\end{itemize}
+
+\end{itemize}
 \end{frame}
 
 \begin{frame}
 \frametitle{Tree Adjoining Grammars}
 
 \begin{itemize}
-\item
-
-
-
-
 \item Sits between context-free grammars and context-sensitive grammars
 
-
-
-
-
 \item Handles all the weak and strong cases used to argue for the
-
-
 non-context-free nature of language
 
-
-
-
-
 \item Simple handling of crossed and nested dependencies -- compare with
-
-
 context sensitive grammars
 
-
-
-
-
-29
-
-
-
-
 \end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Crossing Dependencies in TAG: $a_2a_1b_2b_1$}
+
+\begin{center}
+\includegraphics[scale=.4]{pics/pic2-4.jpg}
+\end{center}
+
+$$G : (T = \{a, b,\epsilon \}, N = \{S \}, I = \{\pi_1\}, A = \{\pi_2\}, S = \{\pi_1\})$$
 
 \end{frame}
 
 \begin{frame}
-\frametitle{Crossing Dependencies in TAG: a2a1b2b1}
+\frametitle{Crossing Dependencies in TAG: Derived Tree $a_3a_2a_1b_3b_2b_1$}
 
-\begin{itemize}
-\item
-
-
-
-
-$\pi$1 : S$\pi$2
+\begin{center}
+\includegraphics[scale=.4]{pics/pic2-5.jpg}
+\end{center}
 
 
+\end{frame}
 
 
-
-$\pi$2 : Sna
-
-
-S$\pi$2
+\begin{frame}
+\frametitle{Nested Dependencies in TAG: $c_1c_2d_2d_1$}
 
 
-a
+\begin{center}
+\includegraphics[scale=.4]{pics/pic2-6.jpg}
+\end{center}
+$$G : (T = \{c, d, \epsilon\}, N = \{S \}, I = \{\gamma_1\}, A = \{\gamma_2\}, S = \{\gamma_1\})$$
 
 
-
-
-
-b
-
-
-
-
-
-∗
-
-
-Sna
-
-
-
-
-
-G : (T = \{a, b, \}, N = \{S \}, I = \{$\pi$1\}, A = \{$\pi$2\}, S = \{$\pi$1\})
-
-
-
-
-
-30
-
-
-
-
-\end{itemize}
+What happens if we put together a new grammar with trees $\pi_1$, $\pi_2$, $\gamma_1$, $\gamma_2$?
 
 \end{frame}
 
 \begin{frame}
-\frametitle{Crossing Dependencies in TAG: Derived Tree a3a2a1b3b2b1}
+\frametitle{Nos Ubicamos}
 
 \begin{itemize}
-\item
 
-Sna
+\item context-sensitive grammars: $0^i$, $i$ is not a prime number and $i > 0$
 
 
-S$\pi$2
-
-
-a1
-
-
-
-
-
-Sna
-
-
-b1
-
-
-
-
-
-Sna
-
-
-
-
-
-Sna
-
-
-
-
-
-S$\pi$2
-
-
-a2
-
-
-
-
-
-Sna
-
-
-b1
-
-
-
-
-
-Sna
-
-
-
-
-
-b2
-
-
-
-
-
-Sna
-
-
-
-
-
-Sna
-
-
-a1
-
-
-
-
-
-b2
-
-
-
-
-
-S$\pi$2
-
-
-S
-
-
-
-
-
-a3
-
-
-
-
-
-b1
-
-
-
-
-
-b3
-
-
-Sna
-
-
-
-
-
-a2
-
-
-
-
-
-Sna
-
-
-a1
-
-
-
-
-
-S
-
-
-
-
-
-31
-
-
-
-
-\end{itemize}
-
-\end{frame}
-
-\begin{frame}
-\frametitle{Crossing Dependencies in TAG: Derivation Tree}
-
-\begin{itemize}
-\item
-
-
-
-
-$\pi$1 ( )
-
-
-
-
-
-$\pi$1 ( )
-
-
-
-
-
-$\pi$1 ( )
-
-
-
-
-
-$\pi$2 [0](a1 , b1 )
-
-
-
-
-
-$\pi$2 [0](a1 , b1 )
-
-
-
-
-
-$\pi$2 [0](a1 , b1 )
-
-
-
-
-
-$\pi$2 [00](a2 , b2 )
-
-
-
-
-
-$\pi$2 [00](a2 , b2 )
-
-
-$\pi$2 [00](a3 , b3 )
-
-
-
-
-
-32
-
-
-
-
-\end{itemize}
-
-\end{frame}
-
-\begin{frame}
-\frametitle{Nested Dependencies in TAG: c1c2d2d1}
-
-\begin{itemize}
-\item
-
-
-
-
-$\gamma$1 : S$\gamma$2
-
-
-
-
-
-$\gamma$2 : Sna
-
-
-c
-
-
-
-
-
-S$\gamma$2
-
-
-d
-
-
-
-
-
-∗
-
-
-Sna
-
-
-
-
-
-G : (T = \{c, d, \}, N = \{S \}, I = \{$\gamma$1\}, A = \{$\gamma$2\}, S = \{$\gamma$1\})
-
-
-What happens if we put together a new grammar with trees $\pi$1, $\pi$2, $\gamma$1, $\gamma$2?
-
-
-33
-
-
-
-
-\end{itemize}
-
-\end{frame}
-
-\begin{frame}
-\frametitle{}
-
-\begin{itemize}
-\item
-
-\item context-sensitive grammars: 0i, i is not a prime number and i $>$ 0
-
-
-\item indexed grammars: 0n1n2n . . . mn, for any ﬁxed m and n $\geq$ 0
+\item indexed grammars: $0^n1^n2^n \ldots m^n$, for any fixed $m$ and $n \geq 0$
 
 
 \item tree-adjoining grammars (TAG), linear-indexed grammars (LIG),
+combinatory categorial grammars (CCG): $0^n1^n2^n3^n$, for $n \geq 0$
+
+\item context-free grammars: $0^n1^n$ for $n \geq 0$
 
 
-combinatory categorial grammars (CCG): 0n1n2n3n, for n $\geq$ 0
+\item deterministic context-free grammars: $S \rightarrow S c$, $S \rightarrow S A \mid A$,
+$A \rightarrow a S b \mid ab$: the language of ``balanced parentheses''
 
 
-\item context-free grammars: 0n1n for n $\geq$ 0
-
-
-\item deterministic context-free grammars: S $\rightarrow$ S c, S $\rightarrow$ S A $\mid$ A,
-
-
-A $\rightarrow$ a S b $\mid$ ab: the language of ''balanced parentheses''
-
-
-\item regular grammars: (0$\mid$1)∗00(0$\mid$1)∗
-
-
-34
-
-
-
-
-\end{itemize}
-
-\end{frame}
-
-\begin{frame}
-\frametitle{TAG is between CSL and CFG:}
-
-\begin{itemize}
-\item
-
-has Polynomial time recognition and handles many crossing dependencies.
-
-
-35
-
-
-
+\item regular grammars: $(0\mid 1)^*00(0\mid 1)^*$
 
 \end{itemize}
 
@@ -1960,24 +1326,33 @@ has Polynomial time recognition and handles many crossing dependencies.
 \begin{frame}
 \frametitle{}
 
-\begin{itemize}
-\item
+\begin{center}
+\includegraphics[scale=.4]{pics/pic2-7.jpg}
+\end{center}
+
+
+TAG is between CSL and CFG: has Polynomial time recognition and handles many crossing dependencies.
+
+\end{frame}
+
+\begin{frame}
+\frametitle{}
+
 
 Given grammar G and input x, provide algorithm for: Is x $\in$ L(G)?
 
 
-\item unrestricted: undecidable (grammars using {`}movement', feature structure uniﬁcation)
+\begin{itemize}
+\item unrestricted: undecidable (grammars using {`}movement', feature structure unification)
 
 
 \item context-sensitive: NSPACE[n] -- linear non-deterministic space
 
 
-\item indexed grammars: NP-Complete (restricted feature structure uniﬁcation)
+\item indexed grammars: NP-Complete (restricted feature structure unification)
 
 
 \item tree-adjoining grammars (TAG), linear-indexed grammars (LIG), combinatory
-
-
 categorial grammars (CCG), head grammars: O(n6 )
 
 
@@ -1989,1188 +1364,192 @@ categorial grammars (CCG), head grammars: O(n6 )
 
 \item regular grammars: O(n)
 
-
-
+\end{itemize}
 
 
 Which class corresponds to human language?
 
-
-36
-
-
-
-
-\end{itemize}
-
 \end{frame}
 
 \begin{frame}
-\frametitle{}
+\frametitle{Tree Adjoining Grammars}
 
 \begin{itemize}
-\item
-
-Tree Adjoining Grammars
-
-
-
-
 
 \item Membership is in P (O(n6))
 
 
 \item TALs are closed under union, concatenation, Kleene closure, h, h$-$1,
-
-
 intersection with RLs and regular substitution. There is also a pumping
-
-
 lemma for TALs (proofs in (VijayShanker, 1987))
 
 
-Tree Adjoining Languages are a full abstract family of languages (AFL)
-
-
-
-
+Tree Adjoining Languages are a full abstract family of languages (Afl)
 
 \item No equivalent of Ogden's Lemma. TALs are not closed under
-
-
-intersection, intersection with CFLs and complementation.
-
-
-
+intersection, intersection with Cfls and complementation.
 
 
 \item TAGs, LIGs, CCGs, HGs (see previous slide) were shown by TAG
-
-
 researchers to be weakly equivalent (VijayShanker, 1987; Weir, 1988)
-
-
-37
-
-
-
 
 \end{itemize}
 
 \end{frame}
 
 \begin{frame}
-\frametitle{}
+\frametitle{Computationally Constrained Grammar Formalisms}
 
 \begin{itemize}
-\item
-
-Computationally Constrained Grammar Formalisms
-
-
-
 
 
 \item Why bother with computationally constrained grammar formalisms?
 
 
-
-
-
 \item Perhaps linguists can analyze language free of any thoughts about
-
-
-computational efﬁciency, using any system that can elegantly explain the
-
-
+computational efficiency, using any system that can elegantly explain the
 data
 
-
-
-
-
 \item And then if at all necessary this analysis can be translated to a
-
-
 computationally constrained formalism
 
-
-
-
-
-38
-
-
-
-
 \end{itemize}
 
 \end{frame}
 
 \begin{frame}
-\frametitle{}
+\frametitle{Computationally Constrained Grammar Formalisms}
 
 \begin{itemize}
-\item
-
-Computationally Constrained Grammar Formalisms
-
-
-
-
 
 \item But what if the computational system actually provides constraints on
-
-
 what can and cannot happen?
 
-
-
-
-
 \item The linguist would be forced to assume ad-hoc restrictions to adequately
-
-
 explain the facts
 
-
-
-
-
 \item Better to start with a constrained system and grow only if necessary
-
-
 (Occam's Razor)
 
-
-
-
-
 \item Read: (Gazdar, 1981, Linguistic Inquiry) and Remarks and Replies by E.
-
-
 Willams
 
-
-39
-
-
-
-
 \end{itemize}
-
 \end{frame}
 
-\begin{frame}
-\frametitle{}
-
-\begin{itemize}
-\item
-
-Overview
-
-
-
-
-
-\item Tree Adjoining Grammars
-
-
-
-
-
- Weak vs. Strong Generative Capacity
-
-
-
-
-
-
-
-
-
-
-
-TAGs  Natural Language and Complexity
-
-
-
-
-
-
-
-
- Lexicalization of Grammars
-
-
-
-
-
-\item TAGs for Natural Languages
-
-
-
-
-
-40
-
-
-
-
-\end{itemize}
-
-\end{frame}
 
 \begin{frame}
-\frametitle{}
+\frametitle{Lexicalization of Grammars}
 
 \begin{itemize}
-\item
-
-Lexicalization of Grammars
-
-
-
-
 
 \item Why is lexicalization important? Here's a strange fact: a context-free
-
-
-grammar can be inﬁnitely ambiguous.
-
-
-
-
+grammar can be infinitely ambiguous.
 
 \item Lexicalization of a grammar means that each elementary object is
-
-
 associated with some terminal symbol. This guarantees that every input
-
-
-is only ﬁnitely ambiguous.
-
+is only finitely ambiguous.
 
 (Joshi and Schabes, 1997) show TALs are closed under lexicalization:
-
-
 every TAL has a lexicalized grammar without changing the language.
 
-
-
-
-
 \item Lexicalization is an interesting idea for syntax, semantics (in linguistics)
-
-
 and sentence processing (in psycholinguistics):
 
-
 What if each word brings with it an entire syntactic and semantic context
-
-
 for that word?
 
-
-41
-
-
-
-
 \end{itemize}
-
 \end{frame}
 
 \begin{frame}
-\frametitle{}
+\frametitle{Lexicalization of Context-Free Grammars}
 
 \begin{itemize}
-\item
-
-Lexicalization of Context-Free Grammars
-
-
-
-
 
 \item Can we transform every CFG to a normal form where there is guaranteed
-
-
 to be a terminal symbol on the right hand side?
-
-
-
-
 
 \item Answer: yes -- using Griebach Normal Form
 
-
-
-
-
-\item Every CFG can be converted to the form: A $\rightarrow$ a $\alpha$ where A is a
-
-
-non-terminal, a is a terminal symbol, and $\alpha$ $\in$ N ∗
-
-
-
-
-
-42
-
-
-
+\item Every CFG can be converted to the form: $A \rightarrow a \alpha$ where $A$ is a
+non-terminal, $a$ is a terminal symbol, and $\alpha \in N^*$
 
 \end{itemize}
-
 \end{frame}
 
-\begin{frame}
-\frametitle{}
-
-\begin{itemize}
-\item
-
-Griebach Normal Form: T (G)
-
-
-
-
-
-T (GNF(G))
-
-
-A1 $\rightarrow$ A2
-
-
-A2 $\rightarrow$ A3
-
-
-
-
-
-A3
-
-
-A1 $\mid$ b
-
-
-
-
-
-A3 $\rightarrow$ A1 A2 $\mid$ a
-
-
-A1
-
-
-A2
-
-
-A3
-
-
-a
-
-
-
-
-
-A1
-
-
-A3
-
-
-
-
-
-A1
-
-
-
-
-
-a
-
-
-
-
-
-A2
-
-
-
-
-
-A3
-
-
-
-
-
-b
-
-
-
-
-
-a
-
-
-
-
-
-A1
-
-
-b
-
-
-
-
-
-A3
-
-
-
-
-
-A3
-
-
-
-
-
-a
-
-
-
-
-
-a
-
-
-
-
-
-a
-
-
-43
-
-
-
-
-\end{itemize}
-
-\end{frame}
 
 \begin{frame}
-\frametitle{}
+\frametitle{Lexicalized Tree Adjoining Grammars}
 
 \begin{itemize}
-\item
 
-Lexicalization of Context-Free Grammars
-
-
-
-
-
-\item CFG G: (r1) S $\rightarrow$ S S
-
-
-
-
-
-(r2) S $\rightarrow$ a
-
-
-
-
-
-\item Tree substitution Grammar G :
-
-
-
-
-
-$\alpha$1 : S
-
-
-S
-
-
-a
-
-
-
-
-
-$\alpha$2 : S
-
-
-S$\downarrow$
-
-
-
-
-
-$\alpha$3 : S
-
-
-
-
-
-S$\downarrow$ S
-
-
-a
-
-
-
-
-
-S
-
-
-
-
-
-a
-
-
-
-
-
-S
-
-
-
-
-
-S
-
-
-
-
-
-S
-
-
-
-
-
-S
-
-
-
-
-
-S
-
-
-
-
-
-S
-
-
-
-
-
-.
-
-
-.
-
-
-.
-
-
-
-
-
-.
-
-
-.
-
-
-.
-
-
-
-
-
-.
-
-
-.
-
-
-.
-
-
-
-
-
-.
-
-
-.
-
-
-.
-
-
-44
-
-
-
-
-\end{itemize}
-
-\end{frame}
-
-\begin{frame}
-\frametitle{}
-
-\begin{itemize}
-\item
-
-Lexicalization of Context-Free Grammars
-
-
-
-
-
-$\alpha$
-
-
-
-
-
-$\beta$
-
-
-X
-
-
-
-
-
-$\gamma$
-
-
-X
-
-
-
-
-
-X*
-
-
-
-
-
-X
-
-
-$\beta$
-
-
-X
-
-
-
-
-
-45
-
-
-
-
-\end{itemize}
-
-\end{frame}
-
-\begin{frame}
-\frametitle{}
-
-\begin{itemize}
-\item
-
-Lexicalization of Context-Free Grammars
-
-
-
-
-
-\item CFG G: (r1) S $\rightarrow$ S S
-
-
-
-
-
-(r2) S $\rightarrow$ a
-
-
-
-
-
-\item Lexicalized Tree adjoining Grammar G :
-
-
-
-
-
-$\alpha$1 : S
-
-
-S
-
-
-a
-
-
-
-
-
-$\alpha$2 : S
-
-
-S∗
-
-
-
-
-
-S∗
-
-
-
-
-
-$\alpha$3 : S
-
-
-S
-
-
-a
-
-
-
-
-
-a
-
-
-
-
-
-$\gamma$: S
-
-
-S
-
-
-a
-
-
-
-
-
-$\gamma$: S
-
-
-S
-
-
-
-
-
-S
-
-
-
-
-
-S
-
-
-
-
-
-S
-
-
-
-
-
-S
-
-
-
-
-
-S
-
-
-
-
-
-S
-
-
-
-
-
-S
-
-
-
-
-
-S
-
-
-
-
-
-a
-
-
-
-
-
-a
-
-
-
-
-
-a
-
-
-
-
-
-a
-
-
-
-
-
-a
-
-
-
-
-
-a
-
-
-
-
-
-46
-
-
-
-
-\end{itemize}
-
-\end{frame}
-
-\begin{frame}
-\frametitle{}
-
-\begin{itemize}
-\item
-
-Overview
-
-
-
-
-
-\item Tree Adjoining Grammars
-
-
-
-
-
- Weak vs. Strong Generative Capacity
-
-
-
-
-
-
-
-
-
-
-
-TAGs  Natural Language and Complexity
-
-
-
-
-
-
-
-
- Lexicalization of Grammars
-
-
-
-
-
-\item TAGs for Natural Languages
-
-
-
-
-
-47
-
-
-
-
-\end{itemize}
-
-\end{frame}
-
-\begin{frame}
-\frametitle{}
-
-\begin{itemize}
-\item
-
-Lexicalized Tree Adjoining Grammars
-
-
-
-
-
-\item Finite set of elementary trees, such that each tree has at least one
-
-
+\item finite set of elementary trees, such that each tree has at least one
 terminal symbol
-
-
-
-
 
 \item Elementary trees: initial and auxiliary
 
-
-
-
-
 \item Operations: substitution and adjunction
-
-
-
-
 
 \item Derivation Tree: how elementary trees are put together
 
-
-
-
-
 \item Derived Tree
-
-
-48
-
-
-
-
 \end{itemize}
 
 \end{frame}
 
 \begin{frame}
-\frametitle{}
+\frametitle{Localization of Dependencies}
 
 \begin{itemize}
-\item
-
-Localization of Dependencies
-
-
-
-
 
 \item Syntactic:
 
-
--- agreement: person, number, gender
-
-
--- subcategorization: sleeps (null), eats (NP); gives (NP NP)
+\begin{itemize}
+\item agreement: person, number, gender
 
 
--- ﬁller-gap: who did John ask Bill to invite
+\item subcategorization: sleeps (null), eats (NP); gives (NP NP)
 
 
--- word order: within and across clauses as in scrambling, clitic
+\item filler-gap: who did John ask Bill to invite
 
 
+\item word order: within and across clauses as in scrambling, clitic
 movement, etc.
+\end{itemize}
+
 \end{itemize}
 \end{frame}
 
 \begin{frame}
-\frametitle{}
+\frametitle{Localization of Dependencies}
 
 \begin{itemize}
-\item
-
-Localization of Dependencies
-
-
-
-
 
 \item Semantic:
 
-
--- function-argument: all arguments of the anchoring word (the functor)
-
-
+\begin{itemize}
+\item function-argument: all arguments of the anchoring word (the functor)
 are localized
 
 
--- word clusters (ﬂexible idioms): non-compositional, e.g. take a walk,
-
-
+\item word clusters (flexible idioms): non-compositional, e.g. take a walk,
 give a cold shoulder to
 
 
--- word co-occurences, lexical semantic aspects of meaning
+\item word co-occurences, lexical semantic aspects of meaning
+\end{itemize}
 \end{itemize}
 \end{frame}
 
 \begin{frame}
-\frametitle{}
+\frametitle{Lexicalized Tree Adjoining Grammars}
 
-\begin{itemize}
-\item
+\begin{center}
+\includegraphics[scale=.4]{pics/pic2-8.jpg}
+\end{center}
 
-Lexicalized Tree Adjoining Grammars
-
-
-NP
-
-
-NP
-
-
-NP∗
-
-
-
-
-
-SBAR
-
-
-VP
-
-
-
-
-
-the store
-
-
-WH$\downarrow$
-
-
-
-
-
-S
-
-
-VP∗
-
-
-
-
-
-WH
-
-
-
-
-
-NP$\downarrow$
-
-
-
-
-
-NP
-
-
-
-
-
-VP
-
-
-last week
-
-
-
-
-
-which
-
-
-
-
-
-NP
-
-
-
-
-
-imagined
-
-
-
-
-
-NP
-
-
-
-
-
-IBM
-
-
-
-
-
-51
-
-
-
-
-\end{itemize}
 
 \end{frame}
 
