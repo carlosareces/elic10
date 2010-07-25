@@ -472,131 +472,139 @@ am 21.7.1998 104.0 $\mu$g/m${}^3$, womit der gesetzlich zul\"assige Grenzwert na
 \end{frame}
 
 \begin{frame}
-\frametitle{El Role de la Computadora}
+\frametitle{El Rol de la Computadora}
 
  Dos posibilidades
 \begin{itemize}
-\item { {\#1 The system produces a document without human help: }}
+\item \#1 El sisema produce un documento autom\'aticamente (sin ayuda humana) 
 
- { {weather forecasts, simulation reports, patient letters}}
+ reportes clim\'aticos, reportes de simulaciones, cartas a pacientes,
+ res\'umenes de datos estad\'isticos, explicaciones en sistemas expertos.
 
- { {summaries of statistical data, explanations of expert system reasoning, context-sensitive help, }}
+\item \#2 El sistema ayuda a un autor humano a crear un documento:
 
-\item { {\#2 The system helps a human author create a document:}}
-
- { {weather forecasts, simulation reports, patient letters}}
-
- { {customer-service letters, patent claims, technical documents, job descriptions, ...}}
+ reportes clim\'aticos, reportes de simulaciones, cartas a pacientes
+ pedidos de patentes, documentos t\'ecnicos (manuales), pedidos de empleo
 \end{itemize}
 
 \end{frame}
 
 \begin{frame}
-\frametitle{When are NLG Techniques Appropriate?}
+\frametitle{En qu\'e casos son las t\'ecnicas de GLN Adecuadas?}
 
-\label{f44}
-\begin{itemize}
-\item { {Options to consider:}}
-\item { {Text vs Graphics}}
-\begin{itemize}
-\item Which medium is better?
-\end{itemize}
-\item { {Computer generation vs Human authoring}}
-\begin{itemize}
-\item Is the necessary source data available?
-\item Is automation economically justified?
-\end{itemize}
-\item { {NLG vs simple string concatenation}}
-\begin{itemize}
-\item How much variation occurs in output texts?
-\item Are linguistic constraints and optimisations important?
-\end{itemize}
-\end{itemize}
+Opciones a Considerar:
 
-\end{frame}
-
-\begin{frame}
-\frametitle{Enforcing Constraints}
-
-\label{f46}
 \begin{itemize}
-\item { {Linguistically well-formed text involves many constraints:}}
+\item { {Texto vs.\ Gr\'aficos}}
 \begin{itemize}
-\item orthography, morphology, syntax
-\item reference, word choice, pragmatics
+\item Qu\'e medio es mejor?
 \end{itemize}
-\item { {Constraints are automatically enforced in NLG systems}}
+\item { {Generaci\'on Autom\'atica vs. Autor\'ia Humana}}
 \begin{itemize}
-\item automatic, covers 100\% of cases
+\item Son los datos necesarios accesibles? 
+\item Vale la pena (e.g., econ\'omicamente)?
 \end{itemize}
-\item { {String-concatenation system developers must explicitly enforce constraints by careful design and testing}}
+\item { {GLN vs. Concatenaci\'on de strings}}
 \begin{itemize}
-\item A lot of work
-\item Hard to guarantee 100\% satisfaction
+\item Cu\'anta variaci\'on hay en el texto?
+\item Que impacto tiene la calidad gramatical del texto? 
 \end{itemize}
 \end{itemize}
 
 \end{frame}
 
 \begin{frame}
-\frametitle{Example: Syntax, aggregation}
+\frametitle{Calidad Gramatical}
+
+\begin{itemize}
+\item La generaci\'on de texto ling\"u\'isticamente bien formado requiere la verificaci\'on de constraints
+\begin{itemize}
+\item ortogr\'aficos, morfol\'ogicos, sint\'acticos
+\item referencia, elecci\'on de palabras, pragm\'aticas
+\end{itemize}
+\item Estos constraints se verifican autom\'aticamente por un sistema de GLN
+\begin{itemize}
+\item en forma autom\'atica, el 100\% de los casos
+\end{itemize}
+\item Los desarrolladores de sistemas basados en concatenaci\'on de strings tienen que verificar
+ el cumplimiento de estos strings manualmente y v\'ia testing
+\begin{itemize}
+\item Muy trabajoso
+\item Dif\'icil de garantizar exactitud del 100\%
+\end{itemize}
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Ejemplo: Syntaxis, agregaci\'on}
 
 \label{f48}
 \begin{itemize}
-\item { {Output of existing Medical AI system:}}
-\begin{itemize}
-\item The primary measure you have chosen, CXR shadowing, should be justified in comparison to TLC and walking distance as my data reveals they are better overall. Here are the specific comparisons:
-\item TLC has a lower patient cost TLC is more tightly distributed TLC is more objective walking distance has a lower patient cost
-\end{itemize}
+\item { {Output de sistemas de IA Medical existentes:}}
+
+\begin{quote}
+ The primary measure you have chosen, CXR shadowing, should be justified in comparison to TLC and walking distance as my data reveals they are better overall. Here are the specific comparisons:
+\medskip
+
+ TLC has a lower patient cost TLC is more tightly distributed TLC is more objective walking distance has a lower patient cost
+\end{quote}
 \end{itemize}
 
 \end{frame}
 
 \begin{frame}
-\frametitle{Example: Pragmatics}
+\frametitle{Ejemplo: Pragm\'atica}
 
 \label{f50}
 \begin{itemize}
-\item { {Output of system which gives English versions of database queries:}}
+\item Output de un sistema que da versiones en ingl\'es de consultas a una base de datos:
+
+\begin{quote} 
+The number of households such that there is at least 1 order with dollar amount greater 
+than or equal to \$100.\pause
+\end{quote}
+
 \begin{itemize}
-\item The number of households such that there is at least 1 order with dollar amount greater than or equal to \$100.
-\item Humans interpret this as number of \^ahouseholds which have placed an order \mbox{$>$}= \$100\^a
-\item Actual query returns count of all households in DB if there is any order in the DB (from any household) which is \mbox{$>$}=\$100
+
+\item Se interpreta como ``number of households which have placed an order 
+\mbox{$>=$} \$100'' \pause
+\item La consulta inicial era el n\'umero total de casas en la base de datos, si habia alguna 
+orden en la base de datos (de cualquier casa) por mas de \$100
 \end{itemize}
 \end{itemize}
 
 \end{frame}
 
 \begin{frame}
-\frametitle{NLG System Architecture}
+\frametitle{La Arquitectura de un Systema de GLN}
 
-\label{f52}
-\begin{itemize}
-\item { {The Component Tasks in NLG}}
-\item { {A Pipelined Architecture}}
-\item { {Alternative Architectures}}
+]\begin{itemize}
+\item { {Las tareas b\'asicas en un sistema de GLN}}
+\item Arquitectura de Pipeline 
+\item Alternative Architectures
 \end{itemize}
 
 \end{frame}
 
 \begin{frame}
-\frametitle{Component Tasks in NLG}
+\frametitle{Las Tareas B\'asicas en un sistema de GLN}
 
 \label{f54}
-\begin{itemize}
-\item { {1 Content determination}}
-\item { {2 Document structuring}}
-\item { {3 Aggregation}}
-\item { {4 Lexicalisation}}
-\item { {5 Referring expression generation}}
-\item { {6 Linguistic realisation}}
-\item { {7 Structure realisation}}
-\end{itemize}
+\begin{enumerate}
+\item { { Determinaci\'on de Contenido (Content determination)}}
+\item { { Estructuraci\'on del Documento (Document structuring)}}
+\item { { Agregaci\'on (Aggregation)}}
+\item { { Lexicalizaci\'on (Lexicalisation)}}
+\item { { Generaci\'on de Expresiones Referenciales (Referring expression generation)}}
+\item { { Realizaci\'on Ling\"u\'istica (Linguistic realisation)}}
+\item { { Realizaci\'on de Estructura (Structure realisation}}
+\end{enumerate}
 
 \end{frame}
 
 \begin{frame}
-\frametitle{Tasks and Architecture in NLG}
+\frametitle{Las Tareas B\'asicas en un sistema de GLN}
 
 \begin{center}
 \begin{tabular}{|l|c|}  \hline
@@ -613,7 +621,7 @@ Structure Realisation & realization\\ \hline
 \end{frame}
 
 \begin{frame}
-\frametitle{A Pipelined Architecture}
+\frametitle{Una Arquitectura Pipeline}
 
 \begin{center}
 Document\\
@@ -632,29 +640,32 @@ Realization
 \end{frame}
 
 \begin{frame}
-\frametitle{Other Architectures}
+\frametitle{Otras Arquitecturas}
 
 \label{f60}
 \begin{itemize}
-\item { {\#1: Variations on the \^astandard\^a architecture:}}
-\item { {shift tasks around}}
-\item { {allow feedback between stages}}
-\item { {\#2: An integrated reasoner which does everything:}}
-\item { {represent all tasks in the same way: eg as constraints, axioms, plan operators ...}}
-\item { {feed specifications into a constraint-solver, theorem-prover ...}}
+\item { {\#1: Variaciones de la arquitectura ``standard'':}}
+\begin{itemize}
+\item { {Alterar el orden de las tareas}}
+\item { {Permitir feedback entre las distintas etapas}}
 \end{itemize}
-
+\item { {\#2: Un sistema integrado donde todas las tareas se combinan:}}
+\begin{itemize}
+\item { {representar todas las tareas en forma uniforme: e.g.\ como constraints, axiomas, operadores de planning, \ldots}}
+\item { {alimentar estas especificaciones a un  constraint-solver, demostrador de teoremas, \ldots}}
+\end{itemize}
+\end{itemize}
 \end{frame}
 
 \begin{frame}
-\frametitle{Research Questions}
+\frametitle{Temas de Investigaci\'on}
 
 \label{f62}
 \begin{itemize}
-\item { {When is text the best means to communicate with the user?}}
-\item { {When is NLG technology better than string concatenation?}}
-\item { {Is there an architecture which combines the theoretical elegance of integrated approaches with the engineering simplicity of the pipeline?}}
-\item { {How should document plans and text specifications be represented?}}
+\item { {Cu\'ando es texto la mejor forma de cominicarse con el usuario??}}
+\item { {Cu\'ando es GLN mejor que concatenaci\'on de strings?}}
+\item { {Existe alguna arquitectura que combine la elegancia te\'orica y la flexibilidad de un sistema integrado, con la simplicidad de una arquitectura pipeline?}}
+\item { {Como debemos representar planes de documento y expecificaciones de texto?}}
 \end{itemize}
 
 \end{frame}
