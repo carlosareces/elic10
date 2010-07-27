@@ -37,7 +37,6 @@
 \newcommand{\PROP}{\textsf{PROP}\xspace}
 \newcommand{\lang}{\mathcal{L}\xspace}
 
-
 \newcommand{\mytt}[1]{\textsf{\scriptsize{#1}}}
 \newcommand{\mytts}[1]{\textsf{\scriptsize{#1}}}
 
@@ -50,7 +49,6 @@
 
 \setbeamertemplate{navigation symbols}{}
 
-
 \newcommand{\F}{\mathop{\mathsf{F}\vphantom{a}}\nolimits}
 \newcommand{\G}{\mathop{\mathsf{G}\vphantom{a}}\nolimits}
 \newcommand{\X}{\mathop{\mathsf{X}\vphantom{a}}\nolimits}
@@ -58,7 +56,6 @@
 \newcommand{\Blue}[1]{\textcolor{blue}{#1}}
 \newcommand{\Red}[1]{\textcolor{red}{#1}}
 \newcommand{\Green}[1]{\textcolor{PineGreen}{#1}}
-
 
 \title[GLN y Aplicaciones]{\Huge Generaci\'on de Lenguaje Natural y Aplicaciones}
 %\mH{Lecture \#\mytitlenbr:} \mytitle}
@@ -75,5391 +72,2227 @@ Universidad Nacional de C\'ordoba, C\'ordoba, Argentina}
 
 \begin{document}
 
-
 \beamerdefaultoverlayspecification{}
-
 
 \begin{frame}[plain]
  \titlepage
 \end{frame}
 
-
 \begin{frame}
-\frametitle{Generating Referring Expressions}
+\frametitle{Generando Expresiones Referenciales}
 
+\begin{quote}
 
-Example
-
-
-
-He claims record
+\textbf{He claims record}\medskip
 
 The 22-year-old computer science undergraduate from Bath is
 claiming a world record for the longest distance ridden on a
-unicycle in 24 hours.
+unicycle in 24 hours.\medskip
 
+A unicycling student covered exactly 282 miles at Aberystwy
+University's athletics track.\medskip
 
-A unicycling student covered exactly 282 miles at Aberystwyth
-
-
-
-University's athletics track.
 Sam Wakeling was aiming to beat the existing record of 235.3
 miles.
-
+\end{quote}
 
 \end{frame}
 
-
-
-
 \begin{frame}
-\frametitle{Generating Referring Expressions}
+\frametitle{Generando Expresiones Referenciales}
 
+\begin{quote}
 
+\textbf{\mH{He} claims record}\medskip
 
-
-
-
-Example
-
-
-
-He claims record
-
-
-
-The 22-year-old computer science undergraduate from Bath is
-
-
-
+\mH{The 22-year-old computer science undergraduate from Bath} is
 claiming a world record for the longest distance ridden on a
+unicycle in 24 hours.\medskip
 
+\mH{A unicycling student} covered exactly 282 miles at Aberystwy
+University's athletics track.\medskip
 
-
-unicycle in 24 hours.
-
-
-
-A unicycling student covered exactly 282 miles at Aberystwyth
-
-
-
-University's athletics track.
-
-
-
-Sam Wakeling was aiming to beat the existing record of 235.3
-
-
-
+\mH{Sam Wakeling} was aiming to beat the existing record of 235.3
 miles.
-
+\end{quote}
 
 \end{frame}
 
-
 \begin{frame}
-\frametitle{Generating Referring Expressions}
+\frametitle{Generando Expresiones Referenciales}
 
+\begin{quote}
+\textbf{\mH{Unicycling student} claims record}\medskip
 
+\mH{A student} is claiming a world record for the longest distance ridden
+on a unicycle in 24 hours.\medskip
 
+\mH{Sam Wakeling} covered exactly 282 miles at Aberystwyth
+University's athletics track.\medskip
 
-
-
-Example
-
-
-
-Unicycling student claims record
-
-
-
-A student is claiming a world record for the longest distance ridden
-
-
-
-on a unicycle in 24 hours.
-
-
-
-Sam Wakeling covered exactly 282 miles at Aberystwyth
-
-
-
-University's athletics track.
-
-
-
-The 22-year-old computer science undergraduate from Bath was
-
-
-
+\mH{The 22-year-old computer science undergraduate from Bath} was
 aiming to beat the existing record of 235.3 miles.
-\end{frame}
-
-\begin{frame}
-\frametitle{Referring Expressions in Linguistic Theory}
-
-
-
-
+\end{quote}
 
 \end{frame}
 
 \begin{frame}
-\frametitle{Terminology}
+\frametitle{Terminolog\'ia}
 
-
-
-
-
-
-Referring Expression
-
-
-
+\begin{itemize}
+\item \mH{Referring Expression}
 A linguistic expression (typically an NP) that a speaker uses to
-
-
-
 identify a (discourse) entity to the hearer.
 
-
-
-Referent
-
-
-
+\item \mH{Referent}
 The entity to which the speaker refers by a referring expression.
 
-
-
-Reference
-
-
-
+\item \mH{Reference}
 The process of identifying an entity by using a referring expression.
 
-
-
-
-
-
-
-
-
-
+\end{itemize}
 \end{frame}
+
+
 \begin{frame}
-\frametitle{
-Reference and Discourse}
-
-
-
-
-
+\frametitle{Reference and Discourse}
 
 A given entity can be referred to in various ways:
 
-
-1
-
-
-
-
-
-
+\begin{enumerate}
+\item 
 Noam Chomsky has given a talk today.
 
-
-
-
-
-2
-
-
-
-
-
-
+\item
 One of the people working at MIT has given a talk today.
 
-
-
-
-
-3
-
-
-
-
-
-
+\item 
 A person who is working at MIT has given a talk today.
 
-
-
-
-
-4
-
-
-
-
-
-
+\item 
 A person has given a talk today.
-
-
-
-
-
-
-
-
-
-
+\end{enumerate}
 \end{frame}
+
 \begin{frame}
-\frametitle{
-Reference and Discourse}
-
-
-
-
-
+\frametitle{Reference and Discourse}
 
 Reference and linguistic form
 
-
-
 The linguistic form of a referring expression reﬂects the current
-
-
-
 state of the discourse (and the speaker's beliefs about the hearer's
-
-
-
-discourse model)
-
-
-
-
-
-
-
-
-
-
-\end{frame}
-\begin{frame}
-\frametitle{
-Reference and Discourse}
-
-
-
-
-
-
-Reference and linguistic form
-
-
-
-The linguistic form of a referring expression reﬂects the current
-
-
-
-state of the discourse (and the speaker's beliefs about the hearer's
-
-
-
-discourse model)
-
-
+discourse model)\pause
 
 Typically:
 
-
-
 new discourse referents are introduced by indeﬁnite NPs ({``}a
-
-
-
 cat'')
 
-
-
 old discourse referents are referred to by deﬁnite NPs and
-
-
-
 pronouns ({``}the cat''/''it'')
 
-
-
-
-
-
-
-
-
-
 \end{frame}
+
 \begin{frame}
-\frametitle{
-Prince (1981, 1992): Linguistic Form \& Familiarity Scale}
-
-
-
-
-
+\frametitle{Prince (1981, 1992): Linguistic Form \& Familiarity Scale}
 
 Assumed Familiarity:
 
-
-
 From the point of view of the speaker/writer:
 
-
-
 Which assumptions about the hearer/reader inﬂuence the choice of
-
-
-
 the referring expression?
-
-
 
 From the point of view of the hearer/reader:
 
-
-
 Which conclusion is he/she going to draw from the choice of the
-
-
-
 referring expression?
 
-
-
-
-
-
-
-
-
-
 \end{frame}
+
 \begin{frame}
-\frametitle{
-Dimensions of Familiarity (Prince 1981, 1992)}
-
-
+\frametitle{Dimensions of Familiarity (Prince 1981, 1992)}
 
 status of the referent
 
-
-
 (assumed by the speaker)
-
-
 
 hearer-new
 
-
-
 hearer-old
-
 
 discourse-new
 
-
-
-
-
-
-
-
-
-
 discourse-old
 
-
-
-
-
-
-
-
-
-
 \end{frame}
+
 \begin{frame}
-\frametitle{
-Dimensions of Familiarity (Prince 1981, 1992)}
-
-
+\frametitle{Dimensions of Familiarity (Prince 1981, 1992)}
 
 status of the referent
 
-
-
 (assumed by the speaker)
-
-
 
 hearer-new
 
-
-
 hearer-old
-
-
-
-
-
 
 discourse-new
 
-
-
-
-
-
 discourse-old
-
-
-
-
-
 
 brand-new
-
-
-
-
-
 
 brand-new: introduction of a new discourse referent representing
 
-
-
 an unknown entity (a student)
 
-
-
-
-
-
-
-
-
-
 \end{frame}
+
 \begin{frame}
-\frametitle{
-Dimensions of Familiarity (Prince 1981, 1992)}
-
-
+\frametitle{Dimensions of Familiarity (Prince 1981, 1992)}
 
 status of the referent
 
-
-
 (assumed by the speaker)
-
-
 
 hearer-new
 
-
-
 hearer-old
-
-
-
-
-
 
 discourse-new
 
-
-
-
-
-
 discourse-old
 
-
-
-
-
-
 brand-new
-
-
-
-
 
 ---
 
-
-
-
-
-
 brand-new: introduction of a new discourse referent representing
-
-
 
 an unknown entity (a student)
 
-
-
-
-
-
-
-
-
-
 \end{frame}
+
 \begin{frame}
-\frametitle{
-Dimensions of Familiarity (Prince 1981, 1992)}
-
-
+\frametitle{Dimensions of Familiarity (Prince 1981, 1992)}
 
 status of the referent
 
-
-
 (assumed by the speaker)
-
-
 
 hearer-new
 
-
-
 hearer-old
-
-
-
-
-
 
 discourse-new
 
-
-
-
-
-
 discourse-old
 
-
-
-
-
-
 brand-new
-
-
 
 unused
 
-
-
-
-
 ---
-
-
-
-
-
 
 brand-new: introduction of a new discourse referent representing
 
-
-
 an unknown entity (a student)
-
-
 
 unused: introduction of a new discourse referent representing a
 
-
-
 known entity (Queen Elisabeth)
 
-
-
-
-
-
-
-
-
-
 \end{frame}
+
 \begin{frame}
-\frametitle{
-Dimensions of Familiarity (Prince 1981, 1992)}
-
-
+\frametitle{Dimensions of Familiarity (Prince 1981, 1992)}
 
 status of the referent
 
-
-
 (assumed by the speaker)
-
-
 
 hearer-new
 
-
-
 hearer-old
-
-
-
-
-
 
 discourse-new
 
-
-
-
-
-
 discourse-old
-
-
-
-
-
 
 brand-new
 
-
-
 unused
 
-
-
-
-
 ---
-
-
 
 evoked
 
-
-
-
-
-
 brand-new: introduction of a new discourse referent representing
-
-
 
 an unknown entity (a student)
 
-
-
 unused: introduction of a new discourse referent representing a
-
-
 
 known entity (Queen Elisabeth)
 
-
-
 evoked: an entity is related to one which
-
-
 
 has been referred to before (in the discourse)
 
-
-
 The 22-year old computer science undergraduate from Bath
-
-
 
 or is present in the situation
 
-
-
 (you)
 
-
-
-
-
-
-
-
-
-
 \end{frame}
+
 \begin{frame}
-\frametitle{
-Dimensions of Familiarity (Prince 1981, 1992)}
-
-
+\frametitle{Dimensions of Familiarity (Prince 1981, 1992)}
 
 status of the referent
 
-
-
 (assumed by the speaker)
-
-
 
 hearer-new
 
-
-
 hearer-old
-
-
-
-
-
 
 discourse-new
 
-
-
-
-
-
 discourse-old
-
-
-
-
-
 
 brand-new
 
-
-
 unused
-
-
-
-
 
 ---
 
-
-
 evoked
-
-
-
-
-
 
 brand-new: introduction of a new discourse referent representing
 
-
-
 an unknown entity (a student)
-
-
 
 unused: introduction of a new discourse referent representing a
 
-
-
 known entity (Queen Elisabeth)
-
-
 
 evoked: an entity is related to one which
 
-
-
 has been referred to before (in the discourse)
-
-
 
 The 22-year old computer science undergraduate from Bath
 
-
-
 or is present in the situation
 
-
-
 (you)
-
-
 
 inferrable: introduction of a new discourse referent whose relation
 
-
-
 to a known entity is inferrable (like hearer-old but neither
-
-
 
 discourse-new nor discourse-old)
 
-
-
 (Peter walked towards the house. The door was open.)
-
-
 
 Caroline Sporleder
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 \end{frame}
+
 \begin{frame}
-\frametitle{
-Prince's Familiarity Hierarchy}
-
-
+\frametitle{Prince's Familiarity Hierarchy}
 
 Assumed Familiarity
 
-
-
-
-
-
 New
-
-
-
-
-
 
 Brand$-$new
 
-
-
-
-
-
 Inferrable
-
-
-
-
-
 
 Unused
 
-
-
 U
-
-
-
-
-
 
 (Noncontaining)
 
-
-
 Inferrable
 
-
-
 I
-
-
-
-
-
 
 Containing
 
-
-
 Inferrable
-
-
 
 C
 
-
-
 I
 
-
-
-
-
-
 Evoked
-
-
-
-
-
 
 (Textually) Situationally
 
-
-
 Evoked
 
-
-
 Evoked
-
-
 
 ES
 
-
-
 E
 
-
-
-
-
-
 Brand$-$new
 
-
-
 Brand$-$new
-
-
 
 (unanchored) Anchored
 
-
-
 BN A
-
-
 
 BN
 
-
-
-
-
-
-
-
-
-
 \end{frame}
+
 \begin{frame}
-\frametitle{
-Prince's Familiarity Hierarchy}
-
-
+\frametitle{Prince's Familiarity Hierarchy}
 
 Assumed Familiarity
 
-
-
-
-
-
 New
-
-
-
-
-
 
 Brand$-$new
 
-
-
-
-
-
 Inferrable
-
-
-
-
-
 
 Unused
 
-
-
 U
-
-
-
-
-
 
 (Noncontaining)
 
-
-
 Inferrable
 
-
-
 I
-
-
-
-
-
 
 Containing
 
-
-
 Inferrable
-
-
 
 C
 
-
-
 I
 
-
-
-
-
-
 Evoked
-
-
-
-
-
 
 (Textually) Situationally
 
-
-
 Evoked
 
-
-
 Evoked
-
-
 
 ES
 
-
-
 E
 
-
-
-
-
-
 Brand$-$new
 
-
-
 Brand$-$new
-
-
 
 (unanchored) Anchored
 
-
-
 BN
 
-
-
 BN A
-
-
-
-
-
 
 Yesterday I got on a bus.
 
-
-
-
-
-
-
-
-
-
 \end{frame}
+
 \begin{frame}
-\frametitle{
-Prince's Familiarity Hierarchy}
-
-
+\frametitle{Prince's Familiarity Hierarchy}
 
 Assumed Familiarity
 
-
-
-
-
-
 New
-
-
-
-
-
 
 Brand$-$new
 
-
-
-
-
-
 Inferrable
-
-
-
-
-
 
 Unused
 
-
-
 U
-
-
-
-
-
 
 (Noncontaining)
 
-
-
 Inferrable
 
-
-
 I
-
-
-
-
-
 
 Containing
 
-
-
 Inferrable
-
-
 
 C
 
-
-
 I
 
-
-
-
-
-
 Evoked
-
-
-
-
-
 
 (Textually) Situationally
 
-
-
 Evoked
 
-
-
 Evoked
-
-
 
 ES
 
-
-
 E
 
-
-
-
-
-
 Brand$-$new
 
-
-
 Brand$-$new
-
-
 
 (unanchored) Anchored
 
-
-
 BN A
 
-
-
 BN
-
-
-
-
-
 
 Somebody who works with Peter says he knows your sister.
 
-
-
-
-
-
-
-
-
-
 \end{frame}
+
 \begin{frame}
-\frametitle{
-Prince's Familiarity Hierarchy}
-
-
+\frametitle{Prince's Familiarity Hierarchy}
 
 Assumed Familiarity
 
-
-
-
-
-
 New
-
-
-
-
-
 
 Brand$-$new
 
-
-
-
-
-
 Inferrable
-
-
-
-
-
 
 Unused
 
-
-
 U
-
-
-
-
-
 
 (Noncontaining)
 
-
-
 Inferrable
 
-
-
 I
-
-
-
-
-
 
 Containing
 
-
-
 Inferrable
-
-
 
 C
 
-
-
 I
 
-
-
-
-
-
 Evoked
-
-
-
-
-
 
 (Textually) Situationally
 
-
-
 Evoked
 
-
-
 Evoked
-
-
 
 S
 
-
+E
 
 E
 
-
-
-E
-
-
-
-
-
-
 Brand$-$new
 
-
-
 Brand$-$new
-
-
 
 (unanchored) Anchored
 
-
-
 BN
 
-
-
 BN A
-
-
-
-
-
 
 Noam Chomsky went to Penn.
 
-
-
-
-
-
-
-
-
-
 \end{frame}
+
 \begin{frame}
-\frametitle{
-Prince's Familiarity Hierarchy}
-
-
+\frametitle{Prince's Familiarity Hierarchy}
 
 Assumed Familiarity
 
-
-
-
-
-
 New
-
-
-
-
-
 
 Brand$-$new
 
-
-
-
-
-
 Inferrable
-
-
-
-
-
 
 Unused
 
-
-
 U
-
-
-
-
-
 
 (Noncontaining)
 
-
-
 Inferrable
 
-
-
 I
-
-
-
-
-
 
 Containing
 
-
-
 Inferrable
-
-
 
 C
 
-
-
 I
 
-
-
-
-
-
 Evoked
-
-
-
-
-
 
 (Textually) Situationally
 
-
-
 Evoked
 
-
-
 Evoked
-
-
 
 S
 
-
+E
 
 E
 
-
-
-E
-
-
-
-
-
-
 Brand$-$new
 
-
-
 Brand$-$new
-
-
 
 (unanchored) Anchored
 
-
-
 BN A
 
-
-
 BN
-
-
-
-
-
 
 Somebody who works with Peter says he knows your sister.
 
-
-
-
-
-
-
-
-
-
 \end{frame}
+
 \begin{frame}
-\frametitle{
-Prince's Familiarity Hierarchy}
-
-
+\frametitle{Prince's Familiarity Hierarchy}
 
 Assumed Familiarity
 
-
-
-
-
-
 New
-
-
-
-
-
 
 Brand$-$new
 
-
-
-
-
-
 Inferrable
-
-
-
-
-
 
 Unused
 
-
-
 U
-
-
-
-
-
 
 (Noncontaining)
 
-
-
 Inferrable
 
-
-
 I
-
-
-
-
-
 
 Containing
 
-
-
 Inferrable
-
-
 
 C
 
-
-
 I
 
-
-
-
-
-
 Evoked
-
-
-
-
-
 
 (Textually) Situationally
 
-
-
 Evoked
 
-
-
 Evoked
-
-
 
 ES
 
-
-
 E
 
-
-
-
-
-
 Brand$-$new
 
-
-
 Brand$-$new
-
-
 
 (unanchored) Anchored
 
-
-
 BN A
 
-
-
 BN
-
-
-
-
-
 
 Excuse me do you have the time?
 
-
-
-
-
-
-
-
-
-
 \end{frame}
+
 \begin{frame}
-\frametitle{
-Prince's Familiarity Hierarchy}
-
-
+\frametitle{Prince's Familiarity Hierarchy}
 
 Assumed Familiarity
 
-
-
-
-
-
 New
-
-
-
-
-
 
 Brand$-$new
 
-
-
-
-
-
 Inferrable
-
-
-
-
-
 
 Unused
 
-
-
 U
-
-
-
-
-
 
 (Noncontaining)
 
-
-
 Inferrable
 
-
-
 I
-
-
-
-
-
 
 Containing
 
-
-
 Inferrable
-
-
 
 C
 
-
-
 I
 
-
-
-
-
-
 Evoked
-
-
-
-
-
 
 (Textually) Situationally
 
-
-
 Evoked
 
-
-
 Evoked
-
-
 
 S
 
-
+E
 
 E
 
-
-
-E
-
-
-
-
-
-
 Brand$-$new
 
-
-
 Brand$-$new
-
-
 
 (unanchored) Anchored
 
-
-
 BN A
 
-
-
 BN
-
-
-
-
-
 
 Yesterday I got on a bus. The driver was drunk.
 
-
-
-
-
-
-
-
-
-
 \end{frame}
+
 \begin{frame}
-\frametitle{
-Prince's Familiarity Hierarchy}
-
-
+\frametitle{Prince's Familiarity Hierarchy}
 
 Assumed Familiarity
 
-
-
-
-
-
 New
-
-
-
-
-
 
 Brand$-$new
 
-
-
-
-
-
 Inferrable
-
-
-
-
-
 
 Unused
 
-
-
 U
-
-
-
-
-
 
 (Noncontaining)
 
-
-
 Inferrable
 
-
-
 I
-
-
-
-
-
 
 Containing
 
-
-
 Inferrable
-
-
 
 C
 
-
-
 I
 
-
-
-
-
-
 Evoked
-
-
-
-
-
 
 (Textually) Situationally
 
-
-
 Evoked
 
-
-
 Evoked
-
-
 
 ES
 
-
-
 E
 
-
-
-
-
-
 Brand$-$new
 
-
-
 Brand$-$new
-
-
 
 (unanchored) Anchored
 
-
-
 BN
 
-
-
 BN A
-
-
-
-
-
 
 The pages of the book which I just bought, were falling out.
 
-
-
-
-
-
-
-
-
-
 \end{frame}
+
 \begin{frame}
-\frametitle{
-Prince's Familiarity Hierarchy}
-
-
+\frametitle{Prince's Familiarity Hierarchy}
 
 Assumed Familiarity
 
-
-
-
-
-
 New
-
-
-
-
-
 
 Brand$-$new
 
-
-
-
-
-
 Inferrable
-
-
-
-
-
 
 Unused
 
-
-
 U
-
-
-
-
-
 
 (Noncontaining)
 
-
-
 Inferrable
 
-
-
 I
-
-
-
-
-
 
 Containing
 
-
-
 Inferrable
-
-
 
 C
 
-
-
 I
 
-
-
-
-
-
 Evoked
-
-
-
-
-
 
 (Textually) Situationally
 
-
-
 Evoked
 
-
-
 Evoked
-
-
 
 ES
 
-
-
 E
 
-
-
-
-
-
 Brand$-$new
 
-
-
 Brand$-$new
-
-
 
 (unanchored) Anchored
 
-
-
 BN A
-
-
 
 BN
 
-
-
-
-
-
 E
-
-
 
 ES
 
-
 $>$ U $>$ I $>$ I C $>$ BN A $>$ BN
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 \end{frame}
+
 \begin{frame}
-\frametitle{
-Prince's Familiarityscale}
-
-
-
-
-
+\frametitle{Prince's Familiarityscale}
 
 E
 
-
-
 ES
-
-
-
-
-
 
 $>$ U $>$ I $>$ I C $>$ BN A $>$ BN
 
-
-
-
-
 1
-
-
-
-
-
 
 Noam Chomsky has given a talk today. (U)
 
-
-
-
-
 2
-
-
-
-
-
 
 One of the people working at MIT has given a talk today.
 
-
-
 (I C )
 
-
-
-
-
 3
-
-
-
-
-
 
 A person who is working at MIT has given a talk today.
 
-
-
 (BN A )
 
-
-
-
-
 4
-
-
-
-
-
 
 A person has given a talk today. (BN)
 
-
-
-
-
-
-
-
-
-
 \end{frame}
+
 \begin{frame}
-\frametitle{
-Generating Referring Expressions: Rule-based}
-
-
+\frametitle{Generating Referring Expressions: Rule-based}
 
 Approaches
 
+\end{frame}
 
-
-
-
-
-
-
-
+\begin{frame}
+\frametitle{Pick your Referring Expression}
 
 \end{frame}
+
 \begin{frame}
-\frametitle{
-Pick your Referring Expression}
-
-
-
-
-
-
-
-
-
-
-\end{frame}
-\begin{frame}
-\frametitle{
-Generating Referring Expressions}
-
-
-
-
-
+\frametitle{Generating Referring Expressions}
 
 Important for . . .
 
-
-
 generation (concept-to-text, text-to-text)
-
-
 
 Need to distinguish
 
-
-
 identiﬁcation of target entity to hearer (discriminate between
-
-
 
 target entity and other entities in discourse)
 
-
-
 other communicative goals
-
-
 
 I met an old friend yesterday. vs. The scoundrel is the one
 
-
-
 who betrayed us.
 
-
-
-
-
-
-
-
-
-
 \end{frame}
+
 \begin{frame}
-\frametitle{
-Concept-to-text Generation}
-
-
+\frametitle{Concept-to-text Generation}
 
 ID
 
-
-
 e1
-
-
 
 e2
 
-
-
 e3
-
-
 
 e4
 
-
-
-
-
-
 what
 
-
+coin
 
 coin
 
-
-
-coin
-
-
-
 helmet
 
-
-
 helmet
-
 
 material
 
-
-
 gold
 
-
-
 silver
 
-
-
 silver
-
-
 
 bronze
 
-
-
-
-
-
 origin
 
-
-
 Roman
-
-
 
 Greek
 
-
-
 Roman
-
-
 
 Etruscan
 
-
-
-
-
-
-
-
-
-
 where found
-
-
 
 Pompeii
 
-
-
 Chios
-
-
 
 Rome
 
-
-
 Pisa
-
-
-
-
-
 
 date
 
-
-
 50 BC
-
-
 
 600 BC
 
-
-
 200 AD
-
-
 
 400 BC
 
-
-
-
-
-
-
-
-
-
 \end{frame}
+
 \begin{frame}
-\frametitle{
-Concept-to-text Generation}
-
-
+\frametitle{Concept-to-text Generation}
 
 ID
 
-
-
 e1
-
-
 
 e2
 
-
-
 e3
-
-
 
 e4
 
-
-
-
-
-
 what
 
-
+coin
 
 coin
 
-
-
-coin
-
-
-
 helmet
 
-
-
 helmet
-
-
-
-
-
 
 material
 
-
-
 gold
 
-
-
 silver
 
-
-
 silver
-
-
 
 bronze
 
-
-
-
-
-
 origin
 
-
-
 Roman
-
-
 
 Greek
 
-
-
 Roman
-
-
 
 Etruscan
 
-
-
-
-
-
 where found
-
-
 
 Pompeii
 
-
-
 Chios
-
-
 
 Rome
 
-
-
 Pisa
-
-
-
-
-
 
 date
 
-
-
 50 BC
-
-
 
 600 BC
 
-
-
 200 AD
 
-
-
 400 BC
-
-
-
-
-
 
 The silver coin is Greek. It was found on Chios and {\O} dates from
 
-
-
 around 600 BC. The other coin is Roman. It is gold and {\O} dates
-
-
 
 from around 50 BC. It was found in Pompeii. . .
 
-
-
-
-
-
-
-
-
-
 \end{frame}
+
 \begin{frame}
-\frametitle{
-Concept-to-text Generation}
-
-
+\frametitle{Concept-to-text Generation}
 
 ID
 
-
-
 e1
-
-
 
 e2
 
-
-
 e3
-
-
 
 e4
 
-
-
-
-
-
 what
 
-
+coin
 
 coin
 
-
-
-coin
-
-
-
 helmet
 
-
-
 helmet
-
-
-
-
-
 
 material
 
-
-
 gold
 
-
-
 silver
 
-
-
 silver
-
-
 
 bronze
 
-
-
-
-
-
 origin
 
-
-
 Roman
-
-
 
 Greek
 
-
-
 Roman
-
-
 
 Etruscan
 
-
-
-
-
-
 where found
-
-
 
 Pompeii
 
-
-
 Chios
-
-
 
 Rome
 
-
-
 Pisa
-
-
-
-
-
 
 date
 
-
-
 50 BC
-
-
 
 600 BC
 
-
-
 200 AD
-
-
 
 400 BC
 
-
-
-
-
-
 The silver coin is Greek. It was found on Chios and {\O} dates from
-
-
 
 around 600 BC. The other coin is Roman. It is gold and {\O} dates
 
-
-
 from around 50 BC. It was found in Pompeii. . .
-
-
 
 Here are two coins: the silver one is Greek . . .
 
-
-
 Caroline Sporleder
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 \end{frame}
+
 \begin{frame}
-\frametitle{
-Rule-base Generation of Referring Expressions (REs)}
-
-
+\frametitle{Rule-base Generation of Referring Expressions (REs)}
 
 (cf. Dale (1989), Reiter \& Dale (1992), Dale \& Reiter (1995))
 
-
-
-
-
-
 EPICURE system
-
-
 
 generate cookery recipes
 
-
-
 deep generation
-
-
 
 three levels of semantic representation:
 
-
-
 ﬂexible knowledge base (KB) representing physical objects in a
 
-
-
 speciﬁc state
-
-
 
 deep semantic structure (DS) of a RE (recoverable by hearer)
 
-
-
 surface semantic structure (SS) of an RE (to be realised by the
-
-
 
 generation grammar)
 
-
-
-
-
-
 to construct an RE:
-
 
 1
 
-
-
-
-
 2
-
 
 construct deep semantic structure for a KB entity
 
-
-
 i.e. what do you want to say about the entity?
-
-
 
 from the DS construct a surface semantic structure
 
-
-
 i.e. how dow you want to say it (pronominalisation etc.)
 
-
-
-
-
-
-
-
-
-
-
 \end{frame}
+
 \begin{frame}
-\frametitle{
-Rule-base Generation of Referring Expressions (REs)}
-
-
+\frametitle{Rule-base Generation of Referring Expressions (REs)}
 
 (cf. Dale (1989), Reiter \& Dale (1992), Dale \& Reiter (1995))
 
-
-
-
-
-
 EPICURE system
-
-
 
 generate cookery recipes
 
-
-
 deep generation
-
-
 
 three levels of semantic representation:
 
-
-
 ﬂexible knowledge base (KB) representing physical objects in a
 
-
-
 speciﬁc state
-
-
 
 $\Rightarrow$ in this domain, discourse entities change!
 
-
-
 deep semantic structure (DS) of a RE (recoverable by hearer)
-
-
 
 surface semantic structure (SS) of an RE (to be realised by the
 
-
-
 generation grammar)
-
-
-
-
-
 
 to construct an RE:
 
-
 1
-
-
-
-
 
 2
 
-
 construct deep semantic structure for a KB entity
-
-
 
 i.e. what do you want to say about the entity?
 
-
-
 from the DS construct a surface semantic structure
-
-
 
 i.e. how dow you want to say it (pronominalisation etc.)
 
+\end{frame}
 
-
-
-
-
-
-
-
-
+\begin{frame}
+\frametitle{Rule-base Generation of Referring Expressions (REs)}
 
 \end{frame}
+
 \begin{frame}
-\frametitle{
-Rule-base Generation of Referring Expressions (REs)}
-
-
-
-
-
-
-
-
-
+\frametitle{Rule-base Generation of Referring Expressions (REs)}
 
 \end{frame}
+
 \begin{frame}
-\frametitle{
-Rule-base Generation of Referring Expressions (REs)}
-
-
-
-
-
-
-
-
-
+\frametitle{Rule-base Generation of Referring Expressions (REs)}
 
 \end{frame}
+
 \begin{frame}
-\frametitle{
-Rule-base Generation of Referring Expressions (REs)}
-
-
-
-
-
-
-
-
-
+\frametitle{Rule-base Generation of Referring Expressions (REs)}
 
 \end{frame}
+
 \begin{frame}
-\frametitle{
-Rule-base Generation of Referring Expressions (REs)}
-
-
-
-
-
-
-
-
-
-
-\end{frame}
-\begin{frame}
-\frametitle{
-Generation of Pronouns and Elided NPs}
-
-
-
-
-
+\frametitle{Generation of Pronouns and Elided NPs}
 
 Pronominalisation:
 
-
-
 basically Centering-based approach (Cb s can be pronominalised)
-
-
 
 Elided (empty) NPs
 
-
-
 Cb s can be elided if they ﬁll an optional grammatical role (e.g.
-
-
 
 indirect object)
 
-
-
 Fry the onionsi .
-
-
 
 Add the garlic {\O}i .
 
-
-
-
-
-
-
-
-
-
 \end{frame}
+
 \begin{frame}
-\frametitle{
-Generation of Deﬁnite NPs}
-
-
+\frametitle{Generation of Deﬁnite NPs}
 
 take into account Gricean Maxims:
 
-
-
-
-
-
-
-
-
-
 \end{frame}
+
 \begin{frame}
-\frametitle{
-Generation of Deﬁnite NPs}
-
-
+\frametitle{Generation of Deﬁnite NPs}
 
 take into account Gricean Maxims:
-
-
 
 Quality
 
-
-
 Say the truth.
-
-
 
 Quantity
 
-
-
 Be as informative as possible.
-
-
 
 Relevance
 
-
-
 Be relevant.
-
-
 
 Manner
 
-
-
 Be brief. Avoid ambiguity. Be orderly.
 
-
-
-
-
-
-
-
-
-
 \end{frame}
+
 \begin{frame}
-\frametitle{
-Generation of Deﬁnite NPs}
-
-
+\frametitle{Generation of Deﬁnite NPs}
 
 take into account Gricean Maxims:
 
-
-
 Quality
-
-
 
 Say the truth.
 
-
-
 Quantity
-
-
 
 Be as informative as possible.
 
-
-
 Relevance
-
-
 
 Be relevant.
 
-
-
 Manner
-
-
 
 Be brief. Avoid ambiguity. Be orderly.
 
-
-
-
-
-
-
-
-
-
 \end{frame}
+
 \begin{frame}
-\frametitle{
-Generation of Deﬁnite NPs}
-
-
+\frametitle{Generation of Deﬁnite NPs}
 
 take into account Gricean Maxims:
 
-
-
 Quality
-
-
 
 Say the truth.
 
-
-
 Quantity
-
-
 
 Be as informative as possible.
 
-
-
 Relevance
-
-
 
 Be relevant.
 
-
-
 Manner
 
-
-
 Be brief. Avoid ambiguity. Be orderly.
-
-
 
 $\Rightarrow$ Choose the shortest RE that discriminates the target entity
 
-
-
 from all other entities in the discourse model (the distractors).
 
-
-
-
-
-
-
-
-
-
 \end{frame}
+
 \begin{frame}
-\frametitle{
-Generation of Deﬁnite NPs}
-
-
+\frametitle{Generation of Deﬁnite NPs}
 
 Strategy
 
-
-
 entities in the KB are described by attribute-value pairs (AVPs)
-
-
 
 $\Rightarrow$ realise the smallest set of values that singles out the entity
 
-
-
-
-
-
-
-
-
-
 \end{frame}
+
 \begin{frame}
-\frametitle{
-Generation of Deﬁnite NPs}
-
-
+\frametitle{Generation of Deﬁnite NPs}
 
 Strategy
 
-
-
 entities in the KB are described by attribute-value pairs (AVPs)
 
-
-
 $\Rightarrow$ realise the smallest set of values that singles out the entity
-
-
 
 ID
 
-
-
 e1
-
-
 
 e2
 
-
-
 e3
-
-
 
 e4
 
-
-
 e5
-
-
-
-
-
 
 what
 
-
+coin
 
 coin
 
-
-
 coin
-
-
-
-coin
-
-
 
 helmet
 
-
-
 helmet
-
 
 material
 
-
-
 gold
 
-
+silver
 
 silver
 
-
-
 silver
-
-
-
-silver
-
-
 
 bronze
 
-
-
-
-
-
 origin
 
-
-
 Roman
 
-
-
 Roman
-
-
 
 Greek
 
-
-
 Roman
-
-
 
 Etruscan
 
-
-
-
-
-
-
-
-
-
 where found
-
-
 
 Pompeii
 
-
-
 Rome
-
-
 
 Chios
 
-
-
 Rome
-
-
 
 Pisa
 
-
-
-
-
-
 date
-
-
 
 50 BC
 
-
-
 30 AD
-
-
 
 600 BC
 
-
-
 200 AD
-
-
 
 400 BC
 
-
-
-
-
-
-
-
-
-
 \end{frame}
+
 \begin{frame}
-\frametitle{
-Generation of Deﬁnite NPs}
-
-
+\frametitle{Generation of Deﬁnite NPs}
 
 Strategy
 
-
-
 entities in the KB are described by attribute-value pairs (AVPs)
-
-
 
 $\Rightarrow$ realise the smallest set of values that singles out the entity
 
-
-
 ID
-
-
 
 e1
 
-
-
 e2
-
-
 
 e3
 
-
-
 e4
-
-
 
 e5
 
-
-
-
-
-
 what
 
-
+coin
 
 coin
 
-
-
 coin
-
-
-
-coin
-
-
 
 helmet
 
-
-
 helmet
-
 
 material
 
-
-
 gold
 
-
+silver
 
 silver
 
-
-
 silver
-
-
-
-silver
-
-
 
 bronze
 
-
-
-
-
-
 origin
 
-
-
 Roman
 
-
-
 Roman
-
-
 
 Greek
 
-
-
 Roman
-
-
 
 Etruscan
 
-
-
-
-
-
-
-
-
-
 where found
-
-
 
 Pompeii
 
-
-
 Rome
-
-
 
 Chios
 
-
-
 Rome
-
-
 
 Pisa
 
-
-
-
-
-
 date
-
-
 
 50 BC
 
-
-
 30 AD
-
-
 
 600 BC
 
-
-
 200 AD
-
-
 
 400 BC
 
-
-
-
-
-
-
-
-
-
 \end{frame}
+
 \begin{frame}
-\frametitle{
-Generation of Deﬁnite NPs}
-
-
+\frametitle{Generation of Deﬁnite NPs}
 
 Strategy
 
-
-
 entities in the KB are described by attribute-value pairs (AVPs)
-
-
 
 $\Rightarrow$ realise the smallest set of values that singles out the entity
 
-
-
 ID
-
-
 
 e1
 
-
-
 e2
-
-
 
 e3
 
-
-
 e4
-
-
 
 e5
 
-
-
-
-
-
 what
 
-
+coin
 
 coin
 
-
-
 coin
-
-
-
-coin
-
-
 
 helmet
 
-
-
 helmet
-
-
-
-
-
 
 material
 
-
-
 gold
 
-
+silver
 
 silver
 
-
-
 silver
-
-
-
-silver
-
-
 
 bronze
 
-
-
-
-
-
 origin
 
-
-
 Roman
 
-
-
 Roman
-
-
 
 Greek
 
-
-
 Roman
-
-
 
 Etruscan
 
-
-
-
-
-
 where found
-
-
 
 Pompeii
 
-
-
 Rome
-
-
 
 Chios
 
-
-
 Rome
-
-
 
 Pisa
 
-
-
-
-
-
 date
-
-
 
 50 BC
 
-
-
 30 AD
-
-
 
 600 BC
 
-
-
 200 AD
 
-
-
 400 BC
-
-
-
-
-
 
 Good:
 
-
-
 the gold coin (the golden one, the object made of gold)
-
-
 
 the coin found in Pompeii
 
-
-
 the coin dating from 50 BC
 
-
-
-
-
-
-
-
-
-
 \end{frame}
+
 \begin{frame}
-\frametitle{
-Generation of Deﬁnite NPs}
-
-
+\frametitle{Generation of Deﬁnite NPs}
 
 Strategy
 
-
-
 entities in the KB are described by attribute-value pairs (AVPs)
-
-
 
 $\Rightarrow$ realise the smallest set of values that singles out the entity
 
-
-
 ID
-
-
 
 e1
 
-
-
 e2
-
-
 
 e3
 
-
-
 e4
-
-
 
 e5
 
-
-
-
-
-
 what
 
-
+coin
 
 coin
 
-
-
 coin
-
-
-
-coin
-
-
 
 helmet
 
-
-
 helmet
-
-
-
-
-
 
 material
 
-
-
 gold
 
-
+silver
 
 silver
 
-
-
 silver
-
-
-
-silver
-
-
 
 bronze
 
-
-
-
-
-
 origin
 
-
-
 Roman
 
-
-
 Roman
-
-
 
 Greek
 
-
-
 Roman
-
-
 
 Etruscan
 
-
-
-
-
-
 where found
-
-
 
 Pompeii
 
-
-
 Rome
-
-
 
 Chios
 
-
-
 Rome
-
-
 
 Pisa
 
-
-
-
-
-
 date
-
-
 
 50 BC
 
-
-
 30 AD
-
-
 
 600 BC
 
-
-
 200 AD
-
-
 
 400 BC
 
-
-
-
-
-
 Good:
-
-
 
 the gold coin (the golden one, the object made of gold)
 
-
-
 the coin found in Pompeii
 
-
-
 the coin dating from 50 BC
-
-
 
 Not so good:
 
-
-
 the gold coin found in Pompeii (too informative)
-
-
 
 the Roman coin (not unique)
 
-
-
 Caroline Sporleder
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 \end{frame}
+
 \begin{frame}
-\frametitle{
-Generation of Deﬁnite NPs}
-
-
-
-
-
+\frametitle{Generation of Deﬁnite NPs}
 
 Search strategy:
 
-
-
 compute the discriminatory power of each AVP and choose the one
-
-
 
 with the highest until the entity is singled out
 
-
-
 Distractors:
-
-
 
 U = x1 , x2 , ..., xn
 
-
-
 Discriminatory power of an AVP given U:
-
-
 
 F ($<$ a, v $>$, U) = n$-$k
 
-
-
 1$\leq$k $\leq$n
-
-
 
 n$-$1
 
-
-
 where k is that number of distractors for which $<$ a, v $>$ is also
-
-
 
 true.
 
-
-
-
-
-
-
-
-
-
 \end{frame}
+
 \begin{frame}
-\frametitle{
-Generation of Deﬁnite NPs}
-
-
+\frametitle{Generation of Deﬁnite NPs}
 
 Example
 
-
-
 ID
-
-
 
 e1
 
-
-
 e2
-
-
 
 e3
 
-
-
 e4
-
-
 
 e5
 
-
-
-
-
-
 what
 
-
+coin
 
 coin
 
-
-
 coin
-
-
-
-coin
-
-
 
 helmet
 
-
-
 helmet
-
 
 material
 
-
-
 gold
 
-
+silver
 
 silver
 
-
-
 silver
-
-
-
-silver
-
-
 
 bronze
 
-
-
-
-
-
 origin
 
-
-
 Roman
 
-
-
 Roman
-
-
 
 Greek
 
-
-
 Roman
 
-
-
 Etruscan
-
-
-
-
-
-
-
-
-
 
 where found
 
-
-
 Pompeii
 
-
-
 Rome
-
-
 
 Chios
 
-
-
 Rome
-
-
 
 Pisa
 
-
-
-
-
-
 date
-
-
 
 50 BC
 
-
-
 30 AD
-
-
 
 600 BC
 
-
-
 200 AD
-
-
 
 400 BC
 
-
-
-
-
-
-
-
-
-
 \end{frame}
+
 \begin{frame}
-\frametitle{
-Generation of Deﬁnite NPs}
-
-
+\frametitle{Generation of Deﬁnite NPs}
 
 Example
 
-
-
 ID
-
-
 
 e1
 
-
-
 e2
-
-
 
 e3
 
-
-
 e4
-
-
 
 e5
 
-
-
-
-
-
 what
 
-
+coin
 
 coin
 
-
-
 coin
-
-
-
-coin
-
-
 
 helmet
 
-
-
 helmet
-
-
-
-
-
 
 material
 
-
-
 gold
 
-
+silver
 
 silver
 
-
-
 silver
-
-
-
-silver
-
-
 
 bronze
 
-
-
-
-
-
 origin
 
-
-
 Roman
 
-
-
 Roman
-
-
 
 Greek
 
-
-
 Roman
 
-
-
 Etruscan
-
-
-
-
-
 
 F ($<$ material, gold $>$, U) =
 
 5$-$1
 
-
 5$-$1
-
-
-
-
-
-
-
-
-
 
 where found
 
-
-
 Pompeii
 
-
-
 Rome
-
-
 
 Chios
 
-
-
 Rome
-
-
 
 Pisa
 
-
-
-
-
-
 date
-
-
 
 50 BC
 
-
-
 30 AD
-
-
 
 600 BC
 
-
-
 200 AD
 
-
-
 400 BC
-
-
-
-
 
 =1
 
-
-
-
-
-
-
-
-
-
 \end{frame}
+
 \begin{frame}
-\frametitle{
-Generation of Deﬁnite NPs}
-
-
+\frametitle{Generation of Deﬁnite NPs}
 
 Example
 
-
-
 ID
-
-
 
 e1
 
-
-
 e2
-
-
 
 e3
 
-
-
 e4
-
-
 
 e5
 
-
-
-
-
-
 what
 
-
+coin
 
 coin
 
-
-
 coin
-
-
-
-coin
-
-
 
 helmet
 
-
-
 helmet
-
-
-
-
-
 
 material
 
-
-
 gold
 
-
+silver
 
 silver
 
-
-
 silver
-
-
-
-silver
-
-
 
 bronze
 
-
-
-
-
-
 origin
 
-
-
 Roman
 
-
-
 Roman
-
-
 
 Greek
 
-
-
 Roman
-
-
 
 Etruscan
 
-
-
-
-
-
 F ($<$ material, gold $>$, U) =
-
-
 
 F ($<$ origin, Roman $>$, U) =
 
 5$-$1
 
-
 5$-$1
-
 
 5$-$2
 
-
 5$-$1
-
-
-
-
-
-
-
-
-
 
 where found
 
-
-
 Pompeii
 
-
-
 Rome
-
-
 
 Chios
 
-
-
 Rome
-
-
 
 Pisa
 
-
-
-
-
-
 date
-
-
 
 50 BC
 
-
-
 30 AD
-
-
 
 600 BC
 
-
-
 200 AD
-
-
 
 400 BC
 
-
-
-
-
 =1
-
 
 =
 
-
-
-
-
 3
-
 
 4
 
-
-
-
-
 = .75
 
-
-
-
-
-
-
-
-
-
 \end{frame}
+
 \begin{frame}
-\frametitle{
-Generation of Deﬁnite NPs}
-
-
+\frametitle{Generation of Deﬁnite NPs}
 
 Example
 
-
-
 ID
-
-
 
 e1
 
-
-
 e2
-
-
 
 e3
 
-
-
 e4
-
-
 
 e5
 
-
-
-
-
-
 what
 
-
+coin
 
 coin
 
-
-
 coin
-
-
-
-coin
-
-
 
 helmet
 
-
-
 helmet
-
-
-
-
-
 
 material
 
-
-
 gold
 
-
+silver
 
 silver
 
-
-
 silver
-
-
-
-silver
-
-
 
 bronze
 
-
-
-
-
-
 origin
 
-
-
 Roman
 
-
-
 Roman
-
-
 
 Greek
 
-
-
 Roman
-
-
 
 Etruscan
 
-
-
-
-
-
 F ($<$ material, gold $>$, U) =
-
-
 
 F ($<$ origin, Roman $>$, U) =
 
-
-
-
-
 5$-$1
 
-
 5$-$1
-
 
 5$-$2
 
-
 5$-$1
-
-
-
-
-
 
 where found
 
-
-
 Pompeii
 
-
-
 Rome
-
-
 
 Chios
 
-
-
 Rome
-
-
 
 Pisa
 
-
-
-
-
-
 date
-
-
 
 50 BC
 
-
-
 30 AD
-
-
 
 600 BC
 
-
-
 200 AD
-
-
 
 400 BC
 
-
-
-
-
 =1
-
 
 =
 
-
-
-
-
 3
-
 
 4
 
-
-
-
-
 = .75
-
-
-
-
-
 
 How to choose between equally scoring AVP sets?
 
-
-
-
-
-
-
-
-
-
 \end{frame}
+
 \begin{frame}
-\frametitle{
-Generation of Deﬁnite NPs}
-
-
+\frametitle{Generation of Deﬁnite NPs}
 
 Example
 
-
-
 ID
-
-
 
 e1
 
-
-
 e2
-
-
 
 e3
 
-
-
 e4
-
-
 
 e5
 
-
-
-
-
-
 what
 
-
+coin
 
 coin
 
-
-
 coin
-
-
-
-coin
-
-
 
 helmet
 
-
-
 helmet
-
-
-
-
-
 
 material
 
-
-
 gold
 
-
+silver
 
 silver
 
-
-
 silver
-
-
-
-silver
-
-
 
 bronze
 
-
-
-
-
-
 origin
 
-
-
 Roman
 
-
-
 Roman
-
-
 
 Greek
 
-
-
 Roman
-
-
 
 Etruscan
 
-
-
-
-
-
 F ($<$ material, gold $>$, U) =
-
-
 
 F ($<$ origin, Roman $>$, U) =
 
-
-
-
-
 5$-$1
 
-
 5$-$1
-
 
 5$-$2
 
-
 5$-$1
-
-
-
-
-
 
 where found
 
-
-
 Pompeii
 
-
-
 Rome
-
-
 
 Chios
 
-
-
 Rome
-
-
 
 Pisa
 
-
-
-
-
-
 date
-
-
 
 50 BC
 
-
-
 30 AD
-
-
 
 600 BC
 
-
-
 200 AD
-
-
 
 400 BC
 
-
-
-
-
 =1
-
 
 =
 
-
-
-
-
 3
-
 
 4
 
-
-
-
-
 = .75
 
-
-
-
-
-
 How to choose between equally scoring AVP sets?
-
-
 
 $\Rightarrow$ assume attributes are ordered a priory, e.g.:
 
-
-
 material $>$ origin $>$ where found etc.
-
-
 
 Caroline Sporleder
 
+\end{frame}
 
-
-
-
-
-
-
-
-
-
-
-
+\begin{frame}
+\frametitle{Open Issues}
 
 \end{frame}
+
 \begin{frame}
-\frametitle{
-Open Issues}
-
-
-
-
-
-
-
-
-
-
-\end{frame}
-\begin{frame}
-\frametitle{
-Open Issues}
-
-
-
-
-
+\frametitle{Open Issues}
 
 $\Rightarrow$ the small dog
 
-
-
-
-
-
-
-
-
-
 \end{frame}
+
 \begin{frame}
-\frametitle{
-Open Issues}
-
-
-
-
-
+\frametitle{Open Issues}
 
 $\Rightarrow$ the small dog
-
-
 
 $\Rightarrow$ the Chihuahua
 
-
-
-
-
-
-
-
-
-
 \end{frame}
+
 \begin{frame}
-\frametitle{
-Open Issues}
-
-
-
-
-
+\frametitle{Open Issues}
 
 $\Rightarrow$ the small dog
 
-
-
 $\Rightarrow$ the Chihuahua
-
-
 
 $\Rightarrow$ the 15 cm tall dog
 
-
-
-
-
-
-
-
-
-
 \end{frame}
+
 \begin{frame}
-\frametitle{
-Open Issues}
-
-
-
-
-
+\frametitle{Open Issues}
 
 Humans do not always choose the shortest RE . . .
 
-
-
-
-
-
 $\Rightarrow$ the white bird
 
-
-
-
-
-
-
-
-
-
 \end{frame}
+
 \begin{frame}
 \frametitle{Bibliography} 
 
@@ -5488,6 +2321,5 @@ In Proceedings of Coling, 1992.
 \end{itemize}
 
 \end{frame}
-
 
 \end{document}
