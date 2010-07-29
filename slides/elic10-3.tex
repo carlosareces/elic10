@@ -79,6 +79,296 @@ Universidad Nacional de C\'ordoba, C\'ordoba, Argentina}
 \end{frame}
 
 \begin{frame}
+\frametitle{Lo que Vemos Hoy}
+
+\begin{itemize}
+\item \mH{TAGs y Surface Realization}
+\item Generaci\'ion de Expresiones Referenciales
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Lo que Vemos Hoy}
+
+\begin{itemize}
+\item \mH{TAGs y Surface Realization}
+\begin{tabular}{|l}
+Inteface sint\'axis / sem\'antica\\
+Algoritmo de Realizaci\'on
+\end{tabular}
+\item Generaci\'on de Expresiones Referenciales
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Substituci\'on}
+
+\begin{center}
+\begin{tabular}{|c|c|} \hline
+From & We obtain \\ \hline
+
+\includegraphics[scale=.4]{pics/pic2-17.jpg} & 
+
+\includegraphics[scale=.4]{pics/pic2-18.jpg} \\ \hline
+
+\multicolumn{2}{|c|}{by substituci\'on}  \\ \hline
+\end{tabular}
+\end{center}\pause
+
+
+\mH{Ejemplo:}\begin{tabular}{l}
+\includegraphics[scale=.4]{pics/pic2-19.jpg} \ \ \ \ \ \
+\includegraphics[scale=.4]{pics/pic2-20.jpg} \ \ \ \ \ \ 
+\includegraphics[scale=.4]{pics/pic2-21.jpg} 
+\end{tabular}
+
+\begin{picture}(0,0)
+\put(120,40){+}
+\put(190,40){$\Rightarrow$}
+\end{picture}
+
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Adjunci\'on}
+
+
+\begin{center}
+\begin{tabular}{|c|c|} \hline
+From & We obtain \\ \hline
+
+\includegraphics[scale=.4]{pics/pic2-22.jpg} & 
+
+\includegraphics[scale=.35]{pics/pic2-23.jpg} \\ \hline
+
+\multicolumn{2}{|c|}{by adjunci\'on}  \\ \hline
+\end{tabular}
+\end{center}\pause
+
+\mH{Ejemplo:}\begin{tabular}{l}
+\includegraphics[scale=.45]{pics/pic2-24.jpg} \ \ \ \ \ \
+\includegraphics[scale=.45]{pics/pic2-25.jpg} \ \ \ \ \ \ 
+\includegraphics[scale=.45]{pics/pic2-26.jpg} 
+\end{tabular}
+
+\begin{picture}(0,0)
+\put(90,40){+}
+\put(155,40){$\Rightarrow$}
+\end{picture}
+
+
+\end{frame}
+
+
+\begin{frame}
+\frametitle{LTAG: TAG L\'exica} 
+
+\begin{center}
+\includegraphics[scale=.4]{pics/pic3-1.jpg} \pause
+\medskip
+
+\includegraphics[scale=.3]{pics/pic3-2.jpg} 
+\end{center}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{LTAG con Sem\'antica y Pragm\'atica}
+
+\begin{center}
+\includegraphics[scale=.4]{pics/pic3-3.jpg}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Interface Sintaxis / Sem\'antica}
+
+\begin{columns}
+\column{1.2\textwidth}
+\begin{itemize}
+\item En una regla con informaci\'on sem\'antica como
+\begin{tabular}{c}
+\includegraphics[scale=.4]{pics/pic3-4.jpg}
+\end{tabular}
+
+\mH{self} (y cualquier otro par\'ametro que aparezca) es una \mH{variable} que ser\'a
+instanciada con cierto objeto del discurso. \pause
+
+\item Luego de esa instanciaci\'on, con un objeto `o' digamos, la regla quedar\'a como 
+\begin{tabular}{c}
+\includegraphics[scale=.4]{pics/pic3-5.jpg} \pause
+\end{tabular}
+
+\begin{picture}(0,0)
+\only<3>{
+\put(80,5){\begin{tikzpicture}[>=latex,inner sep=0pt,thick]
+   \draw [->] (0,0) -- ++(0,.7) --++(-4,0);
+  \end{tikzpicture}}}
+\only<4>{
+\put(83,5){\begin{tikzpicture}[>=latex,inner sep=0pt,thick]
+   \draw [->] (0,0) -- ++(0,1.8) --++(-8.5,0);
+  \end{tikzpicture}}}
+\only<5>{
+\put(90,-27){\begin{tikzpicture}[>=latex,inner sep=0pt,thick]
+   \draw [->] (0,0) --(.3,0) -- ++(0,1.3) --++(-.5,0);
+  \end{tikzpicture}}}
+\end{picture}
+\vspace*{-.5cm}
+
+\item Podemos pensar que cuando la palabra `rabbit' es usada,\pause\ un referente $o$ al 
+objeto nombrado es introducido,\pause\ junto con la asserci\'on sem\'antica del predicado rabbit(o) 
+
+\end{itemize}
+\end{columns}
+\end{frame}
+
+\begin{frame}
+\frametitle{Surface Realization}
+
+\begin{itemize}
+\item Tenemos ahora todas las herramientas como para definir un algoritmo de \mH{surface realization}. 
+
+\item Recordemos que antes de llegar a esta etapa, habiamos llegado a una \mH{especificaci\'on a nivel de
+frases} de cada sentencia que quer\'iamos generar. 
+
+\item Si el objetivo es usar LTAG para surface realization, deber\'iamos contar, en el momento de generar 
+cada sentencia con
+\begin{itemize}
+\item la \mH{sem\'antica} que queremos generar 
+\item enriquecida quiz\'as con \mH{informaci\'on del dominio} (background knowledge)   
+\item informaci\'in sobre \mH{el contexto} generado y a generar (e.g., qu\'e elementos ya han sido introducidos)
+\end{itemize}
+
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Surface Realization: The White Rabbit}
+
+\begin{itemize}
+\item Suppongamos que queremos generar una frase correspondiente a la sem\'antica 
+\medskip
+
+\centerline{\{rabbit(r), white(r)\}} 
+\medskip
+
+sabiendo que r ya ha sido mencionada anteriormente 
+\medskip
+
+\centerline{ hearer-old(r)}
+
+\item Busquemos en nuestra gram\'atica, los \'arboles que podr\'ian \mH{contribuir a la generaci\'on} 
+
+\begin{picture}(0,80)
+\only<2>{
+\put(30,10){
+\includegraphics[scale=.4]{pics/pic3-8.jpg}}}
+\only<3>{
+\put(30,10){
+\includegraphics[scale=.4]{pics/pic3-9.jpg}}}
+\end{picture} 
+ 
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Surface Realization}
+
+\mH{Para comunicar}: \{ like(e,m,r), name(m,mary), rabbit(r), white(r) \}\\
+\mH{Contexto de discurso}: \{hearer-old(r)\}\\
+\mH{Conicimiento de dominio}: \{animate(r)\}
+
+\begin{picture}(0,150)
+\only<2>{
+\put(50,0){
+\includegraphics[scale=.4]{pics/pic3-6.jpg}
+}}
+\only<3>{
+\put(50,0){
+\includegraphics[scale=.4]{pics/pic3-7.jpg}
+}}
+\end{picture}
+\end{frame}
+
+\begin{frame}
+\frametitle{El Algoritmo de Realizaci\'on}
+
+\includegraphics[scale=.3]{pics/gen.jpg}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Surface Realization}
+
+\begin{itemize}
+\item El problema de realizacion para una TAG arbitraria es \mH{NP-complete}
+
+\item Podemos tratar de definir una gram\'atica con buenas propiedades para 
+disminuir la complejidad
+\begin{itemize}
+\item Si nos arboles auxiliares \mH{no tienen nodos de sustituci\'on}
+\item Podemos aplicar primero \mH{todas} las operaciones de sustitucion
+\item Y s\'olo despues hacer adjunci\'on para completar la sem\'antica target
+\end{itemize}
+
+\item Existen diferentes heur\'isticas para la eleccion de \mH{given}
+
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Temas de Investigaci\'on}
+
+\begin{itemize}
+\item Si la gram\'atica es grande pueden existir muchas formas de realizar una 
+misma sem\'antica.  El algoritmo que vimos no incluye ninguna heur\'istica para 
+elegir `la mejor' representaci\'on. 
+\begin{itemize}
+\item Podriamos generar todas las opciones y luego producir un ranking. 
+\item Ser\'ia m\'as eficiente si podemos generar s\'olo la m\'as alta en el ranking.
+\end{itemize}
+
+\item Si la gram\'atica es grande, producirla y mantenerla es extremadamente 
+costoso. 
+\begin{itemize}
+\item Podemos generar una meta-gram\'atica que genere la gram\'atica
+\end{itemize}
+
+\item Cu\'al es el mejor lenguaje para representar la sem\'antica? 
+
+\item Como afecta los `agregados a TAG' a si poder expresivo?
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Lo que Vemos Hoy}
+
+\begin{itemize}
+\item \mH{TAGs y Surface Realization}
+\item Generaci\'on de Expresiones Referenciales
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Lo que Vemos Hoy}
+
+\begin{itemize}
+\item TAGs y Surface Realization
+\item \mH{Generaci\'on de RE}
+\begin{tabular}{|l}
+Expresiones Referenciales\\
+Escala de Familiaridad\\
+Generaci\'on de Definite NPs\\
+ER Relacionales 
+\end{tabular}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
 \frametitle{Generando Expresiones Referenciales}
 
 \begin{quote}
@@ -140,24 +430,24 @@ aiming to beat the existing record of 235.3 miles.
 \frametitle{Terminolog\'ia}
 
 \begin{itemize}
-\item \mH{Referring Expression}
-A linguistic expression (typically an NP) that a speaker uses to
-identify a (discourse) entity to the hearer.
+\item \mH{Expresi\'on Referencial:}
+Una expresi\'on ling\"u\'istica (t\'ipicamente un NP) que el speaker
+usa para identificar una entidad (en el discurso)
 
-\item \mH{Referent}
-The entity to which the speaker refers by a referring expression.
+\item \mH{Referente:}
+La entidad a la que el speker refiere mediante la expresion referencial
 
-\item \mH{Reference}
-The process of identifying an entity by using a referring expression.
+\item \mH{Referencia:}
+El proceso de identificar la entidad usando la expresi\'on referencial
 
 \end{itemize}
 \end{frame}
 
 
 \begin{frame}
-\frametitle{Reference and Discourse}
+\frametitle{Referencia y Discurso}
 
-A given entity can be referred to in various ways:
+Una entidad dada puede ser referenciada de muchas maneras diferentes
 
 \begin{enumerate}
 \item 
@@ -175,2151 +465,551 @@ A person has given a talk today.
 \end{frame}
 
 \begin{frame}
-\frametitle{Reference and Discourse}
+\frametitle{Referencia y Discurso}
 
-Reference and linguistic form
+\mH{Referencia y forma ling\"u\'istica}
+\medskip
 
-The linguistic form of a referring expression reﬂects the current
-state of the discourse (and the speaker's beliefs about the hearer's
-discourse model)\pause
+La forma ling\"u\'istica de una expresion referencial \mH{refleja el
+estado actual del referente en el discurso} (m\'as exactamente, 
+las creencias del speaker sobre el modelo del discurso del hearer). 
+\medskip
+\pause
 
-Typically:
+Usualmente:
 
-new discourse referents are introduced by indeﬁnite NPs ({``}a
-cat'')
+\begin{itemize}
+\item referentes nuevos en el discurso se introducen mediante indefinite NPs: \mH{a cat}
 
-old discourse referents are referred to by deﬁnite NPs and
-pronouns ({``}the cat''/''it'')
-
+\item referentes ya existentes en el discurso son referidos mediante definite NPs y pronombres:
+\mH{the cat} / \mH{it}
+\end{itemize}
 \end{frame}
 
 \begin{frame}
-\frametitle{Prince (1981, 1992): Linguistic Form \& Familiarity Scale}
+\frametitle{Lo que Vemos Hoy}
 
-Assumed Familiarity:
-
-From the point of view of the speaker/writer:
-
-Which assumptions about the hearer/reader inﬂuence the choice of
-the referring expression?
-
-From the point of view of the hearer/reader:
-
-Which conclusion is he/she going to draw from the choice of the
-referring expression?
-
+\begin{itemize}
+\item TAGs y Surface Realization
+\item \mH{Generaci\'on de RE}
+\begin{tabular}{|l}
+Expresiones Referenciales\\
+\mH{Escala de Familiaridad}\\
+Generaci\'on de Definite NPs\\
+ER Relacionales 
+\end{tabular}
+\end{itemize}
 \end{frame}
 
-\begin{frame}
-\frametitle{Dimensions of Familiarity (Prince 1981, 1992)}
-
-status of the referent
-
-(assumed by the speaker)
-
-hearer-new
-
-hearer-old
-
-discourse-new
-
-discourse-old
-
-\end{frame}
 
 \begin{frame}
-\frametitle{Dimensions of Familiarity (Prince 1981, 1992)}
-
-status of the referent
-
-(assumed by the speaker)
-
-hearer-new
-
-hearer-old
-
-discourse-new
-
-discourse-old
-
-brand-new
-
-brand-new: introduction of a new discourse referent representing
-
-an unknown entity (a student)
-
-\end{frame}
-
-\begin{frame}
-\frametitle{Dimensions of Familiarity (Prince 1981, 1992)}
-
-status of the referent
-
-(assumed by the speaker)
-
-hearer-new
-
-hearer-old
-
-discourse-new
-
-discourse-old
-
-brand-new
-
----
-
-brand-new: introduction of a new discourse referent representing
-
-an unknown entity (a student)
-
-\end{frame}
-
-\begin{frame}
-\frametitle{Dimensions of Familiarity (Prince 1981, 1992)}
-
-status of the referent
-
-(assumed by the speaker)
-
-hearer-new
-
-hearer-old
-
-discourse-new
-
-discourse-old
-
-brand-new
-
-unused
-
----
-
-brand-new: introduction of a new discourse referent representing
-
-an unknown entity (a student)
-
-unused: introduction of a new discourse referent representing a
-
-known entity (Queen Elisabeth)
-
-\end{frame}
-
-\begin{frame}
-\frametitle{Dimensions of Familiarity (Prince 1981, 1992)}
-
-status of the referent
-
-(assumed by the speaker)
-
-hearer-new
-
-hearer-old
-
-discourse-new
-
-discourse-old
-
-brand-new
-
-unused
-
----
-
-evoked
-
-brand-new: introduction of a new discourse referent representing
-
-an unknown entity (a student)
-
-unused: introduction of a new discourse referent representing a
-
-known entity (Queen Elisabeth)
-
-evoked: an entity is related to one which
-
-has been referred to before (in the discourse)
-
-The 22-year old computer science undergraduate from Bath
-
-or is present in the situation
-
-(you)
-
-\end{frame}
-
-\begin{frame}
-\frametitle{Dimensions of Familiarity (Prince 1981, 1992)}
-
-status of the referent
-
-(assumed by the speaker)
-
-hearer-new
-
-hearer-old
-
-discourse-new
-
-discourse-old
-
-brand-new
-
-unused
-
----
-
-evoked
-
-brand-new: introduction of a new discourse referent representing
-
-an unknown entity (a student)
-
-unused: introduction of a new discourse referent representing a
-
-known entity (Queen Elisabeth)
-
-evoked: an entity is related to one which
-
-has been referred to before (in the discourse)
-
-The 22-year old computer science undergraduate from Bath
-
-or is present in the situation
-
-(you)
-
-inferrable: introduction of a new discourse referent whose relation
-
-to a known entity is inferrable (like hearer-old but neither
-
-discourse-new nor discourse-old)
-
-(Peter walked towards the house. The door was open.)
-
-Caroline Sporleder
-
-\end{frame}
-
-\begin{frame}
-\frametitle{Prince's Familiarity Hierarchy}
-
-Assumed Familiarity
-
-New
-
-Brand$-$new
-
-Inferrable
-
-Unused
-
-U
-
-(Noncontaining)
-
-Inferrable
-
-I
-
-Containing
-
-Inferrable
-
-C
-
-I
-
-Evoked
-
-(Textually) Situationally
-
-Evoked
-
-Evoked
-
-ES
-
-E
-
-Brand$-$new
-
-Brand$-$new
-
-(unanchored) Anchored
-
-BN A
-
-BN
-
-\end{frame}
-
-\begin{frame}
-\frametitle{Prince's Familiarity Hierarchy}
-
-Assumed Familiarity
-
-New
-
-Brand$-$new
-
-Inferrable
-
-Unused
-
-U
-
-(Noncontaining)
-
-Inferrable
-
-I
-
-Containing
-
-Inferrable
-
-C
-
-I
-
-Evoked
-
-(Textually) Situationally
-
-Evoked
-
-Evoked
-
-ES
-
-E
-
-Brand$-$new
-
-Brand$-$new
-
-(unanchored) Anchored
-
-BN
-
-BN A
-
-Yesterday I got on a bus.
-
-\end{frame}
-
-\begin{frame}
-\frametitle{Prince's Familiarity Hierarchy}
-
-Assumed Familiarity
-
-New
-
-Brand$-$new
-
-Inferrable
-
-Unused
-
-U
-
-(Noncontaining)
-
-Inferrable
-
-I
-
-Containing
-
-Inferrable
-
-C
-
-I
-
-Evoked
-
-(Textually) Situationally
-
-Evoked
-
-Evoked
-
-ES
-
-E
-
-Brand$-$new
-
-Brand$-$new
-
-(unanchored) Anchored
-
-BN A
-
-BN
-
-Somebody who works with Peter says he knows your sister.
-
-\end{frame}
-
-\begin{frame}
-\frametitle{Prince's Familiarity Hierarchy}
-
-Assumed Familiarity
-
-New
-
-Brand$-$new
-
-Inferrable
-
-Unused
-
-U
-
-(Noncontaining)
-
-Inferrable
-
-I
-
-Containing
-
-Inferrable
-
-C
-
-I
-
-Evoked
-
-(Textually) Situationally
-
-Evoked
-
-Evoked
-
-S
-
-E
-
-E
-
-Brand$-$new
-
-Brand$-$new
-
-(unanchored) Anchored
-
-BN
-
-BN A
-
-Noam Chomsky went to Penn.
-
-\end{frame}
-
-\begin{frame}
-\frametitle{Prince's Familiarity Hierarchy}
-
-Assumed Familiarity
-
-New
-
-Brand$-$new
-
-Inferrable
-
-Unused
-
-U
-
-(Noncontaining)
-
-Inferrable
-
-I
-
-Containing
-
-Inferrable
-
-C
-
-I
-
-Evoked
-
-(Textually) Situationally
-
-Evoked
-
-Evoked
-
-S
-
-E
-
-E
-
-Brand$-$new
-
-Brand$-$new
-
-(unanchored) Anchored
-
-BN A
-
-BN
-
-Somebody who works with Peter says he knows your sister.
-
-\end{frame}
-
-\begin{frame}
-\frametitle{Prince's Familiarity Hierarchy}
-
-Assumed Familiarity
-
-New
-
-Brand$-$new
-
-Inferrable
-
-Unused
-
-U
-
-(Noncontaining)
-
-Inferrable
-
-I
-
-Containing
-
-Inferrable
-
-C
-
-I
-
-Evoked
-
-(Textually) Situationally
-
-Evoked
-
-Evoked
-
-ES
-
-E
-
-Brand$-$new
-
-Brand$-$new
-
-(unanchored) Anchored
-
-BN A
-
-BN
-
-Excuse me do you have the time?
-
-\end{frame}
-
-\begin{frame}
-\frametitle{Prince's Familiarity Hierarchy}
-
-Assumed Familiarity
-
-New
-
-Brand$-$new
-
-Inferrable
-
-Unused
-
-U
-
-(Noncontaining)
-
-Inferrable
-
-I
-
-Containing
-
-Inferrable
-
-C
-
-I
-
-Evoked
-
-(Textually) Situationally
-
-Evoked
-
-Evoked
-
-S
-
-E
-
-E
-
-Brand$-$new
-
-Brand$-$new
-
-(unanchored) Anchored
-
-BN A
-
-BN
-
-Yesterday I got on a bus. The driver was drunk.
-
-\end{frame}
-
-\begin{frame}
-\frametitle{Prince's Familiarity Hierarchy}
-
-Assumed Familiarity
-
-New
-
-Brand$-$new
-
-Inferrable
-
-Unused
-
-U
-
-(Noncontaining)
-
-Inferrable
-
-I
-
-Containing
-
-Inferrable
-
-C
-
-I
-
-Evoked
-
-(Textually) Situationally
-
-Evoked
-
-Evoked
-
-ES
-
-E
-
-Brand$-$new
-
-Brand$-$new
-
-(unanchored) Anchored
-
-BN
-
-BN A
-
-The pages of the book which I just bought, were falling out.
-
-\end{frame}
-
-\begin{frame}
-\frametitle{Prince's Familiarity Hierarchy}
-
-Assumed Familiarity
-
-New
-
-Brand$-$new
-
-Inferrable
-
-Unused
-
-U
-
-(Noncontaining)
-
-Inferrable
-
-I
-
-Containing
-
-Inferrable
-
-C
-
-I
-
-Evoked
-
-(Textually) Situationally
-
-Evoked
-
-Evoked
-
-ES
-
-E
-
-Brand$-$new
-
-Brand$-$new
-
-(unanchored) Anchored
-
-BN A
-
-BN
-
-E
-
-ES
-
-$>$ U $>$ I $>$ I C $>$ BN A $>$ BN
-
-\end{frame}
-
-\begin{frame}
-\frametitle{Prince's Familiarityscale}
-
-E
-
-ES
-
-$>$ U $>$ I $>$ I C $>$ BN A $>$ BN
-
-1
-
-Noam Chomsky has given a talk today. (U)
-
-2
-
-One of the people working at MIT has given a talk today.
-
-(I C )
-
-3
-
-A person who is working at MIT has given a talk today.
-
-(BN A )
-
-4
-
-A person has given a talk today. (BN)
-
-\end{frame}
-
-\begin{frame}
-\frametitle{Generating Referring Expressions: Rule-based}
-
-Approaches
-
-\end{frame}
-
-\begin{frame}
-\frametitle{Pick your Referring Expression}
-
-\end{frame}
-
-\begin{frame}
-\frametitle{Generating Referring Expressions}
-
-Important for . . .
-
-generation (concept-to-text, text-to-text)
-
-Need to distinguish
-
-identiﬁcation of target entity to hearer (discriminate between
-
-target entity and other entities in discourse)
-
-other communicative goals
-
-I met an old friend yesterday. vs. The scoundrel is the one
-
-who betrayed us.
-
-\end{frame}
-
-\begin{frame}
-\frametitle{Concept-to-text Generation}
-
-ID
-
-e1
-
-e2
-
-e3
-
-e4
-
-what
-
-coin
-
-coin
-
-helmet
-
-helmet
-
-material
-
-gold
-
-silver
-
-silver
-
-bronze
-
-origin
-
-Roman
-
-Greek
-
-Roman
-
-Etruscan
-
-where found
-
-Pompeii
-
-Chios
-
-Rome
-
-Pisa
-
-date
-
-50 BC
-
-600 BC
-
-200 AD
-
-400 BC
-
-\end{frame}
-
-\begin{frame}
-\frametitle{Concept-to-text Generation}
-
-ID
-
-e1
-
-e2
-
-e3
-
-e4
-
-what
-
-coin
-
-coin
-
-helmet
-
-helmet
-
-material
-
-gold
-
-silver
-
-silver
-
-bronze
-
-origin
-
-Roman
-
-Greek
-
-Roman
-
-Etruscan
-
-where found
-
-Pompeii
-
-Chios
-
-Rome
-
-Pisa
-
-date
-
-50 BC
-
-600 BC
-
-200 AD
-
-400 BC
-
-The silver coin is Greek. It was found on Chios and {\O} dates from
-
-around 600 BC. The other coin is Roman. It is gold and {\O} dates
-
-from around 50 BC. It was found in Pompeii. . .
-
-\end{frame}
-
-\begin{frame}
-\frametitle{Concept-to-text Generation}
-
-ID
-
-e1
-
-e2
-
-e3
-
-e4
-
-what
-
-coin
-
-coin
-
-helmet
-
-helmet
-
-material
-
-gold
-
-silver
-
-silver
-
-bronze
-
-origin
-
-Roman
-
-Greek
-
-Roman
-
-Etruscan
-
-where found
-
-Pompeii
-
-Chios
-
-Rome
-
-Pisa
-
-date
-
-50 BC
-
-600 BC
-
-200 AD
-
-400 BC
-
-The silver coin is Greek. It was found on Chios and {\O} dates from
-
-around 600 BC. The other coin is Roman. It is gold and {\O} dates
-
-from around 50 BC. It was found in Pompeii. . .
-
-Here are two coins: the silver one is Greek . . .
-
-Caroline Sporleder
-
-\end{frame}
-
-\begin{frame}
-\frametitle{Rule-base Generation of Referring Expressions (REs)}
-
-(cf. Dale (1989), Reiter \& Dale (1992), Dale \& Reiter (1995))
-
-EPICURE system
-
-generate cookery recipes
-
-deep generation
-
-three levels of semantic representation:
-
-ﬂexible knowledge base (KB) representing physical objects in a
-
-speciﬁc state
-
-deep semantic structure (DS) of a RE (recoverable by hearer)
-
-surface semantic structure (SS) of an RE (to be realised by the
-
-generation grammar)
-
-to construct an RE:
-
-1
-
-2
-
-construct deep semantic structure for a KB entity
-
-i.e. what do you want to say about the entity?
-
-from the DS construct a surface semantic structure
-
-i.e. how dow you want to say it (pronominalisation etc.)
-
-\end{frame}
-
-\begin{frame}
-\frametitle{Rule-base Generation of Referring Expressions (REs)}
-
-(cf. Dale (1989), Reiter \& Dale (1992), Dale \& Reiter (1995))
-
-EPICURE system
-
-generate cookery recipes
-
-deep generation
-
-three levels of semantic representation:
-
-ﬂexible knowledge base (KB) representing physical objects in a
-
-speciﬁc state
-
-$\Rightarrow$ in this domain, discourse entities change!
-
-deep semantic structure (DS) of a RE (recoverable by hearer)
-
-surface semantic structure (SS) of an RE (to be realised by the
-
-generation grammar)
-
-to construct an RE:
-
-1
-
-2
-
-construct deep semantic structure for a KB entity
-
-i.e. what do you want to say about the entity?
-
-from the DS construct a surface semantic structure
-
-i.e. how dow you want to say it (pronominalisation etc.)
-
-\end{frame}
-
-\begin{frame}
-\frametitle{Rule-base Generation of Referring Expressions (REs)}
-
-\end{frame}
-
-\begin{frame}
-\frametitle{Rule-base Generation of Referring Expressions (REs)}
-
-\end{frame}
-
-\begin{frame}
-\frametitle{Rule-base Generation of Referring Expressions (REs)}
-
-\end{frame}
-
-\begin{frame}
-\frametitle{Rule-base Generation of Referring Expressions (REs)}
-
-\end{frame}
-
-\begin{frame}
-\frametitle{Generation of Pronouns and Elided NPs}
-
-Pronominalisation:
-
-basically Centering-based approach (Cb s can be pronominalised)
-
-Elided (empty) NPs
-
-Cb s can be elided if they ﬁll an optional grammatical role (e.g.
-
-indirect object)
-
-Fry the onionsi .
-
-Add the garlic {\O}i .
-
-\end{frame}
-
-\begin{frame}
-\frametitle{Generation of Deﬁnite NPs}
-
-take into account Gricean Maxims:
-
-\end{frame}
-
-\begin{frame}
-\frametitle{Generation of Deﬁnite NPs}
-
-take into account Gricean Maxims:
-
-Quality
-
-Say the truth.
-
-Quantity
-
-Be as informative as possible.
-
-Relevance
-
-Be relevant.
-
-Manner
-
-Be brief. Avoid ambiguity. Be orderly.
-
-\end{frame}
-
-\begin{frame}
-\frametitle{Generation of Deﬁnite NPs}
-
-take into account Gricean Maxims:
-
-Quality
-
-Say the truth.
-
-Quantity
-
-Be as informative as possible.
-
-Relevance
-
-Be relevant.
-
-Manner
-
-Be brief. Avoid ambiguity. Be orderly.
-
-\end{frame}
-
-\begin{frame}
-\frametitle{Generation of Deﬁnite NPs}
-
-take into account Gricean Maxims:
-
-Quality
-
-Say the truth.
-
-Quantity
-
-Be as informative as possible.
-
-Relevance
-
-Be relevant.
-
-Manner
-
-Be brief. Avoid ambiguity. Be orderly.
-
-$\Rightarrow$ Choose the shortest RE that discriminates the target entity
-
-from all other entities in the discourse model (the distractors).
-
-\end{frame}
-
-\begin{frame}
-\frametitle{Generation of Deﬁnite NPs}
-
-Strategy
-
-entities in the KB are described by attribute-value pairs (AVPs)
-
-$\Rightarrow$ realise the smallest set of values that singles out the entity
-
-\end{frame}
-
-\begin{frame}
-\frametitle{Generation of Deﬁnite NPs}
-
-Strategy
-
-entities in the KB are described by attribute-value pairs (AVPs)
-
-$\Rightarrow$ realise the smallest set of values that singles out the entity
-
-ID
-
-e1
-
-e2
-
-e3
-
-e4
-
-e5
-
-what
-
-coin
-
-coin
-
-coin
-
-helmet
-
-helmet
-
-material
-
-gold
-
-silver
-
-silver
-
-silver
-
-bronze
-
-origin
-
-Roman
-
-Roman
-
-Greek
-
-Roman
-
-Etruscan
-
-where found
-
-Pompeii
-
-Rome
-
-Chios
-
-Rome
-
-Pisa
-
-date
-
-50 BC
-
-30 AD
-
-600 BC
-
-200 AD
-
-400 BC
-
-\end{frame}
-
-\begin{frame}
-\frametitle{Generation of Deﬁnite NPs}
-
-Strategy
-
-entities in the KB are described by attribute-value pairs (AVPs)
-
-$\Rightarrow$ realise the smallest set of values that singles out the entity
-
-ID
-
-e1
-
-e2
-
-e3
-
-e4
-
-e5
-
-what
-
-coin
-
-coin
-
-coin
-
-helmet
-
-helmet
-
-material
-
-gold
-
-silver
-
-silver
-
-silver
-
-bronze
-
-origin
-
-Roman
-
-Roman
-
-Greek
-
-Roman
-
-Etruscan
-
-where found
-
-Pompeii
-
-Rome
-
-Chios
-
-Rome
-
-Pisa
-
-date
-
-50 BC
-
-30 AD
-
-600 BC
-
-200 AD
-
-400 BC
-
-\end{frame}
-
-\begin{frame}
-\frametitle{Generation of Deﬁnite NPs}
-
-Strategy
-
-entities in the KB are described by attribute-value pairs (AVPs)
-
-$\Rightarrow$ realise the smallest set of values that singles out the entity
-
-ID
-
-e1
-
-e2
-
-e3
-
-e4
-
-e5
-
-what
-
-coin
-
-coin
-
-coin
-
-helmet
-
-helmet
-
-material
-
-gold
-
-silver
-
-silver
-
-silver
-
-bronze
-
-origin
-
-Roman
-
-Roman
-
-Greek
-
-Roman
-
-Etruscan
-
-where found
-
-Pompeii
-
-Rome
-
-Chios
-
-Rome
-
-Pisa
-
-date
-
-50 BC
-
-30 AD
-
-600 BC
-
-200 AD
-
-400 BC
-
-Good:
-
-the gold coin (the golden one, the object made of gold)
-
-the coin found in Pompeii
-
-the coin dating from 50 BC
-
-\end{frame}
-
-\begin{frame}
-\frametitle{Generation of Deﬁnite NPs}
-
-Strategy
-
-entities in the KB are described by attribute-value pairs (AVPs)
-
-$\Rightarrow$ realise the smallest set of values that singles out the entity
-
-ID
-
-e1
-
-e2
-
-e3
-
-e4
-
-e5
-
-what
-
-coin
-
-coin
-
-coin
-
-helmet
-
-helmet
-
-material
-
-gold
-
-silver
-
-silver
-
-silver
-
-bronze
-
-origin
-
-Roman
-
-Roman
-
-Greek
-
-Roman
-
-Etruscan
-
-where found
-
-Pompeii
-
-Rome
-
-Chios
-
-Rome
-
-Pisa
-
-date
-
-50 BC
-
-30 AD
-
-600 BC
-
-200 AD
-
-400 BC
-
-Good:
-
-the gold coin (the golden one, the object made of gold)
-
-the coin found in Pompeii
-
-the coin dating from 50 BC
-
-Not so good:
-
-the gold coin found in Pompeii (too informative)
-
-the Roman coin (not unique)
-
-Caroline Sporleder
-
-\end{frame}
-
-\begin{frame}
-\frametitle{Generation of Deﬁnite NPs}
-
-Search strategy:
-
-compute the discriminatory power of each AVP and choose the one
-
-with the highest until the entity is singled out
-
-Distractors:
-
-U = x1 , x2 , ..., xn
-
-Discriminatory power of an AVP given U:
-
-F ($<$ a, v $>$, U) = n$-$k
-
-1$\leq$k $\leq$n
-
-n$-$1
-
-where k is that number of distractors for which $<$ a, v $>$ is also
-
-true.
-
-\end{frame}
-
-\begin{frame}
-\frametitle{Generation of Deﬁnite NPs}
-
-Example
-
-ID
-
-e1
-
-e2
-
-e3
-
-e4
-
-e5
-
-what
-
-coin
-
-coin
-
-coin
-
-helmet
-
-helmet
-
-material
-
-gold
-
-silver
-
-silver
-
-silver
-
-bronze
-
-origin
-
-Roman
-
-Roman
-
-Greek
-
-Roman
-
-Etruscan
-
-where found
-
-Pompeii
-
-Rome
-
-Chios
-
-Rome
-
-Pisa
-
-date
-
-50 BC
-
-30 AD
-
-600 BC
-
-200 AD
-
-400 BC
-
-\end{frame}
-
-\begin{frame}
-\frametitle{Generation of Deﬁnite NPs}
-
-Example
-
-ID
-
-e1
-
-e2
-
-e3
-
-e4
-
-e5
-
-what
-
-coin
-
-coin
-
-coin
-
-helmet
-
-helmet
-
-material
-
-gold
-
-silver
-
-silver
-
-silver
-
-bronze
-
-origin
-
-Roman
-
-Roman
-
-Greek
-
-Roman
-
-Etruscan
-
-F ($<$ material, gold $>$, U) =
-
-5$-$1
-
-5$-$1
-
-where found
-
-Pompeii
-
-Rome
-
-Chios
-
-Rome
-
-Pisa
-
-date
-
-50 BC
-
-30 AD
-
-600 BC
-
-200 AD
-
-400 BC
-
-=1
-
-\end{frame}
-
-\begin{frame}
-\frametitle{Generation of Deﬁnite NPs}
-
-Example
-
-ID
-
-e1
-
-e2
-
-e3
-
-e4
-
-e5
-
-what
-
-coin
-
-coin
-
-coin
-
-helmet
-
-helmet
-
-material
-
-gold
-
-silver
-
-silver
-
-silver
-
-bronze
-
-origin
-
-Roman
-
-Roman
-
-Greek
-
-Roman
-
-Etruscan
-
-F ($<$ material, gold $>$, U) =
-
-F ($<$ origin, Roman $>$, U) =
-
-5$-$1
-
-5$-$1
-
-5$-$2
-
-5$-$1
-
-where found
-
-Pompeii
-
-Rome
-
-Chios
-
-Rome
-
-Pisa
-
-date
-
-50 BC
-
-30 AD
-
-600 BC
-
-200 AD
-
-400 BC
-
-=1
-
-=
-
-3
-
-4
-
-= .75
-
-\end{frame}
-
-\begin{frame}
-\frametitle{Generation of Deﬁnite NPs}
-
-Example
-
-ID
-
-e1
-
-e2
-
-e3
-
-e4
-
-e5
-
-what
-
-coin
-
-coin
-
-coin
-
-helmet
-
-helmet
-
-material
-
-gold
-
-silver
-
-silver
-
-silver
-
-bronze
-
-origin
-
-Roman
-
-Roman
-
-Greek
-
-Roman
-
-Etruscan
-
-F ($<$ material, gold $>$, U) =
-
-F ($<$ origin, Roman $>$, U) =
-
-5$-$1
-
-5$-$1
-
-5$-$2
-
-5$-$1
-
-where found
-
-Pompeii
-
-Rome
-
-Chios
-
-Rome
-
-Pisa
-
-date
-
-50 BC
-
-30 AD
-
-600 BC
-
-200 AD
-
-400 BC
-
-=1
-
-=
-
-3
-
-4
-
-= .75
-
-How to choose between equally scoring AVP sets?
-
-\end{frame}
-
-\begin{frame}
-\frametitle{Generation of Deﬁnite NPs}
-
-Example
-
-ID
-
-e1
-
-e2
-
-e3
-
-e4
-
-e5
-
-what
-
-coin
-
-coin
-
-coin
-
-helmet
-
-helmet
-
-material
-
-gold
-
-silver
-
-silver
-
-silver
-
-bronze
-
-origin
-
-Roman
-
-Roman
-
-Greek
-
-Roman
-
-Etruscan
-
-F ($<$ material, gold $>$, U) =
-
-F ($<$ origin, Roman $>$, U) =
-
-5$-$1
-
-5$-$1
-
-5$-$2
-
-5$-$1
-
-where found
-
-Pompeii
-
-Rome
-
-Chios
-
-Rome
-
-Pisa
-
-date
-
-50 BC
-
-30 AD
-
-600 BC
-
-200 AD
-
-400 BC
-
-=1
-
-=
-
-3
-
-4
-
-= .75
-
-How to choose between equally scoring AVP sets?
-
-$\Rightarrow$ assume attributes are ordered a priory, e.g.:
-
-material $>$ origin $>$ where found etc.
-
-Caroline Sporleder
-
-\end{frame}
-
-\begin{frame}
-\frametitle{Open Issues}
-
-\end{frame}
-
-\begin{frame}
-\frametitle{Open Issues}
-
-$\Rightarrow$ the small dog
-
-\end{frame}
-
-\begin{frame}
-\frametitle{Open Issues}
-
-$\Rightarrow$ the small dog
-
-$\Rightarrow$ the Chihuahua
-
-\end{frame}
-
-\begin{frame}
-\frametitle{Open Issues}
-
-$\Rightarrow$ the small dog
-
-$\Rightarrow$ the Chihuahua
-
-$\Rightarrow$ the 15 cm tall dog
-
-\end{frame}
-
-\begin{frame}
-\frametitle{Open Issues}
-
-Humans do not always choose the shortest RE . . .
-
-$\Rightarrow$ the white bird
-
-\end{frame}
-
-\begin{frame}
-\frametitle{Bibliography} 
-
-\begin{itemize}\small
-
-\item Robert Dale.
-Cooking up referring expressions.
-In Proceedings of ACL, 1989.
-
-\item Robert Dale and Ehud Reiter.
-Computational interpretations of the gricean maxims in the generation of referring expressions.
-Cognitive Science, 19(2):233--263, 1995.
-
-\item Ellen Prince.
-Toward a taxonomy of given-new information.
-In P. Cole, editor, Radical Pragmatics, pages 223--56. Academic Press, New York, 1981.
-
-\item Ellen Prince.
-The ZPG letter: subjects, deﬁniteness, and information-status.
-In S. Thompson and W. Mann, editors, Discourse descriptions: diverse analyses of a fund raising text, pages
-295--325. John Benjamins, Philadelphia/Amsterdam, 1992.
-
-\item Ehud Reiter and Robert Dale.
-A fast algorithm for the generation of referring expressions.
-In Proceedings of Coling, 1992.
+\frametitle{Prince (1981, 1992): Forma Ling\"u\'istica  \& Escala de Familiaridad}
+
+\mH{Escalas de Familiaridad:}
+\medskip
+
+\begin{itemize}
+\item \mH{Desde el punto de vista del speaker/writer:}
+Qu\'e hip\'otesis sobre el hearer/reader influencian la elecci\'on de una expresi\'on 
+referencial?
+
+\item \mH{Desde el punto de vista del hearer/reader:}
+Qu\'e conclusion sacar\'a de la elecci\'on hecha de una determinada expresi\'on 
+referencial?
 \end{itemize}
 
 \end{frame}
+
+\begin{frame}
+\frametitle{Dimensiones de Familiaridad (Prince 1981, 1992)} \small
+
+\begin{columns}
+\column{1.1\textwidth}
+\begin{center}
+\begin{tabular}{|p{4cm}|l|l|} \hline
+status of the referent\newline
+(assumed by the speaker)
+
+& discourse-new
+
+& discourse-old\\ \hline
+
+hearer-new & \only<2>{\mH{brand-new}}\only<3->{brand-new} & \only<3>{\mH{---}}\only<4->{---} \\ \hline
+
+hearer-old & \only<4>{\mH{unusued}}\only<5->{unusued} & \only<5>{\mH{evoked}}\only<6->{evoked} \\ \hline 
+\end{tabular}
+\end{center}
+\pause
+
+\vspace*{-.5cm}
+\begin{itemize}
+\item \mH{brand-new}: introducci\'on de un nuevo referente en el discurso 
+representando una entidad desconocida: \mH{a student}\pause\pause
+\vspace*{-.2cm}
+
+\item \mH{unused}: introducci\'on de un nuevo referente en el discurso 
+representando una entidad conocida: \mH{Queen Elisabeth}\pause
+\vspace*{-.2cm}
+
+\item \mH{evoked}: una entidad relacionada con otra que
+\vspace*{-.3cm}
+
+\begin{itemize}
+\item has sido referida antes (en el discurso)\\
+\mH{The 22-year old computer science undergraduate from Bath}
+
+\item est\'a presente: \mH{you} \pause
+\end{itemize}
+\vspace*{-.4cm}
+
+\item \mH{inferrable}: introducci\'on de un nuevo referente en el discurso
+cuya relaci\'on a una entidad conocida es irreferible (es hearer-old pero 
+no es ni discourse-new ni discourse-old)\\
+
+Peter walked towards the house. \mH{The door} was open.
+\end{itemize}
+
+\end{columns}
+\end{frame}
+
+\begin{frame}
+\frametitle{Escala de Familiaridad de Prince}
+
+\begin{picture}(0,0)
+\only<1>{\put(-20,-130){
+\includegraphics[scale=.4]{pics/pic3-10.jpg}}}
+\only<2>{\put(-20,-130){
+\includegraphics[scale=.4]{pics/pic3-11.jpg}}}
+\only<3>{\put(-20,-130){
+\includegraphics[scale=.4]{pics/pic3-12.jpg}}}
+\only<4>{\put(-20,-130){
+\includegraphics[scale=.4]{pics/pic3-13.jpg}}}
+\only<5>{\put(-20,-130){
+\includegraphics[scale=.4]{pics/pic3-14.jpg}}}
+\only<6>{\put(-20,-130){
+\includegraphics[scale=.4]{pics/pic3-15.jpg}}}
+\only<7>{\put(-20,-130){
+\includegraphics[scale=.4]{pics/pic3-16.jpg}}}
+\only<8>{\put(-20,-130){
+\includegraphics[scale=.4]{pics/pic3-17.jpg}}}
+\only<8>{\put(-20,-130){
+\includegraphics[scale=.4]{pics/pic3-18.jpg}}}
+\end{picture}
+\end{frame}
+
+\begin{frame}
+\frametitle{Escala de Familiaridad de Prince}
+
+\begin{center}
+\includegraphics[scale=.4]{pics/pic3-19.jpg}
+\end{center}
+
+\begin{enumerate}
+\item Noam Chomsky has given a talk today. ($U$)
+
+\item One of the people working at MIT has given a talk today. ($I^C$)
+
+\item A person who is working at MIT has given a talk today.
+($BN^A$)
+
+\item A person has given a talk today. ($BN$)
+\end{enumerate}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Lo que Vemos Hoy}
+
+\begin{itemize}
+\item TAGs y Surface Realization
+\item \mH{Generaci\'on de RE}
+\begin{tabular}{|l}
+Expresiones Referenciales\\
+Escala de Familiaridad\\
+\mH{Generaci\'on de Definite NPs}\\
+ER Relacionales 
+\end{tabular}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Generando Expresiones Referenciales: Ejemplo}
+
+\begin{center}
+\includegraphics[scale=.45]{pics/pic3-20.jpg}
+\end{center}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Caso Concreto}
+
+\vspace*{-.5cm}
+\begin{center}
+\includegraphics[scale=.45]{pics/pic3-21.jpg}
+\end{center}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Generaci\'on de definite NPs}
+
+Tomemos en cuenta las M\'aximas de Grice:
+
+\begin{itemize}
+
+\item \mT{Quality}\\
+Say the truth.
+
+\item \mT{Quantity}\\
+\only<1>{Be as informative as possible.}
+\only<2->{\mH{Be as informative as possible.}}
+
+\item \mT{Relevance}\\
+Be relevant.
+
+\item \mT{Manner}\\
+\only<1>{Be brief.}\only<2->{\mH{Be brief.}} Avoid ambiguity. Be orderly.\pause\pause
+
+\end{itemize}
+
+$\Rightarrow$ Elegir la RE \mH{m\'as corta} que \mH{discrimita} a
+la entidad target de todas las demas entidades del modelo de discurso 
+(los distractores). 
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Generaci\'on de Definite NPs}
+
+\mH{Estrategia:}
+Las entidades del discurso estan descriptas en terminos de distintos valores
+de sus atributos (atribute-value pairs, AVPs)
+
+$\Rightarrow$ realizar el conjunto mas peque\~no de valores que identifica
+un\'ivocamente a la entidad \pause
+
+\begin{picture}(0,80)
+\only<2>{\put(30,0){
+\includegraphics[scale=.5]{pics/pic3-22.jpg}}}
+\only<3->{\put(30,0){
+\includegraphics[scale=.5]{pics/pic3-23.jpg}}}
+\end{picture}\pause \pause
+
+\mH{Good}: \ 
+\begin{tabular}{|l}
+the gold coin (the golden one, the object made of gold)\\
+the coin found in Pompeii\\
+the coin dating from 50 BC\\
+\end{tabular}\pause
+
+\mH{No Good}: \
+\begin{tabular}{|l}
+the gold coin found in Pompeii (demasiado inform.)\\
+the Roman coin (no un\'ivoca)
+\end{tabular}
+\end{frame}
+
+\begin{frame}
+\frametitle{Generaci\'on de Definite NPs}
+
+\mH{Estrategia de B\'usqueda:} computar el poder discriminatorio de 
+cada AVP y elegir el m\'as alto hasta que la entidad target es 
+un\'ivoca.
+\medskip
+
+\mH{Distractores}: $U = \{x_1, x_2, \ldots, x_n\}$
+\medskip
+
+\mH{Poder discriminatorio de un AVP del objeto target dado U}:
+$$
+F(\langle a,v \rangle, U) = \frac{n-k}{n}
+$$
+
+donde $k$ es el n\'umero de distractores para el que $\tup{a,v}$ es cierto.
+\end{frame}
+
+\begin{frame}
+\frametitle{Generaci\'on de Definite NPs: Ejemplo}
+
+\begin{center}
+\includegraphics[scale=.5]{pics/pic3-24.jpg}
+\end{center}
+
+\vspace*{-.5cm}
+$$
+F(\langle material,gold \rangle,U) = \frac{4-0}{4} = 1 \pause
+$$
+\vspace*{-.1cm}
+$$
+F(\langle origin,Roman \rangle,U) = \frac{4-2}{4} = 0.5 \pause
+$$
+
+Como elegimos entre AVPs con el mismo \'indice? Usualmente asumimos 
+que los atributos estan ordenados a priori
+$$
+material > origen > where found > \ldots
+$$
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Lo que Vemos Hoy}
+
+\begin{itemize}
+\item TAGs y Surface Realization
+\item \mH{Generaci\'on de RE}
+\begin{tabular}{|l}
+Expresiones Referenciales\\
+Escala de Familiaridad\\
+\mH{Generaci\'on de Definite NPs}\\
+ER Relacionales 
+\end{tabular}
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Expresiones Referenciales Relacionales}
+
+\begin{itemize}
+\item Sabemos entonces como referirnos a elementos del dominio del discurso \pause
+
+\item Practiquemos:
+\begin{picture}(0,0)
+\only<2>{\put(102,-88){
+\includegraphics[scale=.4]{pics/pica-1.jpg}}}
+\end{picture}\pause
+
+\item Ahora probemos con este dominio:
+
+\begin{picture}(0,0)
+\only<3>{\put(102,-88){
+\includegraphics[scale=.4]{pics/pica-2.jpg}}}
+\end{picture}
+
+\end{itemize}
+
+\vspace*{3cm}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Infinite Recursion}
+
+\begin{itemize}
+
+\item Los algoritmos originalmente propuestos para computar expresiones referenciales 
+intentaban \mH{reusar} el algoritmo que vimos:
+
+\begin{itemize}
+\item Mantenemos un \mH{stack} the objetos a describir
+\item Describimos el objeto en el \mH{tope} del stack
+\item Cuando utilizamos una una relaci\'on en la descripci\'on ponemos el nuevo indiv\'iduo 
+en el stack. 
+\item Cuando completamos la descripcion de un objeto lo sacamos del stack\pause
+
+\end{itemize}
+
+\item Este algoritmo corre el riesgo de caer en una regresi\'on infinita
+\begin{quote}
+the rabbit in the hat with the rabbit in the hat with the rabbit \ldots
+\end{quote}
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Modelos y F\'ormulas}
+
+\begin{center}
+\includegraphics[scale=.25]{pics/modelo1.jpg}
+\end{center}\pause
+
+\begin{center}
+\includegraphics[scale=.25]{pics/modelo2.jpg}
+\end{center}
+
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Expresiones Referenciales Relacionales}
+\begin{picture}(0,0)
+\put(160,-70){
+\includegraphics[scale=.4]{pics/pic4-1.jpg}}
+\end{picture}
+
+
+\begin{columns}
+\column{6.5cm}
+\begin{itemize}
+\item \mH{Conenzamos con un conjunto conteniendo todos los elementos}
+\end{itemize}
+\column{5cm}
+\end{columns}
+
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Expresiones Referenciales Relacionales}
+\begin{picture}(0,0)
+\put(172,-100){
+\includegraphics[scale=.4]{pics/pic4-2.jpg}}
+\end{picture}
+
+\begin{columns}
+\column{6.5cm}
+\begin{itemize}
+\item Conenzamos con un conjunto conteniendo todos los elementos
+\item \mH{Cada propiedad identifica un conjunto de elementos}
+\end{itemize}
+\column{5cm}
+\end{columns}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Expresiones Referenciales Relacionales}
+\begin{picture}(0,0)
+\put(175,-115){
+\includegraphics[scale=.27]{pics/picx3.jpg}}
+\end{picture}
+
+
+\begin{columns}
+\column{6.5cm}
+\begin{itemize}
+\item Conenzamos con un conjunto conteniendo todos los elementos
+\item Cada propiedad identifica un conjunto de elementos
+\end{itemize}
+\column{5cm}
+\end{columns}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Expresiones Referenciales Relacionales}
+\begin{picture}(0,0)
+\put(175,-145){
+\includegraphics[scale=.27]{pics/picx4.jpg}}
+\end{picture}
+
+
+\begin{columns}
+\column{6.5cm}
+\begin{itemize}
+\item Conenzamos con un conjunto conteniendo todos los elementos
+\item Cada propiedad identifica un conjunto de elementos
+\item \mH{Cuando un conjunto de particiones cubre totalmente otra, podemos eliminarla}
+\end{itemize}
+\column{5cm}
+\end{columns}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Expresiones Referenciales Relacionales}
+\begin{picture}(0,0)
+\put(175,-160){
+\includegraphics[scale=.27]{pics/picx5.jpg}}
+\end{picture}
+
+
+\begin{columns}
+\column{6.5cm}
+\begin{itemize}
+\item Conenzamos con un conjunto conteniendo todos los elementos
+\item Cada propiedad identifica un conjunto de elementos
+\item Cuando un conjunto de particiones cubre totalmente otra, podemos eliminarla
+\item \mH{Al terminar con las propiedades, hacemos regresion sobre las relaciones.} 
+\end{itemize}
+\column{5cm}
+\end{columns}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Expresiones Referenciales Relacionales}
+\begin{picture}(0,0)
+\put(173,-175){
+\includegraphics[scale=.27]{pics/picx6.jpg}}
+\end{picture}
+
+\begin{columns}
+\column{6.5cm}
+\begin{itemize}
+\item Conenzamos con un conjunto conteniendo todos los elementos
+\item Cada propiedad identifica un conjunto de elementos
+\item Cuando un conjunto de particiones cubre totalmente otra, podemos eliminarla
+\item Al terminar con las propiedades, hacemos regresion sobre las relaciones 
+\end{itemize}
+\column{5cm}
+\end{columns}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Expresiones Referenciales Relacionales}
+\begin{picture}(0,0)
+\put(173,-175){
+\includegraphics[scale=.27]{pics/picx7.jpg}}
+\end{picture}
+
+\begin{columns}
+\column{6.5cm}
+\begin{itemize}
+\item Conenzamos con un conjunto conteniendo todos los elementos
+\item Cada propiedad identifica un conjunto de elementos
+\item Cuando un conjunto de particiones cubre totalmente otra, podemos eliminarla
+\item Al terminar con las propiedades, hacemos regresion sobre las relaciones 
+\end{itemize}
+\column{5cm}
+\end{columns}
+\end{frame}
+
+\begin{frame}
+\frametitle{Expresiones Referenciales Relacionales}
+\begin{picture}(0,0)
+\put(173,-180){
+\includegraphics[scale=.27]{pics/picx8.jpg}}
+\end{picture}
+
+\begin{columns}
+\column{6.5cm}
+\begin{itemize}
+\item Conenzamos con un conjunto conteniendo todos los elementos
+\item Cada propiedad identifica un conjunto de elementos
+\item Cuando un conjunto de particiones cubre totalmente otra, podemos eliminarla
+\item Al terminar con las propiedades, hacemos regresion sobre las relaciones 
+\end{itemize}
+\column{5cm}
+\end{columns}
+\end{frame}
+
+\begin{frame}
+\frametitle{Caracter\'isticas del Algoritmo}
+
+\begin{itemize}
+
+\item Todas las REs se computan en paralelo
+
+\item El algoritmo es muy eficiente
+\begin{picture}(0,0)
+\put(0,-120){
+\includegraphics[scale=.35]{pics/graph.jpg}}
+\end{picture}
+
+
+\item Si el modelo cambia, pueden \\ recomputarse solamente 
+los\\ cambios necesarios. 
+
+\item Est\'a basado en la noci\'on de\\ simulaci\'on entre 
+elementos de\\ un modelo
+\end{itemize}
+\end{frame}
+
+
 
 \end{document}
