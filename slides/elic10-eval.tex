@@ -1,0 +1,150 @@
+\documentclass[compress,color=usenames]{beamer}
+
+\newcommand{\mytitlenbr}{1}
+\newcommand{\mytitle}{Image Archive}
+
+%\documentclass[compress,color=usenames,handout]{beamer}
+
+%\usepackage{pgfpages}
+%\pgfpagelayout{4 on 2}[a4paper,border shrink=5mm]
+
+\usepackage{graphicx}
+\usepackage{amsfonts,amssymb}
+\usepackage{latexsym}
+\usepackage{mdwtab}
+\usepackage{xspace}
+\usepackage{tikz}
+\usetikzlibrary{shapes,snakes}
+\usetikzlibrary{petri}
+
+\DefineNamedColor{named}{Periwinkle}{cmyk}{0.57,0.55,0,0}
+\DefineNamedColor{named}{Plum}{cmyk}{0.50,1,0,0}
+\DefineNamedColor{named}{Red}{cmyk}{0,1,1,0}
+
+\newcommand{\mH}[1]{\textcolor{Plum}{#1}}
+\newcommand{\mT}[1]{\textcolor{Periwinkle}{#1}}
+
+\newcommand{\tup}[1]{\langle #1 \rangle}
+
+\newcommand{\dd}{{:}}
+\newcommand{\I}{\mathcal{I}}
+\newcommand{\csetsc}[2]{\{#1 \mid #2\}}
+\newcommand{\cset}[1]{\{#1\}}
+
+\newcommand{\CON}{\textsf{CON}\xspace}
+\newcommand{\ROL}{\textsf{ROL}\xspace}
+\newcommand{\IND}{\textsf{IND}\xspace}
+\newcommand{\PROP}{\textsf{PROP}\xspace}
+\newcommand{\lang}{\mathcal{L}\xspace}
+
+
+\newcommand{\mytt}[1]{\textsf{\scriptsize{#1}}}
+\newcommand{\mytts}[1]{\textsf{\scriptsize{#1}}}
+
+%\usefonttheme{serif}
+
+\mode<presentation>
+ {
+ \usetheme{lined}
+ }
+
+\setbeamertemplate{navigation symbols}{}
+
+
+\newcommand{\F}{\mathop{\mathsf{F}\vphantom{a}}\nolimits}
+\newcommand{\G}{\mathop{\mathsf{G}\vphantom{a}}\nolimits}
+\newcommand{\X}{\mathop{\mathsf{X}\vphantom{a}}\nolimits}
+
+\newcommand{\Blue}[1]{\textcolor{blue}{#1}}
+\newcommand{\Red}[1]{\textcolor{red}{#1}}
+\newcommand{\Green}[1]{\textcolor{PineGreen}{#1}}
+
+\begin{document}
+
+\begin{frame}
+\frametitle{Evaluaci\'on: Opcion 1}
+
+\begin{itemize}
+\item \mH{Examen Takehome}:  
+\begin{itemize}
+\item Con \mH{preguntas te\'oricas y ejercicios pr\'acticos} sobre los contenidos del curso.
+\item Se resuelve en forma \mH{individual}. 
+
+\item Va a aparecer en la p\'agina del curso el \mH{Lunes 2 de Agosto}. 
+\medskip
+
+\centerline{http://www.glyc.dc.uba.ar/elic2010/curso2.php}
+\medskip
+
+\item Se entrega por mail el \mH{Lunes 16 de Agosto} a \url{carlos.areces@gmail.com}
+\item Envien \mH{pdf} de latex, doc, scan, etc. 
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Evaluaci\'on: Opcion 2}
+
+
+\begin{itemize}
+
+\item \mH{Projectos de Desarrollo}: 
+\begin{itemize}
+
+% planning: eliminar navegacion (=> cambiar monitoreo) 
+%           agregar landmarks a la navegacion
+% re: derecha / izquierda
+%     mas cerca / mas lejos
+%     this one  / not this one
+
+\item Extender un aspecto (entre 5 opciones que nosotros les damos) de un generador 
+de instrucciones GIVE 
+   \begin{itemize}
+      \item instalar el framework
+      \item modificar c\'odigo Java
+      \item testear en 3 mundos diferentes (provistos por nosotros)
+      \item Escribir un informe de 8 p\'aginas (al menos) describiendo 
+      lo que hicieron y c\'omo.  Incluyendo ejemplos de casos interesantes 
+      en los mundos (pueden incluir screenshots). 
+   \end{itemize}
+
+\item Se resuelve en grupos de \mH{hasta 2 personas}. 
+
+\item Tienen que \mH{inscribirse} hoy. 
+
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Evaluaci\'on: Opcion 2}
+
+
+\begin{itemize}
+\item \mH{Projectos de Desarrollo}: 
+\begin{itemize}
+\item La descripci\'on detallada va a aparecer en la p\'agina del curso el \mH{Lunes 2 de Agosto}. 
+\medskip
+
+\centerline{http://www.glyc.dc.uba.ar/elic2010/curso2.php}
+\medskip
+
+\item Se entrega por mail el \mH{Lunes 23 de Agosto} a \url{carlos.areces@gmail.com}
+
+\item Envien \mH{pdf} del informe (de latex, doc, scan, etc), m\'as \mH{c\'odigo modificado} e 
+instrucciones de cualquier cosa que debamos modificar en el framework.\pause  
+
+\item Para asegurarnos que el proyecto est\'a en marcha les ofrecemos 2 `check points'
+\begin{itemize}
+  \item Viernes 9: Problemas de Instalaci\'on
+  \item Viernes 16: Problemas de Implementaci\'on
+\end{itemize}
+
+\mH{Compromiso de Calidad:} Preguntas sobre esos temas (por email) ser\'an contestados en el fin 
+de semana siguiente. 
+
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+\end{document}

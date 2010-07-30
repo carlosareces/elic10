@@ -1,0 +1,292 @@
+\documentclass[compress,color=usenames]{beamer}
+
+\newcommand{\mytitlenbr}{1}
+\newcommand{\mytitle}{Image Archive}
+
+%\documentclass[compress,color=usenames,handout]{beamer}
+
+%\usepackage{pgfpages}
+%\pgfpagelayout{4 on 2}[a4paper,border shrink=5mm]
+
+\usepackage{graphicx}
+\usepackage{amsfonts,amssymb}
+\usepackage{latexsym}
+\usepackage{mdwtab}
+\usepackage{xspace}
+\usepackage{tikz}
+\usetikzlibrary{shapes,snakes}
+\usetikzlibrary{petri}
+
+\DefineNamedColor{named}{Periwinkle}{cmyk}{0.57,0.55,0,0}
+\DefineNamedColor{named}{Plum}{cmyk}{0.50,1,0,0}
+\DefineNamedColor{named}{Red}{cmyk}{0,1,1,0}
+
+\newcommand{\mH}[1]{\textcolor{Plum}{#1}}
+\newcommand{\mT}[1]{\textcolor{Periwinkle}{#1}}
+
+\newcommand{\tup}[1]{\langle #1 \rangle}
+
+\newcommand{\dd}{{:}}
+\newcommand{\I}{\mathcal{I}}
+\newcommand{\csetsc}[2]{\{#1 \mid #2\}}
+\newcommand{\cset}[1]{\{#1\}}
+
+\newcommand{\CON}{\textsf{CON}\xspace}
+\newcommand{\ROL}{\textsf{ROL}\xspace}
+\newcommand{\IND}{\textsf{IND}\xspace}
+\newcommand{\PROP}{\textsf{PROP}\xspace}
+\newcommand{\lang}{\mathcal{L}\xspace}
+
+
+\newcommand{\mytt}[1]{\textsf{\scriptsize{#1}}}
+\newcommand{\mytts}[1]{\textsf{\scriptsize{#1}}}
+
+%\usefonttheme{serif}
+
+\mode<presentation>
+ {
+ \usetheme{lined}
+ }
+
+\setbeamertemplate{navigation symbols}{}
+
+
+\newcommand{\F}{\mathop{\mathsf{F}\vphantom{a}}\nolimits}
+\newcommand{\G}{\mathop{\mathsf{G}\vphantom{a}}\nolimits}
+\newcommand{\X}{\mathop{\mathsf{X}\vphantom{a}}\nolimits}
+
+\newcommand{\Blue}[1]{\textcolor{blue}{#1}}
+\newcommand{\Red}[1]{\textcolor{red}{#1}}
+\newcommand{\Green}[1]{\textcolor{PineGreen}{#1}}
+
+\title[GLN y Aplicaciones]{\Huge Generaci\'on de Lenguaje Natural y Aplicaciones}
+%\mH{Lecture \#\mytitlenbr:} \mytitle}
+
+\author[Areces \& Benotti]{
+ Carlos Areces y Luciana Benotti\\[1ex]
+\normalsize \url{{carlos.areces, luciana.benotti}@gmail.com}}
+
+\institute[INRIA / UNC]{
+INRIA Nancy Grand Est, Nancy, France\\
+Universidad Nacional de C\'ordoba, C\'ordoba, Argentina}
+
+\date{ELiC 2010 - Buenos Aires - Argentina}
+
+
+
+\begin{document}
+
+\begin{frame}
+\frametitle{Bibliograf\'ia por Tema}
+
+\mH{\bf Sistemas de GLN}
+\medskip
+
+\begin{thebibliography}{10}\small
+
+
+\bibitem{Reiter94} Ehud Reiter.
+\newblock Has a
+  consensus NL generation architecture appeared, and is it
+  psycholinguistically plausible?.
+\newblock In \emph{Proceedings of INLG}, 1994.
+
+\bibitem{ReiterDale00} Ehud Reiter and Robert Dale.
+\newblock Building Natural Language Generation Systems.
+\newblock Cambridge University Press, 2000.
+
+\bibitem{Reiteretal05} Ehud Reiter, Somayajulu Sripada, Jim Hunter, Jin Yu, and Ian Davy
+\newblock Choosing words in computer-generated weather forecasts.
+\newblock In \emph{Artificial Intelligence}, 167:137-169, 2005.
+
+\end{thebibliography}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Bibliograf\'ia por Tema}
+
+\mH{\bf Tree Adjoining Grammars}
+\medskip
+
+\begin{thebibliography}{10}\small
+
+\bibitem{Joshi87} Aravind Joshi.
+\newblock An introduction to tree adjoining
+grammars.
+\newblock In A. Manaster--Ramer (ed.) \emph{Mathematics of Language}, pp. 87--114. John Benjamins, 
+Amsterdam, 1987.
+
+\bibitem{ShankerJoshi85} Vijay Shanker and Aravind Joshi.
+\newblock Some computational properties of tree adjoining grammars.
+\newblock In \emph{Proceedings of ACL}, 1985.
+
+\bibitem{Bresnanetal82} Joan  Bresnan, Ronald  Kaplan, Stanley Peters and
+Annie Zaenen.
+\newblock Cross--serial dependencies in Dutch.
+\newblock \emph{Linguistic Inquiry}, 13:613--635, 1982.
+
+\end{thebibliography}
+\end{frame}
+
+\begin{frame}
+\frametitle{Bibliograf\'ia por Tema}
+
+\mH{\bf Surface Realization}
+\medskip
+
+\begin{thebibliography}{10}\small
+
+\bibitem{Carrolletal99} John Carroll, Ann Copestake, Dan Flickinger and Victor Poznanski.
+\newblock An Efficient Chart Generator for (Semi-)Lexicalist Grammars.
+\newblock In \emph{Proceedings of EWNLG}, 1999.
+
+\bibitem{CarrollOepen05} John Carroll and Stephan Oepen.
+\newblock High efficiency realization for a wide-coverage unification grammar.
+\newblock In \emph{Proceedings of IJCNLP}, 2005.
+
+
+\bibitem{GardentKow07} Claire Gardent and Eric Kow.
+\newblock A Symbolic Approach to Near-Deterministic Surface Realisation using
+Tree Adjoining Grammar.
+\newblock In \emph{Proceedings of ACL}, 2007.
+
+\end{thebibliography}
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{Bibliograf\'ia por Tema}
+
+\mH{\bf Expresiones Referenciales}
+\medskip
+
+\begin{thebibliography}{10}\small
+
+\bibitem{Prince91} Ellen Prince.
+\newblock Toward a taxonomy of given-new information.
+\newblock In P. Cole, editor, Radical Pragmatics, pages 223--56. Academic Press, New York, 1981.
+
+\bibitem{ClarkWilkes-Gibbs86} H. H. Clark and D. Wilkes-Gibbs. 
+\newblock Referring as a collaborative process.
+\newblock Cognition, 22:1--39, 1986.
+
+\end{thebibliography}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Bibliograf\'ia por Tema}
+\mH{\bf Generaci\'on de Expresiones Referenciales}
+\medskip
+
+\begin{thebibliography}{10}\small
+
+\bibitem{Dale89} Robert Dale.
+\newblock Cooking up referring expressions.
+\newblock In \emph{Proceedings of ACL}, 1989.
+
+\bibitem{ReiterDale92} Ehud Reiter and Robert Dale.
+\newblock A fast algorithm for the generation of referring expressions.
+\newblock In \emph{Proceedings of Coling}, 1992.
+
+\bibitem{DaleRaiter95} Robert Dale and Ehud Reiter.
+\newblock Computational interpretations of the gricean maxims in the generation of referring expressions.
+\newblock \emph{Cognitive Science}, 19(2):233--263, 1995.
+
+\bibitem{StoneWebber98} Matthew Stone and Bonnie Webber.  
+\newblock Textual economy through close coupling of syntax and semantics. 
+\newblock In {Proceedings of INLG},  1998.
+
+\end{thebibliography}
+\end{frame}
+
+\begin{frame}
+\frametitle{Bibliograf\'ia por Tema}
+
+\mH{\bf Generaci\'on de Expresiones Referenciales}
+\medskip
+
+\begin{thebibliography}{10}\small
+
+\bibitem{Deemter02} Kees van Deemter.
+\newblock Generating referring expres-
+sions: Boolean extensions of the incremental algorithm.
+\newblock In \emph{Computational Linguistics}, 28(1):37--52, 2002.
+
+\bibitem{Krahmeretal03} Emiel Krahmer, Sebastiaan van Erk, and Andr\'e Verleg.
+\newblock Graphbased generation of referring expressions.
+\newblock In \emph{Computational Linguistics}, 29(1), 2003.
+
+\bibitem{Arecesetal08} Carlos Areces, Alexander Koller and Kristina Striegnitz. 
+\newblock Referring Expressions as Formulas of Description Logic. 
+\newblock In \emph{Proceedings of INLG}, 2008.
+
+\end{thebibliography}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Bibliograf\'ia por Tema}
+
+\mH{\bf Generaci\'on de Instrucciones en Entornos Virtuales}
+\medskip
+
+\begin{thebibliography}{10}\small
+
+\bibitem{} Kees van Deemter and Jan Odijk.
+\newblock Context modeling and the generation of spoken discourse.
+\newblock \emph{Speech Communication}, 1997.
+
+\bibitem{SluisKrahmer01} Ielka van der Sluis and Emiel Krahmer.
+\newblock Generating referring expressions in a multimodal context.
+\newblock In \emph{Proceedings of CLIN}, 2001.
+
+\bibitem{ByronFosler-Lussier06} Donna Byron and Eric Fosler-Lussier.
+\newblock The OSU Quake 2004 corpus of two-party situated problem-solving dialogs.
+\newblock In \emph{Proceedings of LREC}, 2006.
+  
+\bibitem{Denis10} Alexandre Denis.
+\newblock Generating Referring Expressions with Reference
+Domain Theory.
+\newblock In \emph{Proceddings of INLG}, 2010.
+
+\end{thebibliography}
+\end{frame}
+
+\frametitle{Bibliograf\'ia por Tema}
+\begin{frame}
+
+\mH{\bf Evaluaci\'on}
+\medskip
+
+\begin{thebibliography}{10}\small
+
+\bibitem{BelzGatt08} Anja Belz and Albert Gatt.
+\newblock Intrinsic vs.\ Extrinsic Evaluation Measures for Referring Expression   Generation.
+\newblock In \emph{Proceedings of ACL}, 2008.
+
+\bibitem{ReiterBelz09} Ehud Reiter and Anja Belz.
+\newblock An Investigation into the Validity of Some
+Metrics for Automatically Evaluating Natural Language Generation
+Systems.
+\newblock In \emph{Computational Linguistics}, 25:529--558, 2009.
+  
+\bibitem{Kolleretal10} Alexander Koller, Kristina Striegnitz, Andrew Gargett, Donna Byron,
+Justine Cassell, Robert Dale, Johanna Moore, and Jon Oberlander.
+\newblock Report on the Second NLG Challenge on Generating Instructions in
+Virtual Environments (GIVE-2).
+\newblock In \emph{Proceedings of INLG}, 2010.
+
+\bibitem{Garget10} A.\ Gargett, K.\ Garoufi, A.\ Koller, and K.\
+Striegnitz.
+\newblock The GIVE-2 Corpus of Giving Instructions in Virtual
+Environments.
+\newblock In \emph{Proceedings of LREC}, 2010.
+
+
+\end{thebibliography}
+\end{frame}
+
+\end{document}
