@@ -129,40 +129,232 @@ El proyecto consiste en extender un aspecto (el aspecto que hayan elegido como i
 de instrucciones GIVE. Los pasos a seguir son los siguientes: 
    \begin{enumerate}
       \item Instalar el framework: Las instrucciones para instalar el framework GIVE est\'an en \url{http://kenai.com/projects/give-challenge/pages/Manual#Configuration}. Para asegurar la compatibilidad de las partes del framework instalen la versi\'on m\'as reciente de cada una de las partes. 
-      \item Modificar el c\'odigo del Servidor de NLG. Para este proyecto no tienen que comenzar desde cero con un nuevo sistema NLG sino que tienen que tomar el c\'odigo del \texttt{give2-example-nlgserver} y modificarlo con el aspecto solicitado en la Secci\'on~\ref{porproyecto}. La documentaci\'on en \url{http://kenai.com/projects/give-challenge/pages/Manual#Implementing_your_own_NLG_server} (que explica c\'omo implementar un Servidor NLG desde cero) puede ser \'util para entender c\'omo funciona el \texttt{give2-example-nlgserver}. Quiz\'as tambi\'en quieran consula el el API-doc que est\'a en \url{http://www.give-challenge.org/give2/apidocs/}. 
+      \item Modificar el c\'odigo del Servidor de NLG: Para este proyecto tienen que tomar el c\'odigo del \texttt{give2-example-nlgserver} y modificarlo con el aspecto solicitado en la Secci\'on~\ref{porproyecto}, no tienen que comenzar desde cero con un nuevo sistema NLG. La documentaci\'on en \url{http://kenai.com/projects/give-challenge/pages/Manual#Implementing_your_own_NLG_server} (que explica c\'omo implementar un Servidor NLG desde cero) puede ser \'util para entender c\'omo funciona el \texttt{give2-example-nlgserver}. Quiz\'as tambi\'en quieran consula el el API-doc que est\'a en \url{http://www.give-challenge.org/give2/apidocs/}. 
       
        
-      \item Testear en 3 mundos diferentes (provistos por nosotros)
+      \item Testear en los siguientes 3 mundos diferentes:
+      \begin{itemize}
+      \item Un mundo simple: \\ \url{http://www.glyc.dc.uba.ar/elic2010/development-world.giveworld}
+      \item Un mundo con varios distractores: \\ \url{http://www.glyc.dc.uba.ar/elic2010/evalworld-1-2010.giveworld}
+      \item Un mundo con navegaci\'on compleja: \\ \url{http://www.glyc.dc.uba.ar/elic2010/testworld3.giveworld}
+      \end{itemize}
+      Para cambiar de mundo es necasario modificar el archivo de configuraci\'on del matchmaker, es decir \texttt{matchmaker-config.xml} como se explica en: \\ \url{http://kenai.com/projects/give-challenge/pages/Manual#Configuring_the_Matchmaker}
+      
       \item Escribir un informe de 8 p\'aginas (al menos) describiendo 
-      lo que hicieron y c\'omo.  Incluyendo ejemplos de casos interesantes 
-      en los mundos (pueden incluir screenshots). 
+      lo que hicieron y c\'omo.  Incluyendo ejemplos de situaciones interesantes 
+      en los mundos (recomendamos el uso de screenshots para ilustrar las situaciones). 
    \end{enumerate}
 
 
-
-Se entrega por mail el 	extbf{Lunes 23 de Agosto} a \url{carlos.areces@gmail.com}
-
- Envien 	extbf{pdf} del informe (de latex, doc, scan, etc), m\'as 	extbf{c\'odigo modificado} e 
-instrucciones de cualquier cosa que debamos modificar en el framework.  
-
-Para asegurarnos que el proyecto est\'a en marcha les ofrecemos 2 `check points'
+El proyecto se entrega por mail el \textbf{Lunes 23 de Agosto} a \url{carlos.areces@gmail.com}. Envien 	\textbf{pdf} del informe (de latex, doc, scan, etc), m\'as el \textbf{c\'odigo modificado} e instrucciones de cualquier cosa que debamos modificar en el framework (aunque esto no deber\'ia ser necesario para lo que se pide en el proyecto). Para asegurarnos que el proyecto est\'a en marcha les ofrecemos 2 `check points'; preguntas sobre esos temas (por email a a \url{carlos.areces@gmail.com}) ser\'an contestados en el fin 
+de semana correspondiente. 
 \begin{itemize}
   \item Viernes 6: Problemas de Instalaci\'on
   \item Viernes 13: Problemas de Implementaci\'on
 \end{itemize}
 
-	\textbf{Compromiso de Calidad:} Preguntas sobre esos temas (por email) ser\'an contestados en el fin 
-de semana siguiente. 
+
 
 
 
 \section{Descripciones y asignaciones de proyectos} \label{porproyecto}
 
-\medskip
-\textbf{Proyecto 1: } 
+A continuaci\'on se describen los proyectos en detalle. El objetivo de estas descripciones es darles ejemplos concretos de lo que se requiere para aprobar el proyecto. Si durante el desarrollo del proyecto deciden incluir otras extensiones, adelante!. Si quieren modificar alguna de las extensiones que nosotros les proponemos (por el motivo que sea) ponganse en contacto con nosotros primero.   
 
+\bigskip
+\noindent
+\textbf{Proyecto 1: Determinaci\'on de contenido - Cambio de granularidad} 
 
-\medskip
-\textbf{Proyecto 2: } 
+\textbf{Asignado a: Cossio Christian y Mart\'inez Miguel} 
+
+\textbf{Descripci\'on:} El objetivo de este proyecto es modificar la forma en la que realiza la determinaci\'on del contenido a transmitir el sistema \texttt{give2-example-nlgserver}. Este sistema toma el plan y verbaliza cada una de las acciones del plan como una instrucci\'on, es decir, usa un nivel de granularidad 1 para la determinaci\'on del contenido (usando la terminolog\'ia que introducimos en clase). Por ejemplo, al comenzar la interacci\'on en el mundo \texttt{development-world} dice lo siguiente: 
+
+\begin{verbatim}
+NLG: Look around until you see a blue thing. Then go towards it.
+User: [goes really close to the button]
+NLG: Excellent! Press the button.
+User: [walks backwards a bit to center the button]
+NLG: Wait. That's not what I wanted you to do. [replan] Go to the
+button.
+User: [presses the button]
+NLG: Wait. That's not what I wanted you to do. [replan] Go to the door.
+User: [goes through the door]
+NLG: Excellent!
+\end{verbatim}
+
+Modifique el sistema \texttt{give2-example-nlgserver} para que use un nivel de granularidad 3 para la determinaci\'on del contenido y para monitorear la ejecuci\'on. En el ejemplo anterior deber\'ia generar lo siguiente:
+
+\begin{verbatim}
+NLG: Press the blue button.
+User: [goes really close to the button]
+User: [walks backwards a bit to center the button]
+User: [presses the button]
+NLG: Great! 
+NLG: Look for the blue room.
+User: [goes through the door]
+NLG: Great! 
+\end{verbatim}
+
+Es decir, el nuevo Servidor NLG no debe replanear si el usuario se sale del plan en el nivel 1. El sistema debe replanear s\'olo cuando el usuario presiona el bot\'on incorrecto. 
+
+\bigskip
+\noindent
+\textbf{Proyecto 2: Determinaci\'on de contenido - Landmarks en navegaci\'on} 
+
+\textbf{Asignado a: Daniel Koile y Celeste Gunski} 
+
+\textbf{Descripci\'on:} El objetivo de este proyecto es modificar la forma en la que realiza la determinaci\'on del contenido a transmitir el sistema \texttt{give2-example-nlgserver}. El sistema actualmente no usa objetos con los que el usuario no puede interactuar (llamados landmarks) para guiar la navegaci\'on. Este proyecto consiste en agregar esa capacidad. Por ejemplo, al comenzar la interacci\'on en el mundo \texttt{evalworld-1-2010.giveworld} dice lo siguiente: 
+
+\begin{verbatim}
+NLG: Go straight. 
+User: [goes straight towards a chair]
+NLG: Excellent! Look around until you see a button near a green thing,
+NLG: then go towards it. 
+NLG: It should be in front of you slightly to the right. 
+User: [turns right]
+User:[goes straight towards the red button by a plant]
+NLG: Excellent! Press the button
+\end{verbatim}
+
+Modifique el sistema \texttt{give2-example-nlgserver} para que use landmarks (plantas, lamparas, sillones, etc) durante la determinaci\'on del contenido de instrucciones de movimiento y para monitorear la ejecuci\'on. Es decir, el sistema debe analizar las instrucciones de movimiento \texttt{move(from, to)} y comprobar si la regi\'on \texttt{to} contiene un landmark. En el ejemplo anterior deber\'ia generar lo siguiente:
+
+\begin{verbatim}
+NLG: Go towards the plant. 
+User: [goes towards the plant]
+NLG: Excellent! Look around until you see a button near a green thing, 
+NLG: then go towards it. 
+NLG: It should be in front of you slightly to the right. 
+User: [turns right]
+User:[goes straight towards the red button]
+NLG: Excellent! Press the button
+\end{verbatim}
+
+Puede ocurrir, como es el caso del ejemplo anterior, que hay m\'as de un landmark en la regi\'on target; en el ejemplo hay una l\'ampara, una silla y una planta. En este caso, el sistema debe elegir el landmark que est\'a \textbf{m\'as cerca} de la regi\'on \texttt{to} de la siguiente acci\'on \texttt{move}; en el ejemplo la planta es la que est\'a m\'as cerca de la regi\'on del bot\'on que hay que presionar.  N\'otese que el motitoreo de las instrucciones que incluyen landmarks tambi\'en debe modificarse para que el \'exito de la acci\'on no ocurra cuando el usuario entre en la regi\'on que tiene el landmark sino cuando el usuario est\'e cerca del landmark (deber\'a definir qu\'e considera \texttt{cerca} en este contexto). 
+ 
+\bigskip
+\noindent
+\textbf{Proyecto 3: Generaci\'on de expresiones referenciales con deducci\'on por eliminaci\'on} 
+
+\textbf{Asignado a: Etcheverry Mathias y Zeballos Yasim} 
+
+\textbf{Descripci\'on:}
+El objetivo de este proyecto es modificar la forma en la que realiza el proceso de monitoreo de expresiones referenciales generadas el sistema \texttt{give2-example-nlgserver}. El sistema actualmente no monitorea la identificaci\'on de los objetos target de una expresi\'on referencial generada. Este proyecto consiste en agregar esa capacidad. Por ejemplo, al comenzar la interacci\'on en el mundo \texttt{evalworld-1-2010.giveworld} dice lo siguiente: 
+
+\begin{verbatim}
+NLG: Go straight. 
+User: [goes straight towards a chair]
+NLG: Excellent! Look around until you see a button near a green thing, 
+NLG: then go towards it. 
+NLG: It should be in front of you slightly to the right. 
+User: [turns right]
+User:[goes straight towards the red button by a plant]
+NLG: Excellent! Press the button
+\end{verbatim}
+
+Modifique el sistema \texttt{give2-example-nlgserver} para que monitoree la identificaci\'on de objetos target de una expresi\'on referencial. Por ejemplo, el objeto target de la expresi\'on referencial \texttt{a button near a green thing} es el bot\'on rojo al lado de la planta. El sistema modificado debe indicar que ese es el bot\'on target cada vez que se hace visible y que otros botones rojos en la misma habitaci\'on no lo son. En el ejemplo anterior deber\'ia generar lo siguiente:
+
+\begin{verbatim}
+NLG: Go straight. 
+User: [goes straight towards a chair]
+NLG: Excellent! Look around until you see a button near a green thing, 
+NLG: then go towards it. 
+NLG: It should be in front of you slightly to the right. 
+User: [walks around and sees a red button near a lamp]
+NLG: Not that one!
+User: [walks around and sees a red button near a picture]
+NLG: Not that one!
+User: [walks around and sees the target red button next to a plant]
+NLG: Yeah! That one!
+User:[goes straight towards the red button]
+NLG: Excellent! Press the button
+\end{verbatim}
+
+\bigskip
+\noindent
+\textbf{Proyecto 4: Generaci\'on de expresiones referenciales relacionales (relaci\'on con landmark o distractor)} 
+
+\textbf{Asignado a: Navarro Andr\'es y Fontana Fernando}
+
+\textbf{Descripci\'on:}
+El objetivo de este proyecto es modificar la forma en la que realiza el proceso de generaci\'on de expresiones referenciales el sistema \texttt{give2-example-nlgserver}. El sistema actualmente no genera expresiones referenciales como \texttt{the yellow button on the left of the picture}. Este proyecto consiste en agregar esa capacidad. Por ejemplo, al comenzar la interacci\'on en el mundo \texttt{evalworld-1-2010.giveworld} dice lo siguiente: 
+
+\begin{verbatim}
+NLG: Go straight. 
+User: [goes straight towards a chair]
+NLG: Excellent! Look around until you see a button near a green thing, 
+NLG: then go towards it. 
+NLG: It should be in front of you slightly to the right. 
+User: [turns right]
+User:[goes straight towards the red button by a plant]
+NLG: Excellent! Press the button
+User:[presses the button]
+NLG: Great! Turn left almost all the way but not quite. Then go in that direction. 
+User: [turns and goes forward]
+NLG: Excellent! Go to the button near the red button. 
+NLG: It should be in front of you. 
+\end{verbatim}
+
+Modifique el sistema \texttt{give2-example-nlgserver} para que prefiera en uso de landmarks (objetos de tipo diferente al tipo del target de la expresi\'on referencial, e.g. cuadros, c\'omodas, etc), en lugar de distractores (objetos del mismo tipo, como botones), durante la generaci\'on de expresiones referenciales. En el ejemplo anterior podr\'ia generar lo siguiente:
+
+\begin{verbatim}
+NLG: Go straight. 
+User: [goes straight towards a chair]
+NLG: Excellent! 
+NLG: Look around until you see a red button on the left of the closed door, 
+NLG: then go towards it. 
+NLG: It should be in front of you slightly to the right. 
+User: [turns right]
+User:[goes straight towards the red button by a plant]
+NLG: Excellent! Press the button
+User:[presses the button]
+NLG: Great! Turn left almost all the way but not quite. Then go in that direction. 
+User: [turns and goes forward]
+NLG: Excellent! Go to the yellow button on the left of the picture. 
+NLG: It should be in front of you. 
+\end{verbatim}
+
+La extensi\'on se pide para landmarks que se encuentran apoyados en las paredes (como cuadros, c\'omodas, puertas y camas) y no necesariamente para otros landmarks que pueden estar a la derecha o a la izquierda de un bot\'on dependiendo de la ubicaci\'on del jugador (como plantas).  
+
+\bigskip
+\noindent
+\textbf{Proyecto 5: Generaci\'on de expresiones referenciales centradas en el usuario} 
+
+\textbf{Asignado a: Guerrero Augusto C\'esar, Ossola Mar\'ia Florencia y Orellaia Luciana} 
+
+\textbf{Descripci\'on:}
+El objetivo de este proyecto es modificar la forma en la que realiza el proceso de generaci\'on de expresiones referenciales el sistema \texttt{give2-example-nlgserver}. El sistema actualmente no genera expresiones referenciales como \texttt{the yellow button furthest from you}. Este proyecto consiste en agregar esa capacidad. Por ejemplo, al comenzar la interacci\'on en el mundo \texttt{evalworld-1-2010.giveworld} dice lo siguiente: 
+
+\begin{verbatim}
+NLG: Go straight. 
+User: [goes straight towards a chair]
+NLG: Excellent! Look around until you see a button near a green thing, 
+NLG: then go towards it. 
+NLG: It should be in front of you slightly to the right. 
+User:[goes straight towards the red button by a plant]
+NLG: Excellent! Press the button
+User:[presses the button]
+NLG: Great! Turn left almost all the way but not quite. Then go in that direction. 
+User: [turns and goes forward]
+NLG: Excellent! Go to the button near the red button. 
+NLG: It should be in front of you. 
+\end{verbatim}
+
+Modifique el sistema \texttt{give2-example-nlgserver} para que use la distancia del target de la expresi\'on referencial con respecto al jugador como una propiedad a incluir en la expresi\'on referencial. En el ejemplo anterior podr\'ia generar lo siguiente:
+
+\begin{verbatim}
+NLG: Go straight. 
+User: [goes straight towards a chair]
+NLG: Excellent! Look around until you see the red button furthest from you, 
+NLG: then go towards it. 
+NLG: It should be in front of you slightly to the right. 
+User:[goes straight towards the red button by a plant]
+NLG: Excellent! Press the button
+User:[presses the button]
+NLG: Great! Turn left almost all the way but not quite. Then go in that direction. 
+User: [turns and goes forward]
+NLG: Excellent! Go to the yellow button furthest from you. 
+NLG: It should be in front of you. 
+\end{verbatim}
+
 
 \end{document}
