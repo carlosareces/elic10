@@ -1,0 +1,181 @@
+\documentclass{article}
+\usepackage{url}
+\usepackage{color}
+%\usepackage{covington}
+%\usepackage{qtree}
+\usepackage{amsfonts,amssymb,latexsym,theorem}
+\usepackage{a4wide}
+
+\def\at#1#2{{\char64}_{#1}#2}
+\newbox\itembox
+\def\itemlistlabel#1{#1\hfill}
+\def\itemlist#1{\setbox\itembox=\hbox{#1}%
+		\list{}{\labelwidth\wd\itembox
+		             \leftmargin\labelwidth
+                             \advance\leftmargin by\itemindent
+			     \advance\leftmargin by\labelsep
+			      \let\makelabel\itemlistlabel}}
+\let\enditemlist\endlist
+\def\Mseq#1#2#3{{#1}_{1},...,{#1}_{#2}\in #3}
+\def\Mseqc#1#2{{#1}_{1}\wedge\cdots\wedge{#1}_{#2}}
+
+
+\def\goth#1{\mathfrak{#1}}
+\def\gothA{{\mathfrak{A}}}			\def\gotha{{\mathfrak{a}}}
+\def\gothB{{\mathfrak{B}}}			\def\gothb{{\mathfrak{b}}}
+\def\gothC{{\mathfrak{C}}}			\def\gothc{{\mathfrak{c}}}
+\def\gothD{{\mathfrak{D}}}			\def\gothd{{\mathfrak{d}}}
+\def\gothE{{\mathfrak{E}}}			\def\gothe{{\mathfrak{e}}}
+\def\gothF{{\mathfrak{F}}}			\def\gothf{{\mathfrak{f}}}
+\def\gothG{{\mathfrak{G}}}			\def\gothg{{\mathfrak{g}}}
+\def\gothH{{\mathfrak{H}}}			\def\gothh{{\mathfrak{h}}}
+\def\gothI{{\mathfrak{I}}}			\def\gothi{{\mathfrak{i}}}
+\def\gothJ{{\mathfrak{J}}}			\def\gothj{{\mathfrak{j}}}
+\def\gothK{{\mathfrak{K}}}			\def\gothk{{\mathfrak{k}}}
+\def\gothL{{\mathfrak{L}}}			\def\gothl{{\mathfrak{l}}}
+\def\gothM{{\mathfrak{M}}}			\def\gothm{{\mathfrak{m}}}
+\def\gothN{{\mathfrak{N}}}			\def\gothn{{\mathfrak{n}}}
+\def\gothO{{\mathfrak{O}}}			\def\gotho{{\mathfrak{o}}}
+\def\gothP{{\mathfrak{P}}}			\def\gothp{{\mathfrak{p}}}
+\def\gothQ{{\mathfrak{Q}}}			\def\gothq{{\mathfrak{q}}}
+\def\gothR{{\mathfrak{R}}}			\def\gothr{{\mathfrak{r}}}
+\def\gothS{{\mathfrak{S}}}			\def\goths{{\mathfrak{s}}}
+\def\gothT{{\mathfrak{T}}}			\def\gotht{{\mathfrak{t}}}
+\def\gothU{{\mathfrak{U}}}			\def\gothu{{\mathfrak{u}}}
+\def\gothV{{\mathfrak{V}}}			\def\gothv{{\mathfrak{v}}}
+\def\gothW{{\mathfrak{W}}}			\def\gothw{{\mathfrak{w}}}
+\def\gothX{{\mathfrak{X}}}			\def\gothx{{\mathfrak{x}}}
+\def\gothY{{\mathfrak{Y}}}			\def\gothy{{\mathfrak{y}}}
+\def\gothZ{{\mathfrak{Z}}}			\def\gothz{{\mathfrak{z}}}
+
+\def\calA{{\cal A}}			\def\cA{{\cal a}}
+\def\calB{{\cal B}}			\def\cb{{\cal b}}
+\def\calC{{\cal C}}			\def\calc{{\cal c}}
+\def\calD{{\cal D}}			\def\cd{{\cal d}}
+\def\calE{{\cal E}}			\def\ce{{\cal e}}
+\def\calF{{\cal F}}			\def\cf{{\cal f}}
+\def\calG{{\cal G}}			\def\cg{{\cal g}}
+\def\calH{{\cal H}}			\def\ch{{\cal h}}
+\def\calI{{\cal I}}			\def\ci{{\cal i}}
+\def\calJ{{\cal J}}			\def\cj{{\cal j}}
+\def\calK{{\cal K}}			\def\ck{{\cal k}}
+\def\calL{{\cal L}}			\def\cl{{\cal l}}
+\def\calM{{\cal M}}			\def\cm{{\cal m}}
+\def\calN{{\cal N}}			\def\cn{{\cal n}}
+\def\calO{{\cal O}}			\def\co{{\cal o}}
+\def\calP{{\cal P}}			\def\cp{{\cal p}}
+\def\calQ{{\cal Q}}			\def\cq{{\cal q}}
+\def\calR{{\cal R}}			\def\calr{{\cal r}}
+\def\calS{{\cal S}}			\def\cs{{\cal s}}
+\def\calT{{\cal T}}			\def\ct{{\cal t}}
+\def\calU{{\cal U}}			\def\cu{{\cal u}}
+\def\calV{{\cal V}}			\def\cv{{\cal v}}
+\def\calW{{\cal W}}			\def\cw{{\cal w}}
+\def\calX{{\cal X}}			\def\cx{{\cal x}}
+\def\calY{{\cal Y}}			\def\cy{{\cal y}}
+\def\calZ{{\cal Z}}			\def\cz{{\cal z}}
+
+\def\sfA{{\sf A}}			\def\sfa{{\sf a}}
+\def\sfB{{\sf B}}			\def\sfb{{\sf b}}
+\def\sfC{{\sf C}}			\def\sfc{{\sf c}}
+\def\sfD{{\sf D}}			\def\sfd{{\sf e}}
+\def\sfE{{\sf E}}			\def\sfe{{\sf f}}
+\def\sfF{{\sf F}}			\def\sff{{\sf f}}
+\def\sfG{{\sf G}}			\def\sfg{{\sf g}}
+\def\sfH{{\sf H}}			\def\sfh{{\sf h}}
+\def\sfI{{\sf I}}			\def\sfi{{\sf i}}
+\def\sfJ{{\sf J}}			\def\sfj{{\sf j}}
+\def\sfK{{\sf K}}			\def\sfk{{\sf k}}
+\def\sfL{{\sf L}}			\def\sfl{{\sf l}}
+\def\sfM{{\sf M}}			\def\sfm{{\sf m}}
+\def\sfN{{\sf N}}			\def\sfn{{\sf n}}
+\def\sfO{{\sf O}}			\def\sfo{{\sf o}}
+\def\sfP{{\sf P}}			\def\sfp{{\sf p}}
+\def\sfQ{{\sf Q}}			\def\sfq{{\sf q}}
+\def\sfR{{\sf R}}			\def\sfr{{\sf r}}
+\def\sfS{{\sf S}}			\def\sfs{{\sf s}}
+\def\sfT{{\sf T}}			\def\sft{{\sf t}}
+\def\sfU{{\sf U}}			\def\sfu{{\sf u}}
+\def\sfV{{\sf V}}			\def\sfv{{\sf v}}
+\def\sfW{{\sf W}}			\def\sfw{{\sf w}}
+\def\sfX{{\sf X}}			\def\sfx{{\sf x}}
+\def\sfY{{\sf Y}}			\def\sfy{{\sf y}}
+\def\sfZ{{\sf Z}}			\def\sfz{{\sf z}}
+
+\def\forces{\models}
+\def\univ{\mathrm{E}}
+\def\Univ{\mathrm{A}}
+\newcommand{\lgcof}[1]{\Lambda_{#1}}
+\newcommand{\mcs}{\textsc{mcs}}
+
+\title{\textsf{Curso: Generaci\'on de Lenguaje Natural y Aplicaciones}\\
+Escuela de Ling\"u\'istica Computacional 2010 \\
+26-31 de Julio 2010, Buenos Aires, Argentina\\
+}
+\author{Evaluaci\'on: Proyectos}
+\date{Entrega: \textbf{Lunes 23 de Agosto, 2010}\\
+\mbox{    } }
+
+\begin{document}
+
+\maketitle
+
+
+
+\textbf{Instrucciones Generales para Todos los Proyectos: } 
+
+\begin{itemize}
+
+% planning: eliminar navegacion (=> cambiar monitoreo) 
+%           agregar landmarks a la navegacion
+% re: derecha / izquierda
+%     mas cerca / mas lejos
+%     this one  / not this one
+
+\item Extender un aspecto (entre 5 opciones que nosotros les damos) de un generador 
+de instrucciones GIVE 
+   \begin{itemize}
+      \item instalar el framework
+      \item modificar c\'odigo Java
+      \item testear en 3 mundos diferentes (provistos por nosotros)
+      \item Escribir un informe de 8 p\'aginas (al menos) describiendo 
+      lo que hicieron y c\'omo.  Incluyendo ejemplos de casos interesantes 
+      en los mundos (pueden incluir screenshots). 
+   \end{itemize}
+
+\item Se resuelve en grupos de 	extbf{hasta 2 personas}. 
+
+\item Tienen que 	extbf{inscribirse} hoy. 
+
+\item La descripci\'on detallada va a aparecer en la p\'agina del curso el 	extbf{Lunes 2 de Agosto}. 
+\medskip
+\
+\centerline{http://www.glyc.dc.uba.ar/elic2010/curso2.php}
+\medskip
+
+\item Se entrega por mail el 	extbf{Lunes 23 de Agosto} a \url{carlos.areces@gmail.com}
+
+\item Envien 	extbf{pdf} del informe (de latex, doc, scan, etc), m\'as 	extbf{c\'odigo modificado} e 
+instrucciones de cualquier cosa que debamos modificar en el framework.  
+
+\item Para asegurarnos que el proyecto est\'a en marcha les ofrecemos 2 `check points'
+\begin{itemize}
+  \item Viernes 9: Problemas de Instalaci\'on
+  \item Viernes 16: Problemas de Implementaci\'on
+\end{itemize}
+
+	extbf{Compromiso de Calidad:} Preguntas sobre esos temas (por email) ser\'an contestados en el fin 
+de semana siguiente. 
+
+
+\end{itemize}
+
+
+\medskip
+\textbf{Proyecto 1: } 
+
+
+\medskip
+\textbf{Proyecto 2: } 
+
+\end{document}
