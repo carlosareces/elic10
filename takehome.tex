@@ -1,0 +1,216 @@
+\documentclass{article}
+\usepackage{url}
+\usepackage{color}
+%\usepackage{covington}
+%\usepackage{qtree}
+\usepackage{amsfonts,amssymb,latexsym,theorem}
+\usepackage{a4wide}
+
+\def\at#1#2{{\char64}_{#1}#2}
+\newbox\itembox
+\def\itemlistlabel#1{#1\hfill}
+\def\itemlist#1{\setbox\itembox=\hbox{#1}%
+		\list{}{\labelwidth\wd\itembox
+		             \leftmargin\labelwidth
+                             \advance\leftmargin by\itemindent
+			     \advance\leftmargin by\labelsep
+			      \let\makelabel\itemlistlabel}}
+\let\enditemlist\endlist
+\def\Mseq#1#2#3{{#1}_{1},...,{#1}_{#2}\in #3}
+\def\Mseqc#1#2{{#1}_{1}\wedge\cdots\wedge{#1}_{#2}}
+
+
+\def\goth#1{\mathfrak{#1}}
+\def\gothA{{\mathfrak{A}}}			\def\gotha{{\mathfrak{a}}}
+\def\gothB{{\mathfrak{B}}}			\def\gothb{{\mathfrak{b}}}
+\def\gothC{{\mathfrak{C}}}			\def\gothc{{\mathfrak{c}}}
+\def\gothD{{\mathfrak{D}}}			\def\gothd{{\mathfrak{d}}}
+\def\gothE{{\mathfrak{E}}}			\def\gothe{{\mathfrak{e}}}
+\def\gothF{{\mathfrak{F}}}			\def\gothf{{\mathfrak{f}}}
+\def\gothG{{\mathfrak{G}}}			\def\gothg{{\mathfrak{g}}}
+\def\gothH{{\mathfrak{H}}}			\def\gothh{{\mathfrak{h}}}
+\def\gothI{{\mathfrak{I}}}			\def\gothi{{\mathfrak{i}}}
+\def\gothJ{{\mathfrak{J}}}			\def\gothj{{\mathfrak{j}}}
+\def\gothK{{\mathfrak{K}}}			\def\gothk{{\mathfrak{k}}}
+\def\gothL{{\mathfrak{L}}}			\def\gothl{{\mathfrak{l}}}
+\def\gothM{{\mathfrak{M}}}			\def\gothm{{\mathfrak{m}}}
+\def\gothN{{\mathfrak{N}}}			\def\gothn{{\mathfrak{n}}}
+\def\gothO{{\mathfrak{O}}}			\def\gotho{{\mathfrak{o}}}
+\def\gothP{{\mathfrak{P}}}			\def\gothp{{\mathfrak{p}}}
+\def\gothQ{{\mathfrak{Q}}}			\def\gothq{{\mathfrak{q}}}
+\def\gothR{{\mathfrak{R}}}			\def\gothr{{\mathfrak{r}}}
+\def\gothS{{\mathfrak{S}}}			\def\goths{{\mathfrak{s}}}
+\def\gothT{{\mathfrak{T}}}			\def\gotht{{\mathfrak{t}}}
+\def\gothU{{\mathfrak{U}}}			\def\gothu{{\mathfrak{u}}}
+\def\gothV{{\mathfrak{V}}}			\def\gothv{{\mathfrak{v}}}
+\def\gothW{{\mathfrak{W}}}			\def\gothw{{\mathfrak{w}}}
+\def\gothX{{\mathfrak{X}}}			\def\gothx{{\mathfrak{x}}}
+\def\gothY{{\mathfrak{Y}}}			\def\gothy{{\mathfrak{y}}}
+\def\gothZ{{\mathfrak{Z}}}			\def\gothz{{\mathfrak{z}}}
+
+\def\calA{{\cal A}}			\def\cA{{\cal a}}
+\def\calB{{\cal B}}			\def\cb{{\cal b}}
+\def\calC{{\cal C}}			\def\calc{{\cal c}}
+\def\calD{{\cal D}}			\def\cd{{\cal d}}
+\def\calE{{\cal E}}			\def\ce{{\cal e}}
+\def\calF{{\cal F}}			\def\cf{{\cal f}}
+\def\calG{{\cal G}}			\def\cg{{\cal g}}
+\def\calH{{\cal H}}			\def\ch{{\cal h}}
+\def\calI{{\cal I}}			\def\ci{{\cal i}}
+\def\calJ{{\cal J}}			\def\cj{{\cal j}}
+\def\calK{{\cal K}}			\def\ck{{\cal k}}
+\def\calL{{\cal L}}			\def\cl{{\cal l}}
+\def\calM{{\cal M}}			\def\cm{{\cal m}}
+\def\calN{{\cal N}}			\def\cn{{\cal n}}
+\def\calO{{\cal O}}			\def\co{{\cal o}}
+\def\calP{{\cal P}}			\def\cp{{\cal p}}
+\def\calQ{{\cal Q}}			\def\cq{{\cal q}}
+\def\calR{{\cal R}}			\def\calr{{\cal r}}
+\def\calS{{\cal S}}			\def\cs{{\cal s}}
+\def\calT{{\cal T}}			\def\ct{{\cal t}}
+\def\calU{{\cal U}}			\def\cu{{\cal u}}
+\def\calV{{\cal V}}			\def\cv{{\cal v}}
+\def\calW{{\cal W}}			\def\cw{{\cal w}}
+\def\calX{{\cal X}}			\def\cx{{\cal x}}
+\def\calY{{\cal Y}}			\def\cy{{\cal y}}
+\def\calZ{{\cal Z}}			\def\cz{{\cal z}}
+
+\def\sfA{{\sf A}}			\def\sfa{{\sf a}}
+\def\sfB{{\sf B}}			\def\sfb{{\sf b}}
+\def\sfC{{\sf C}}			\def\sfc{{\sf c}}
+\def\sfD{{\sf D}}			\def\sfd{{\sf e}}
+\def\sfE{{\sf E}}			\def\sfe{{\sf f}}
+\def\sfF{{\sf F}}			\def\sff{{\sf f}}
+\def\sfG{{\sf G}}			\def\sfg{{\sf g}}
+\def\sfH{{\sf H}}			\def\sfh{{\sf h}}
+\def\sfI{{\sf I}}			\def\sfi{{\sf i}}
+\def\sfJ{{\sf J}}			\def\sfj{{\sf j}}
+\def\sfK{{\sf K}}			\def\sfk{{\sf k}}
+\def\sfL{{\sf L}}			\def\sfl{{\sf l}}
+\def\sfM{{\sf M}}			\def\sfm{{\sf m}}
+\def\sfN{{\sf N}}			\def\sfn{{\sf n}}
+\def\sfO{{\sf O}}			\def\sfo{{\sf o}}
+\def\sfP{{\sf P}}			\def\sfp{{\sf p}}
+\def\sfQ{{\sf Q}}			\def\sfq{{\sf q}}
+\def\sfR{{\sf R}}			\def\sfr{{\sf r}}
+\def\sfS{{\sf S}}			\def\sfs{{\sf s}}
+\def\sfT{{\sf T}}			\def\sft{{\sf t}}
+\def\sfU{{\sf U}}			\def\sfu{{\sf u}}
+\def\sfV{{\sf V}}			\def\sfv{{\sf v}}
+\def\sfW{{\sf W}}			\def\sfw{{\sf w}}
+\def\sfX{{\sf X}}			\def\sfx{{\sf x}}
+\def\sfY{{\sf Y}}			\def\sfy{{\sf y}}
+\def\sfZ{{\sf Z}}			\def\sfz{{\sf z}}
+
+\def\forces{\models}
+\def\univ{\mathrm{E}}
+\def\Univ{\mathrm{A}}
+\newcommand{\lgcof}[1]{\Lambda_{#1}}
+\newcommand{\mcs}{\textsc{mcs}}
+
+\title{\textsf{Curso: Generaci\'on de Lenguaje Natural y Aplicaciones}\\
+Escuela de Ling\"u\'istica Computacional 2010 \\
+26-31 de Julio 2010, Buenos Aires, Argentina\\
+}
+\author{Evaluaci\'on Take Home}
+\date{Entrega: \textbf{Lunes 16 de Agosto, 2010}\\
+\mbox{    } }
+
+\begin{document}
+
+\maketitle
+
+
+
+\textbf{Pregunta 1: } 
+
+
+\medskip
+\textbf{Pregunta 2: } 
+
+
+\medskip
+\textbf{Question 3: } 
+For any $n\ge 1$, let $R^{n}xy$ be the first-order formula $$\exists
+z_{1}\cdots \exists z_{n}\,(Rxz_{1}\wedge Rz_{1}z_{2} \wedge \cdots
+\wedge Rz_{n}y).$$  Let $\psi$ be a first-order formula that is a
+boolean combination of formulas of the form $R^{n}xy$, $Rxy$, and
+$x=y$.  Show that the class of frames defined by the universal 
+closure
+of $\psi$ is definable in the basic hybrid language.
+
+Hint: the trichotomy condition, which we mentioned in class is
+expressed in first-order logic by
+$$\forall x \forall y (Rxy \vee x=y \vee Ryx)$$
+and we defined this in hybrid logic
+by
+$\at{j}{\Diamond i} \vee \at{j}{i} \vee \at{i}{\Diamond j} $.
+
+
+\medskip
+
+
+\medskip
+\textbf{Question 4: } 
+In Lecture~5 we discussed the \textit{universal modality} (or the
+\textit{global modality}, as it is sometimes called). Recall that the
+box form of this modality is written $\Univ$ and the diamond form is
+written $\univ$. They have the following semantics. For any model
+${\cal M} = (W,R,V)$, and any $w\in W$:
+$$\begin{array}{lcl}
+{\cal M},w \forces \Univ\phi & \ \mbox{iff} \ & \mbox{for all \ } u\in W,
+{\cal M},u \forces \phi \\
+
+{\cal M},w \forces \univ\phi & \ \mbox{iff} \ & \mbox{for some\ } u\in W,
+{\cal M},u \forces \phi \\
+\end{array}$$
+Add the universal $\univ$ to the basic hybrid language.  Use a
+filtration argument to show that the satisfiability problem for the
+resulting language is decidable.  (Recall that $@_{i}\phi$ can be
+defined to be $\univ(i\wedge \phi)$ or $\Univ(i\rightarrow \phi)$, so
+you do not have to deal explicitly with the satisfaction operators.)
+
+\medskip
+\textbf{Question 5: } 
+In Lecture~3 we proved a completeness result for the basic hybrid
+language with respect to named models. Now, recall that the axioms we
+used made heavy use of the $@$-operator, and so did the {\sc paste\/}
+rule, which played a crucial role in the proof.  Now, suppose we
+wanted to use nominals, but we didn't want to use the @-operator. That
+is, supposed we wanted to drop @ from the basic hybrid language. Could
+we still prove completeness with respect to named model?
+
+Yes, we can, and that's the purpose of the present exercise.  Using
+the hints given below, write down such an axiomatisation, and prove it
+sound and complete with respect to named models.
+
+\emph{First hint}. Note that for all $n, m\ge 0$, the formula
+$$\Diamond^{n}(i\wedge p) \rightarrow \Box^{m} (i \rightarrow p).$$
+is valid. 
+Here, for all $n,m\ge0$, $\Diamond^{n}$, and $\Box^{m}$ are
+sequences of diamonds and boxes of lengths $n$ and $m$ respectively.  Why are
+these axioms important?  Essentially they let us prove that nominals
+really do occur uniquely in one MCS in any generated submodel of the
+canonical model. Think about it.
+
+
+\emph{Second hint}. Let $\Diamond_{i}\phi$ be a shorthand for
+$\Diamond(i\wedge\phi)$, and add all rules of the form
+$$
+\begin{array}{c} \underline{\models\Diamond_{k}\cdots
+\Diamond_{i}\Diamond_{j}\phi \rightarrow \theta} \\
+\models\Diamond_{k}\cdots \Diamond_{i}\Diamond \phi \rightarrow \theta   
+\end{array}.
+$$ 
+Here $j$ is a nominal distinct from $k, \cdots ,i$ that does not occur
+in $\phi$ or $\theta$.) Why are these rules important?
+Essentially they let us do what the \textsc{paste} rule does
+without using the @ operator.
+
+\emph{Third hint.} Note that the \textsc{name rule} does not use the $@$ operator
+so we are still free to use it.
+
+This is a harder exercise than the previous ones (we'll give you a star if you chose to solve it), but you will learn a
+lot about hybrid completeness proofs if you do it.
+
+\end{document}
