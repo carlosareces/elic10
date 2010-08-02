@@ -1,10 +1,9 @@
 \documentclass{article}
 \usepackage{url}
 \usepackage{color}
-%\usepackage{covington}
-%\usepackage{qtree}
 \usepackage{amsfonts,amssymb,latexsym,theorem}
 \usepackage{a4wide}
+\usepackage{graphicx}
 
 \def\at#1#2{{\char64}_{#1}#2}
 \newbox\itembox
@@ -123,94 +122,152 @@ Escuela de Ling\"u\'istica Computacional 2010 \\
 
 
 \textbf{Pregunta 1: } 
+\begin{enumerate}
+\item Enumerar las etapas b\'asicas de un sistema estandar 
+de GLN, describiendo cada una de ellas en 2 renglones. 
+\item Muchos sistemas organizan
+estas etapas en un pipeline. 
+\begin{enumerate}
+\item Describir las \textbf{desventajas} de esta 
+arquitectura (max 5 renglones).  
 
+\item Mencionar expl\'icitamente dos etapas donde la arquitectura 
+pipeline es particularmente problem\'atica y dar un ejemplo de generaci\'on 
+concreto donde la calidad del texto mejorar\'ia al no usar un pipeline. 
+  
+\end{enumerate}
+\end{enumerate}
 
 \medskip
 \textbf{Pregunta 2: } 
+Considerar la siguiente gram\'atica l\'exica TAG presentada en clase
 
-
-\medskip
-\textbf{Question 3: } 
-For any $n\ge 1$, let $R^{n}xy$ be the first-order formula $$\exists
-z_{1}\cdots \exists z_{n}\,(Rxz_{1}\wedge Rz_{1}z_{2} \wedge \cdots
-\wedge Rz_{n}y).$$  Let $\psi$ be a first-order formula that is a
-boolean combination of formulas of the form $R^{n}xy$, $Rxy$, and
-$x=y$.  Show that the class of frames defined by the universal 
-closure
-of $\psi$ is definable in the basic hybrid language.
-
-Hint: the trichotomy condition, which we mentioned in class is
-expressed in first-order logic by
-$$\forall x \forall y (Rxy \vee x=y \vee Ryx)$$
-and we defined this in hybrid logic
-by
-$\at{j}{\Diamond i} \vee \at{j}{i} \vee \at{i}{\Diamond j} $.
-
-
+\begin{center}
+\framebox{
+\begin{minipage}{.8\textwidth}
+\begin{center}
+\includegraphics[scale=.45]{slides/pics/pic2-30.jpg} 
 \medskip
 
+\includegraphics[scale=.45]{slides/pics/pic2-29.jpg} 
+\medskip
+
+\includegraphics[scale=.45]{slides/pics/pic2-28.jpg}
+\end{center}
+\end{minipage}}
+\end{center}
+
+\begin{enumerate}
+\item Mostrar que la frase ``Who does John think Mary likes'' pertenece al lenguaje 
+de la gram\'atica, mostrando los distintos pasos de la construcci\'on del \'arbol. 
+
+\item Dar tres ejemplos de frases generadas por la gram\'atica que no son gramaticalmente 
+correctas\footnote{Cualquier noci\'on razonable de `gramaticalidad' est\'a bien, no vamos 
+a ser estrictos con eso. Pero intenten que los ejemplos sean lo mas diferente posible entre 
+ellos.}.
+
+\item Dar una descripci\'on, lo m\'as detallada posible, de las frases generadas por 
+la gram\'atica. 
+
+\item Si restringimos las operaciones de sustitucion y adjuncci\'on de forma que no permitimos 
+sustituciones una vez que una operaci\'on de adjuncci\'on ha sido aplicada, obtenemos el mismo 
+lenguaje? Justifique por que. 
+\end{enumerate}
 
 \medskip
-\textbf{Question 4: } 
-In Lecture~5 we discussed the \textit{universal modality} (or the
-\textit{global modality}, as it is sometimes called). Recall that the
-box form of this modality is written $\Univ$ and the diamond form is
-written $\univ$. They have the following semantics. For any model
-${\cal M} = (W,R,V)$, and any $w\in W$:
-$$\begin{array}{lcl}
-{\cal M},w \forces \Univ\phi & \ \mbox{iff} \ & \mbox{for all \ } u\in W,
-{\cal M},u \forces \phi \\
+\textbf{Pregunta 3:} El algoritmo incremental de Dale and Reiter para la GRE puede definirse
+de la siguiente forma:
 
-{\cal M},w \forces \univ\phi & \ \mbox{iff} \ & \mbox{for some\ } u\in W,
-{\cal M},u \forces \phi \\
-\end{array}$$
-Add the universal $\univ$ to the basic hybrid language.  Use a
-filtration argument to show that the satisfiability problem for the
-resulting language is decidable.  (Recall that $@_{i}\phi$ can be
-defined to be $\univ(i\wedge \phi)$ or $\Univ(i\rightarrow \phi)$, so
-you do not have to deal explicitly with the satisfaction operators.)
+\begin{center}
+\framebox{
+\begin{minipage}{.8\textwidth}
+\begin{description}
+\item[Input:] \ \\
+            Un conjunto de individuos con sus propiedades\\
+            Un individuo target. 
+\item[Output:] \ \\
+            Un conjunto de propiedades
+\item[Algoritmo:] \ \\
+            Empezar con un conjunto vac\'io\\
+            Agregar propiedades del objeto target, mientras cada propiedad elimine al menos a un distractor 
+y mientras el conjunto de distractores sea no vac\'io.
+\end{description}
+\end{minipage}}
+\end{center}
+
+Asumamos que en cada iteraci\'on, la propiedad a utilizar se elige en forma `greedy' utilizando aquella con 
+mayor poder discriminatorio.  
+
+\begin{enumerate}
+\item Dar un ejemplo de un conjunto de objetos y propiedades donde para alg\'un objeto 
+target, la heur\'istica greedy no lleva a la descripci\'on m\'as corta. 
+\item Extender el algoritmo para que tome un orden parcial sobre las propiedades y proponer combinaciones 
+de este orden con el poder discriminatorio de una propiedad.  Dar ejemplos. 
+\end{enumerate}
 
 \medskip
-\textbf{Question 5: } 
-In Lecture~3 we proved a completeness result for the basic hybrid
-language with respect to named models. Now, recall that the axioms we
-used made heavy use of the $@$-operator, and so did the {\sc paste\/}
-rule, which played a crucial role in the proof.  Now, suppose we
-wanted to use nominals, but we didn't want to use the @-operator. That
-is, supposed we wanted to drop @ from the basic hybrid language. Could
-we still prove completeness with respect to named model?
+\textbf{Pregunta 4: } 
+\begin{enumerate}
 
-Yes, we can, and that's the purpose of the present exercise.  Using
-the hints given below, write down such an axiomatisation, and prove it
-sound and complete with respect to named models.
+\item \textbf{Monos y Bananas:} un mono esta en una habitaci\'on con unas bananas 
+colgando del techo.  La habitaci\'on tiene una caja a la que el mono puede 
+subirse para alcanzar las bananas. Inicialmente, el mono esta en la posici\'on A, 
+las bananas en la posici\'on B, y la caja en la posici\'on C. El mono y la caja 
+tiene la propiedad `altura baja,' pero si el mono se sube a la caja, su 
+altura pasa a ser `alta' que es la misma altura a la que est\'an las bananas. 
+Las acciones que el mono puede realizar son \emph{Ir} de una posici\'on a otra. 
+\emph{Empujar} un objeto de un lugar a otro.  \emph{TreparA} y \emph{BajarseDe}
+un objeto. Y \emph{Tomar} y \emph{Soltar} un objeto. La acci\'on \emph{Tomar}
+resulta en el objeto estando en posesi\'on del mono, siempre y cuando el mono 
+y el objeto esten en el mismo lugar y a la misma altura. 
 
-\emph{First hint}. Note that for all $n, m\ge 0$, the formula
-$$\Diamond^{n}(i\wedge p) \rightarrow \Box^{m} (i \rightarrow p).$$
-is valid. 
-Here, for all $n,m\ge0$, $\Diamond^{n}$, and $\Box^{m}$ are
-sequences of diamonds and boxes of lengths $n$ and $m$ respectively.  Why are
-these axioms important?  Essentially they let us prove that nominals
-really do occur uniquely in one MCS in any generated submodel of the
-canonical model. Think about it.
+\begin{enumerate}
+\item Especificar el estado inicial descripto, y un estado final en donde el 
+mono tiene las bananas. 
+\item Especificar las seis acciones mencionadas, usando STRIPS. 
+\end{enumerate}
 
+\newpage 
+\item Considerar el siguiente problema de planning
 
-\emph{Second hint}. Let $\Diamond_{i}\phi$ be a shorthand for
-$\Diamond(i\wedge\phi)$, and add all rules of the form
-$$
-\begin{array}{c} \underline{\models\Diamond_{k}\cdots
-\Diamond_{i}\Diamond_{j}\phi \rightarrow \theta} \\
-\models\Diamond_{k}\cdots \Diamond_{i}\Diamond \phi \rightarrow \theta   
-\end{array}.
-$$ 
-Here $j$ is a nominal distinct from $k, \cdots ,i$ that does not occur
-in $\phi$ or $\theta$.) Why are these rules important?
-Essentially they let us do what the \textsc{paste} rule does
-without using the @ operator.
+\vspace*{-.2cm}
+\begin{center}
+\framebox{
+\begin{minipage}{0.8\textwidth}
+\begin{center}
+\includegraphics[scale=.5]{planning.jpg} 
+\end{center}
+\end{minipage}
+}
+\end{center}
 
-\emph{Third hint.} Note that the \textsc{name rule} does not use the $@$ operator
-so we are still free to use it.
+\vspace*{-.2cm}
+Construir los niveles 0, 1 y 2 del grafo de planning (graphplan) indicando mutexes. 
 
-This is a harder exercise than the previous ones (we'll give you a star if you chose to solve it), but you will learn a
-lot about hybrid completeness proofs if you do it.
+\item Demostrar la siguiente propiedad de un grafo de planning
+
+\begin{quote}
+Un literal que no aparece en el \'ultimo nivel de un grafo de planning (totalmente
+expandido, i.e., cuando el grafo `leveled off') no puede ser alcanzado desde el estado inicial por ninguna secuencia de
+acciones. 
+\end{quote}
+\end{enumerate}
+
+\medskip
+\textbf{Pregunta 5:} Durante el \'ultimo d\'ia de clase discutimos distintas 
+m\'etricas que pueden utilizarse para evaluar la calidad de un sistema de 
+generaci\'on de instrucciones en un ambiente virtual.  Supongamos que queremos 
+evaluar (independientemente una de otra) las siguientes caracter\'isticas de un sistema
+\begin{itemize}
+   \item Eficiencia y eficacia\\[-2em]
+   \item Entretenimiento\\[-2em]
+   \item Generaci\'on de background com\'un entre el sistema y el usuario.  
+\end{itemize}
+
+Dar para cada caracter\'istica un listado ordenado 
+de las m\'etricas `Top 5.' Es decir, mencionar en cada caso, en orden de mejor a 
+peor, 5 m\'etricas que eval\'uan la caracter\'istica indicada.  Para cada una 
+de las listas dadas, argumentar el orden elegido\footnote{Pueden incluir m\'etricas
+no mencionadas en clase, argumentando c\'omo obtenerlas y por qu\'e son mejores que otras.}.    
 
 \end{document}
