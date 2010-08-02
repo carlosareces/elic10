@@ -1,0 +1,46 @@
+world development-world-2008: 0,1 to 13,9, contains-tutorial=false,
+      			      player-position=(12.5,1,1.5), player-orientation=[0,0,1],
+			      start-tile=(8.5,1,1.5), goal=t1
+
+room tutorial-room: 9,1 to 13,4
+     dt1: door at (9,1,1.5), state=closed
+     bt1: button at (9.5,0.9,1), color=blue, state=off, controls=dt1
+     pt1: picture at (11.5,1.1,4), state=closed, other-position=(10.5,1.1,4)
+     bt2: button at (12.5,0.9,4), color=green, state=off, controls=pt1
+     bt3: button at (12.5,1.1,4), color=red, state=off
+
+room corridor: polygon 6,5 to 7,5 to 7,6 to 8,6 to 8,7 to 7,7 to 7,8 to 6,8 to 6,7 to 5,7 to 5,6 to 6,6
+
+room left-room: 8,4 to 13,9, color=green
+     d3: door at (8,1,6.5), state=open
+     p1: picture at (13,1.1,6.5), state=closed, other-position=(12.5,1.1,9)
+     s1: safe at (13,1,6.5), state=safe-state-1, push=b5, push=b3, push=b8, push=b8, push=b7
+     t1: trophy at (13,1.1,6.5), 
+     	 	accessible-if={state(p1,open)}, accessible-if={state(s1,safe-state-open)}
+     flower1: flower at (12.5, 0.45, 4.7), orientation=[1,0,0]
+     a1: alarm at (8.5,0,6.5), state=alarmed
+     b5: button at (9.5,0.9,4), color=green
+     b6: button at (11.5,0.9,4), color=green, state=off, controls=p1
+     b7: button at (13,0.9,7.5), color=red
+     b8: button at (10.6,0.85,9), color=green
+     b8-dist1: button at (10.2,0.9,9), color=red, state=off, effect=lost
+     b8-dist2: button at (11.2,0.9,9), color=blue, state=off
+     b9-dist3: button at (11.6,0.8,9), color=blue
+
+room right-room: 0,4 to 5,9, color=red
+     d2: door at (5,1,6.5), state=open
+     lamp1: lamp at (0.3,0,8.7), orientation=[1,0,1]
+     b2: button at (2.3,0.76,4), color=blue, state=off, controls=a1
+     b2-dist1: button at (2.3,0.92,4), color=green, state=off, controls=d2
+     b2-dist2: button at (2.7,0.92,4), color=green, state=off
+     b2-dist3: button at (2.7,0.76,4), color=red, effect=lost
+     b3: button at (0,0.9,6.5), color=blue
+     b4: button at (2.5,0.9,9), color=red, state=off, controls=d2
+
+room little-room: 5,8 to 8,9
+     d4: door at (6.5,1,8), state=open
+
+room room-1: 5,1 to 9,5, color=blue
+     d1: door at (6.5,1,5), state=closed
+     b1: button at (9,0.9,2.5), color=blue, state=off, controls=d1
+

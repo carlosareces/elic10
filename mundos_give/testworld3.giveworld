@@ -1,0 +1,64 @@
+world corpus-collection-world-3: 0,1 to 13,11, contains-tutorial=true,
+      			      player-position=(8.5,1,2.5), player-orientation=[1,0,0],
+			      start-tile=(10.5,1,2.5), goal=t1
+
+room tutorial-room: 7,1 to 10,4
+     dt1: door at (10,1,2.5), state=open
+
+room room-1: 10,1 to 13,6, color=blue
+     d2: door at (10,1,4.5), state=open
+     d3: door at (11.5,1,6), state=open
+     b1: button at (13,1,4.5), state=off, controls=a2, controls=dt1, color=green
+     b4: button at (13,1,2.5), color=green
+     p2: picture at (13,1.1,3.5), state=closed
+
+room room-2: 8,7 to 13,11, color=green
+     d4: door at (11.5,1,7), state=open
+     d5: door at (9.5,1,7), state=open
+     b5: button at (13,1.1,9.6), color=red
+     b2: button at (13,1.1,8.9), color=red, state=off
+     chair1: chair at (12.5, 0, 10.3), orientation=[-1,0,-1]
+     b17: button at (9.6,1,11), color=red, state=off
+     b18: button at (10.2,1,11), color=red, state=off
+     b19: button at (10.8,1,11), color=red, state=off
+
+room room-3: 0,8 to 4,11
+     d6: door at (4,1,10.5), state=open
+     d7: door at (1.5,1,8), state=open
+     b7: button at (2.3,1,8), color=green, state=off
+     b8: button at (2.7,1,8), color=blue, state=off
+     b9: button at (4,1,8.4), state=off, color=blue
+     b10: button at (4,1,8.8), state=off, controls=d8, color=blue
+     couch1: couch at (0.2,0.3,9.4), orientation=[0,0,-1]
+     flower1: flower at (0.6, 0.45, 8.6), orientation=[1,-2,0]     
+
+room room-4: 0,4 to 3,8, color=red
+     d8: door at (1.5,1,4), state=closed
+     b15: button at (3,1,4.8), color=green
+     b14: button at (3,1,6.2), color=yellow, state=off
+     lamp1: lamp at (2.5,0,5.5), orientation=[1,0,0]
+
+room room-5: polygon 0,1 to 0,4 to 5,4 to 5,1 to 3,1 to 3,3 to 2,3 to 2,1 to 0,1
+     d9: door at (4.5,1,4), state=closed
+     p1: picture at (5,1.1,2.5), state=closed, other-position=(5,1.1,1.5)
+     s1: safe at (5,1,2.5), state=safe-state-1, push=b5, push=b4, push=b12, push=b15, push=b5, push=b15
+     t1: trophy at (5,1.1,2.5), accessible-if={state(p1,open)}, accessible-if={state(s1,safe-state-open)}
+     b16: button at (3.3,1,1), state=off, controls=p1, color=blue
+     b11: button at (0,1,2.5), effect=lost, color=blue, state=off
+     b12: button at (0.5,1,1), color=red
+     b13: button at (1.5,1,1), color=green, state=off
+
+room safe-room: 5,2 to 6,3
+
+room corridor1: polygon 4,11 to 7,11 to 7,7 to 6,7 to 6,10 to 4,10 to 4,11
+     d11: door at (6.5,1,7), state=open
+
+room corridor1b: polygon 7,6 to 7,5 to 10,5 to 10,4 to 6,4 to 6,6 to 7,6
+     d10: door at (6.5,1,6), state=open
+
+room corridor2: polygon 4,4 to 4,7 to 8,7 to 8,6 to 9,6 to 9,7 to 10,7 to 10,5 to 7,5 to 7,6 to 5,6 to 5,4 to 4,4
+     a2: alarm at (6.5,0,6.5), state=alarmed
+
+room corridor3: polygon 11,6 to 11,7 to 12,7 to 12,6 to 11,6, color=green
+     a1: alarm at (11.5,0,6.5), state=alarmed
+
